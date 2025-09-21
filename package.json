@@ -1,0 +1,56 @@
+{
+  "name": "talks",
+  "version": "1.0.0",
+  "description": "Public Tech Talks",
+  "homepage": "https://github.com/ShogunPanda/talks",
+  "repository": "https://github.com/ShogunPanda/talks",
+  "bugs": {
+    "url": "https://github.com/ShogunPanda/talks/issues"
+  },
+  "author": "Shogun <shogun@cowtech.it>",
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "freya development",
+    "build": "freya build",
+    "postbuild": "concurrently npm:lint npm:lint:css npm:typecheck",
+    "server": "freya server",
+    "pdf": "freya pdf",
+    "format": "prettier -w src",
+    "lint": "eslint --cache",
+    "lint:css": "stylelint --cache src/**/*.css",
+    "typecheck": "tsc -p . --noEmit",
+    "deploy": "freya deploy",
+    "postdeploy": "node --import tsx src/scripts/postdeploy.ts && cd dist/deploy && netlify deploy --site $NETLIFY_SITE_ID --dir site --prod",
+    "verify": "node --import tsx src/scripts/verify.ts",
+    "list": "find src/talks -type d -depth 1 -exec basename {} \\; | sort",
+    "convert-images": "go-webp remove=false change=false excludeFolders='.freya,dist,node_modules'",
+    "optimize-images": "fd -e .webp -x cwebp {} -o {} -short",
+    "fix-downloads-visibility": "nodemon -e jpg,png,webp --exec chflags nohidden .",
+    "generate-cfp": "node --import tsx src/scripts/generate-cfp.ts"
+  },
+  "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@perseveranza-pets/freya": "^0.74.2"
+  },
+  "devDependencies": {
+    "@cowtech/eslint-config": "^10.2.0",
+    "@cowtech/stylelint-config": "^1.0.1",
+    "@types/node": "^22.10.5",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.18.0",
+    "go-webp": "^1.3.1",
+    "prettier": "^3.4.2",
+    "stylelint": "^16.12.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}

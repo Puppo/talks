@@ -1,0 +1,563 @@
+---
+layout: cover
+# ---
+
+---
+layout: nearform
+# ---
+
+---
+layout: hello
+# ---
+
+---
+layout: quote
+quote:
+  sentence: This is a very intelligent sentence
+  author: Nice person
+
+---
+layout: quote
+quote:
+  sentence: This is a very intelligent sentence
+  author: Nice person
+  light: true
+  primaryIcon: network-wired
+  primaryIconClassName: talk@quote__primary-icon
+  secondaryIcon: chart-network
+  secondaryIconClassName: talk@quote__secondary-icon
+
+---
+layout: quote
+quote:
+  sentence: This has no icons
+  author: Nice person
+  icons: false
+
+---
+layout: end
+# ---
+
+---
+title: Default with simple content
+content:
+  - Sit enim aliqua in velit ipsum voluptate reprehenderit occaecat anim irure non.
+  - Mollit ea nulla labore esse quis ut amet magna sunt culpa sint amet.
+
+---
+title: Default with simple content and image
+content:
+  - Sit enim aliqua in velit ipsum voluptate reprehenderit occaecat anim irure non.
+  - Mollit ea nulla labore esse quis ut amet magna sunt culpa sint amet.
+image:
+  url: '@theme/panda.webp'
+decorations:
+  number: 2
+  logo: false
+  permalink: false
+
+---
+title: Default with vertical items
+items:
+  entries:
+    - index: 1
+      title: Exercitation nisi do in mollit aliqua.
+      text: Qui minim eu do veniam magna quis non.
+    - icon: chevron-left
+      title: Exercitation nisi do in mollit aliqua.
+      text: Qui minim eu do veniam magna quis non.
+    - qr: https://nearform.com
+      title: Cupidatat tempor eiusmod sint nulla.
+      text: Velit enim laborum qui minim incididunt eu.
+    - image: '@theme/panda.webp'
+      title: Aute aute minim sint pariatur sunt magna voluptate aute.
+      text: Dolore Lorem aliquip tempor tempor cillum aute qui qui Lorem.
+
+---
+title: Default with horizontal items
+items:
+  entries:
+    - index: 1
+      title: Exercitation nisi do in mollit aliqua.
+      text: Qui minim eu do veniam magna quis non.
+    - icon: chevron-left
+      title: Exercitation nisi do in mollit aliqua.
+      text: Qui minim eu do veniam magna quis non.
+    - qr: https://nearform.com
+      title: Cupidatat tempor eiusmod sint nulla.
+      text: Velit enim laborum qui minim incididunt eu.
+    - image: '@theme/panda.webp'
+      title: Aute aute minim sint pariatur sunt magna voluptate aute.
+      text: Dolore Lorem aliquip tempor tempor cillum aute qui qui Lorem.
+  horizontal: true
+decorations:
+  number: 4
+
+---
+title: Default with sequence items 1/3
+items:
+  entries:
+    - title: This is the first of three item
+    - title: This is the second of three item
+    - title: This is the third of three item
+  sequence: true
+
+---
+title: Default with sequence items 2/3
+items:
+  entries:
+    - title: This is the first of three item
+    - title: This is the second of three item
+    - title: This is the third of three item
+  sequence: true
+
+---
+title: Default with sequence items 3/3
+items:
+  entries:
+    - title: This is the first of three item
+    - title: This is the second of three item
+    - title: This is the third of three item
+  sequence: true
+
+---
+title: Default with grid
+grids:
+  - entries:
+      - icon: chevron-left
+      - qr: https://nearform.com
+      - icon: chevron-right
+      - image: '@theme/panda.webp'
+    sequence: true
+  - entries:
+      - icon: chevron-left
+      - icon: chevron-up
+      - icon: chevron-right
+    sequence: true
+    className: talk@grid
+decorations:
+  icon: lightbulb-on
+
+---
+title: Default with code
+code:
+  language: json
+  content: |
+    {
+      "name": "test",
+      "version": "1.0.0",
+      "main": "index.mjs",
+      "scripts": {},
+      "dependencies": {}
+    }
+decorations:
+  number: 1
+
+---
+title: Default with code (highlighted)
+code:
+  language: json
+  content: |
+    {
+      "name": "test",
+      "version": "1.0.0",
+      "main": "index.mjs",
+      "scripts": {},
+      "dependencies": {}
+    }
+  highlight: 2, 4
+decorations:
+  icon: lightbulb-on
+
+---
+layout: code
+title: Code Layout
+code:
+  language: javascript
+  highlight: '2'
+  numbers: true
+  content: |
+    import fastify from 'fastify'
+    import { parse, print, visit } from 'graphql/language/index.js'
+
+    /* ... */
+
+    server.post('/graphql', async function handleQuery(req, reply) {
+      // Step 1: Parse the query and check for syntax error
+      const document = parse(req.body.query)
+
+      // Step 2: Add types information to the query
+      const [enrichedAst, enrichedId] = addTypesInformation(document)
+
+      // Step 3: Execute the query on the upstream
+      const response = await graphql('https://api.geographql.rudio.dev', print(enrichedAst))
+
+      // Step 4 and 5: Execute the enriching handler to fetch additional data
+      const extensions = await enrich(response.data, enrichedId, addWeatherInformation)
+
+      // Return to the client
+      return { ...response, extensions: { ...response.extensions, ...extensions }}
+    })
+decorations:
+  number: 10
+
+---
+layout: code
+code:
+  language: javascript
+  highlight: '2'
+  content: |
+    import fastify from 'fastify'
+    import { parse, print, visit } from 'graphql/language/index.js'
+
+    /* ... */
+
+    server.post('/graphql', async function handleQuery(req, reply) {
+      // Step 1: Parse the query and check for syntax error
+      const document = parse(req.body.query)
+
+      // Step 2: Add types information to the query
+      const [enrichedAst, enrichedId] = addTypesInformation(document)
+
+      // Step 3: Execute the query on the upstream
+      const response = await graphql('https://api.geographql.rudio.dev', print(enrichedAst))
+
+      // Step 4 and 5: Execute the enriching handler to fetch additional data
+      const extensions = await enrich(response.data, enrichedId, addWeatherInformation)
+
+      // Return to the client
+      return { ...response, extensions: { ...response.extensions, ...extensions }}
+    })
+  className:
+    lineNotHighlighted: talk@line-not-highlighted
+    lineHighlighted: talk@line-highlighted
+decorations:
+  icon: lightbulb-on
+
+---
+layout: half
+title: Half with simple content
+content:
+  - Sit enim aliqua in velit ipsum voluptate reprehenderit occaecat anim irure non.
+  - Mollit ea nulla labore esse quis ut amet magna sunt culpa sint amet.
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: white
+
+---
+layout: half
+title: Half with vertical items, reversed
+items:
+  entries:
+    - icon: chevron-left
+      title: Exercitation nisi do in mollit aliqua.
+      text: Qui minim eu do veniam magna quis non.
+    - qr: https://nearform.com
+      title: Cupidatat tempor eiusmod sint nulla.
+      text: Velit enim laborum qui minim incididunt eu.
+    - image: '@theme/panda.webp'
+      title: Aute aute minim sint pariatur sunt magna voluptate aute.
+      text: Dolore Lorem aliquip tempor tempor cillum aute qui qui Lorem.
+image:
+  url: '@theme/panda.webp'
+decorations:
+  number: 3
+className:
+  root: theme@half--reverse
+
+---
+layout: image
+title: Image with no content
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: total-white
+
+---
+layout: image
+title: Image with content
+subtitle: Excepteur ullamco reprehenderit amet ea sunt esse.
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: total-white
+
+---
+layout: side
+title: Side with simple content
+content:
+  - Sit enim aliqua in velit ipsum voluptate reprehenderit occaecat anim irure non.
+  - Mollit ea nulla labore esse quis ut amet magna sunt culpa sint amet.
+image:
+  url: '@theme/panda.webp'
+
+---
+layout: side
+title: Side with vertical items
+items:
+  entries:
+    - icon: chevron-left
+      title: Exercitation nisi do in mollit aliqua.
+      text: Qui minim eu do veniam magna quis non.
+    - qr: https://nearform.com
+      title: Cupidatat tempor eiusmod sint nulla.
+      text: Velit enim laborum qui minim incididunt eu.
+    - image: '@theme/panda.webp'
+      title: Aute aute minim sint pariatur sunt magna voluptate aute.
+      text: Dolore Lorem aliquip tempor tempor cillum aute qui qui Lorem.
+image:
+  url: '@theme/panda.webp'
+decorations:
+  number: 3
+
+---
+layout: side
+title: Side with highlight
+items:
+  entries:
+    - icon: chevron-left
+      title: Exercitation nisi do in mollit aliqua.
+      text: Qui minim eu do veniam magna quis non.
+    - qr: https://nearform.com
+      title: Cupidatat tempor eiusmod sint nulla.
+      text: Velit enim laborum qui minim incididunt eu.
+    - image: '@theme/panda.webp'
+      title: Aute aute minim sint pariatur sunt magna voluptate aute.
+      text: Dolore Lorem aliquip tempor tempor cillum aute qui qui Lorem.
+highlight:
+  text: Deserunt fugiat voluptate adipisicing consectetur nostrud esse cillum. Est veniam est cupidatat reprehenderit esse pariatur sint dolore velit incididunt laboris.
+  className: talk@highlight
+decorations:
+  logo: white
+  permalink: white
+
+---
+layout: side
+title: Side with code
+items:
+  entries:
+    - icon: chevron-left
+      title: Exercitation nisi do in mollit aliqua.
+      text: Qui minim eu do veniam magna quis non.
+    - qr: https://nearform.com
+      title: Cupidatat tempor eiusmod sint nulla.
+      text: Velit enim laborum qui minim incididunt eu.
+    - image: '@theme/panda.webp'
+      title: Aute aute minim sint pariatur sunt magna voluptate aute.
+      text: Dolore Lorem aliquip tempor tempor cillum aute qui qui Lorem.
+code:
+  language: json
+  content: |
+    {
+      "name": "test",
+      "version": "1.0.0",
+      "main": "index.mjs",
+      "scripts": {},
+      "dependencies": {}
+    }
+  highlight: 2, 4
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+subtitle: Dolor id enim magna quis aute ex esse officia amet officia occaecat.
+image:
+  url: '@theme/panda.webp'
+className:
+  root: theme@separator--reverse
+decorations:
+  logo: black
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+subtitle: Dolor id enim magna quis aute ex esse officia amet officia occaecat.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: midnight
+className:
+  subtitle: theme@separator__callout
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-midnight-80
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-midnight-50
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-midnight-30
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-midnight-10
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: green
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-green-80
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-green-50
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-green-30
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-green-10
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: purple
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-purple-80
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-purple-50
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-purple-30
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-purple-10
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: blue
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-blue-80
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-blue-50
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-blue-30
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-blue-10
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-grey-80
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-grey-30
+
+---
+layout: separator
+title: Irure consectetur officia aliquip nostrud.
+image:
+  url: '@theme/panda.webp'
+options:
+  background: nf-grey-10

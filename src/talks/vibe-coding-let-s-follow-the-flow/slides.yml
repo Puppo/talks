@@ -1,0 +1,274 @@
+---
+layout: cover
+# ---
+
+# ---
+
+# ---
+# layout: separator
+# title: All hope abandon ye who enter here!
+# image:
+#   url: '@talk/hell.webp'
+# options:
+#   background: green
+
+# ---
+# layout: image
+# image:
+#   url: '@talk/marco.webp'
+# decorations:
+#   logo: white
+
+---
+layout: hello
+# ---
+
+options:
+  author:
+    name: Luca Del Puppo
+    description: Senior Software Engineer, Nearform_
+    roles:
+      - where: Nearform_
+        what: Senior Software Engineer
+        url: https://nearform.com
+    email: luca@delpuppo.net
+    website: https://delpuppo.net
+    twitter: puppo92
+    github: puppo
+    linkedin: lucadelpuppo
+
+---
+layout: nearform
+---
+
+layout: image
+title: The Old Way
+subtitle: The Manual Process
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: total-white
+---
+
+layout: half
+title: The Old Way
+items:
+  entries:
+    - title: Writing code line by line, from scratch
+      text: The developer writes code without any tools or shortcuts.
+    - title: Constantly searching for documentation and syntax
+      text: The developer spends time looking up how to use different functions and libraries.
+    - title: Manual debugging, a tedious process
+      text: The developer has to go through the code line by line to find and fix bugs.
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: white
+---
+
+layout: image
+title: The AI Assistant
+subtitle: A Helping Hand
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: total-white
+---
+
+layout: half
+title: A Helping Hand
+image:
+  url: '@theme/panda.webp'
+items:
+  entries:
+    - title: AI suggests code snippets as you type
+      text: The AI provides real-time code suggestions to speed up development
+    - title: It generates boilerplate code
+      text: The AI can create standard code structures, saving time on repetitive tasks
+    - title: It answers quick questions about APIs and frameworks
+      text: The AI can provide instant answers to common coding questions
+decorations:
+  logo: white
+className:
+  root: theme@half--reverse
+---
+
+layout: image
+title: The New Frontier
+subtitle: The Agent
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: total-white
+---
+
+layout: half
+title: The Agent
+items:
+  entries:
+    - title: The agent takes complex instructions and executes multi-step tasks
+      text: 
+    - title: It can manage project workflows autonomously
+      text: 
+    - title: It acts as a team member, not just a tool
+      text: 
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: white
+---
+
+layout: image
+title: The Interactive "To-Do List" Challenge
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: total-white
+---
+
+title: Let's play a game! 1/2
+items:
+  entries:
+    - index: 1
+      title: Senior Developer
+    - index: 2
+      title: Junior Developer
+  horizontal: true
+  className: talk@narrow-grid
+---
+
+title: Let's play a game! 2/2
+items:
+  entries:
+    - index: 1
+      title: bolt.new
+    - index: 2
+      title: Firebase Studio
+    - index: 3
+      title: GitHub Copilot
+  horizontal: true
+  className: talk@narrow-grid
+---
+
+layout: half
+title: The Art of Prompting
+items:
+  entries:
+    - title: Write clear and specific instructions
+      text: The difference between "Write a to-do list app" and "Using React and Tailwind CSS, create a To-Do list component that manages state and is accessible to screen readers."
+    - title: The developer’s role is shifting from "code writer" to instruction engineer
+      text: Crafting effective prompts is becoming a crucial skill for developers
+    - title: Clear, constrained instructions lead to better results
+      text: Providing detailed and focused prompts helps the agent deliver more accurate and relevant code
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: white
+---
+
+title: The Importance of Context
+items:
+  entries:
+    - title: It helps avoid rework and wasted effort
+      text: By providing context, the agent can make informed decisions and avoid unnecessary mistakes.
+    - title: It ensures the solution aligns with the project’s high-level goals
+      text: Context allows the agent to understand the bigger picture and deliver solutions that fit within the overall project objectives
+    - title: A developer’s value is in understanding the problem, not just writing the code
+      text: Developers bring critical thinking and problem-solving skills that go beyond mere code generation.
+---
+
+title: "The Spec File: Beyond the Prompt"
+items:
+  entries:
+    - title: Moving from conversational prompts to structured specifications
+      text: This shift allows for more precise and effective communication with the AI
+    - title: A spec file provides the AI with a complete context of the project
+      text: It includes all relevant information, such as project goals, constraints, and requirements
+    - title: It's the ultimate form of context, enabling the agent to act autonomously with full awareness
+      text: The spec file empowers the agent to make decisions and execute tasks without constant human intervention
+---
+
+layout: half
+title: The Agent as a Team Player 1/2
+items:
+  entries:
+    - title: Agents can manage the codebase, not just individual files
+      text: The agent can understand and navigate the entire project structure, making it a more effective collaborator.
+    - title: Agents can create issue
+      text: The agent can identify bugs, suggest features, and create issues in the project management system.
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: white
+---
+
+layout: half
+title: The Agent as a Team Player 2/2
+items:
+  entries:
+    - title: Automated PR reviews and suggestions
+      text: The agent can assist in reviewing pull requests, providing feedback, and suggesting improvements, or even creating them.
+      
+    - title: Helping with project management and documentation
+      text: The agent can help organize tasks, update documentation, and ensure that the project stays on track.
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: white
+className:
+  root: theme@half--reverse
+---
+
+layout: half
+title: Homework for the curious
+items:
+  entries:
+    - title: BMad Method
+      text: A methodology to build software with AI assistance, focusing on breaking down tasks into manageable chunks. [Learn more](https://github.com/24601/BMAD-AT-CLAUDE)
+    - title: Spec Driven Development
+      text: makes your specification the center of your engineering process [Learn more](https://github.com/github/spec-kit)
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: white
+---
+
+layout: image
+title: Demo Time!
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: total-white
+---
+
+title: Conclusion 1/2
+items:
+  entries:
+    - title: Development is changing
+      text: The role of developers is evolving with the integration of AI and automation.
+    - title: Less focus on rote tasks, more on high-level design and creativity
+      text: Developers can now focus on more complex and creative aspects of software development.
+  sequence: true
+decorations:
+  logo: white
+---
+
+title: Conclusion 2/2
+items:
+  entries:
+    - title: AI and agents are our collaborators, not replacements
+      text: Embracing these tools can enhance productivity and innovation.
+    - title: Embrace the flow and let the agents handle the routine
+      text: By allowing AI to take care of repetitive tasks, developers can concentrate on higher-level problem-solving and innovation.
+  sequence: true
+decorations:
+  logo: white
+---
+layout: separator
+title: Questions
+image:
+  url: '@theme/panda.webp'
+---
+layout: end
+# ---
+

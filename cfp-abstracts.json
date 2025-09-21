@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Master Template",
+    "keyword": "cfp§1",
+    "text": "Master Template\n\nMaster template for testing. Never deployed to production."
+  },
+  {
+    "name": "Vibe Coding: Let's follow the flow",
+    "keyword": "cfp§2",
+    "text": "Vibe Coding: Let's follow the flow\n\nIn this talk, we will explore the concept of 'vibe coding' and how it can enhance our development process. We'll discuss the importance of maintaining a positive and collaborative atmosphere within our teams, and how this can lead to more effective problem-solving and innovation."
+  }
+]

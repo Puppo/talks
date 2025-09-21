@@ -1,0 +1,77 @@
+[
+  {
+    "name": "email",
+    "keyword": "cfp#1",
+    "text": "luca@delpuppo.net"
+  },
+  {
+    "name": "name",
+    "keyword": "cfp#2",
+    "text": "Luca Del Puppo"
+  },
+  {
+    "name": "city",
+    "keyword": "cfp#3",
+    "text": "Povegliano, Italy"
+  },
+  {
+    "name": "company",
+    "keyword": "cfp#4",
+    "text": "Nearfomr"
+  },
+  {
+    "name": "bio",
+    "keyword": "cfp#5",
+    "text": "Senior Software Engineer at Nearform_"
+  },
+  {
+    "name": "role",
+    "keyword": "cfp#6",
+    "text": "Nearform, Senior Software Engineer"
+  },
+  {
+    "name": "full-role",
+    "keyword": "cfp#7",
+    "text": "Senior Software Engineer"
+  },
+  {
+    "name": "web",
+    "keyword": "cfp@1",
+    "text": "https://delpuppo.net"
+  },
+  {
+    "name": "talks",
+    "keyword": "cfp@2",
+    "text": "https://talks.delpuppo.net"
+  },
+  {
+    "name": "twitter",
+    "keyword": "cfp@3",
+    "text": "https://twitter.com/puppo92"
+  },
+  {
+    "name": "github",
+    "keyword": "cfp@4",
+    "text": "https://github.com/Puppo"
+  },
+  {
+    "name": "linkedin",
+    "keyword": "cfp@5",
+    "text": "https://www.linkedin.com/in/lucadelpuppo/"
+  },
+  {
+    "name": "videos",
+    "keyword": "cfp@6",
+    "text": "https://www.youtube.com/@Puppo_92"
+  },
+  {
+    "name": "picture",
+    "keyword": "cfp@7",
+    "text": "https://avatars.githubusercontent.com/u/2527849?v=4"
+  },
+  {
+    "name": "combined-links",
+    "keyword": "cfp@8",
+    "text": "https://github.com/Puppo, https://twitter.com/puppo92, https://www.linkedin.com/in/lucadelpuppo/"
+  }
+]

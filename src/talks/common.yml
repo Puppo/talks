@@ -1,0 +1,23 @@
+config:
+  theme: main
+  dimensions:
+    width: 2000
+    height: 1120
+  url: https://talks.delpuppo.net
+author:
+  name: Luca Del Puppo
+  description: Nearform_
+  roles:
+    - where: Nearform_
+      what: Senior Software Engineer
+      url: https://nearform.com
+  email: luca@delpuppo.net
+  website: https://delpuppo.net
+  twitter: puppo92
+  github: puppo
+  linkedin: lucadelpuppo
+company:
+  count: 400
+  npm:
+    monthly: 1B
+    percentage: 8%

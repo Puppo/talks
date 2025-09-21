@@ -1,0 +1,15 @@
+---
+config: common.config
+document:
+  title: 'Vibe Coding: Let’s Follow the Flow'
+  titleFormatted: |
+    Vibe Coding:
+    Let’s Follow the Flow
+  abstract: |
+    
+  author:
+    name: 'Luca Del Puppo'
+    description: Senior Software Engineer, Nearform_
+    twitter: nearform
+    email: info@nearform.com
+  company: common.company

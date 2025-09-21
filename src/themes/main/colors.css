@@ -1,0 +1,77 @@
+@import '@freya/colors/basic.css';
+@import '@freya/colors/windi/600.css';
+@import '@freya/colors/windi/500.css';
+@import '@freya/colors/windi/300.css';
+
+:root {
+  --nf-color-white: white;
+  --nf-color-black: black;
+  --nf-color-midnight: #000e38;
+  --nf-color-midnight-80: #0c3d60;
+  --nf-color-midnight-50: #526288;
+  --nf-color-midnight-30: #97a1b8;
+  --nf-color-midnight-10: #f4f8fa;
+  --nf-color-green: #00e5a4;
+  --nf-color-green-80: #33eaae;
+  --nf-color-green-50: #78eec5;
+  --nf-color-green-30: #b2f7e1;
+  --nf-color-green-10: #e5fcf5;
+  --nf-color-purple: #8950ff;
+  --nf-color-purple-80: #a173ff;
+  --nf-color-purple-50: #c4a7ff;
+  --nf-color-purple-30: #dccaff;
+  --nf-color-purple-10: #f3edff;
+  --nf-color-blue: #166bff;
+  --nf-color-blue-80: #4589ff;
+  --nf-color-blue-50: #8ab5ff;
+  --nf-color-blue-30: #b9d3ff;
+  --nf-color-blue-10: #e8f0ff;
+  /* stylelint-disable-next-line comment-empty-line-before */
+  /* Note: there are no grey and grey-50 in the official palette */
+  --nf-color-grey-80: #454551;
+  --nf-color-grey-30: #d9d9d9;
+  --nf-color-grey-10: #eaebed;
+}
+
+@layer colors {
+  /* stylelint-disable-next-line selector-class-pattern */
+  .theme@ {
+    @apply color(white, freya-color-white);
+    @apply color(black, freya-color-black);
+
+    @apply color(sky, freya-color-windi-sky-600);
+    @apply color(blue, freya-color-windi-blue-600);
+    @apply color(pink, freya-color-windi-pink-600);
+    @apply color(green, freya-color-windi-green-600);
+    @apply color(fuchsia, freya-color-windi-fuchsia-600);
+    @apply color(amber, freya-color-windi-amber-300);
+    @apply color(red, freya-color-windi-red-600);
+
+    @apply color(light-blue, freya-color-windi-blue-500);
+    @apply color(light-grey, freya-color-windi-grey-300);
+
+    @apply color(nf-midnight, nf-color-midnight);
+    @apply color(nf-midnight-80, nf-color-midnight-80);
+    @apply color(nf-midnight-50, nf-color-midnight-50);
+    @apply color(nf-midnight-30, nf-color-midnight-30);
+    @apply color(nf-midnight-10, nf-color-midnight-10);
+    @apply color(nf-green, nf-color-green);
+    @apply color(nf-green-80, nf-color-green-80);
+    @apply color(nf-green-50, nf-color-green-50);
+    @apply color(nf-green-30, nf-color-green-30);
+    @apply color(nf-green-10, nf-color-green-10);
+    @apply color(nf-purple, nf-color-purple);
+    @apply color(nf-purple-80, nf-color-purple-80);
+    @apply color(nf-purple-50, nf-color-purple-50);
+    @apply color(nf-purple-30, nf-color-purple-30);
+    @apply color(nf-purple-10, nf-color-purple-10);
+    @apply color(nf-blue, nf-color-blue);
+    @apply color(nf-blue-80, nf-color-blue-80);
+    @apply color(nf-blue-50, nf-color-blue-50);
+    @apply color(nf-blue-30, nf-color-blue-30);
+    @apply color(nf-blue-10, nf-color-blue-10);
+    @apply color(nf-grey-80, nf-color-grey-80);
+    @apply color(nf-grey-30, nf-color-grey-30);
+    @apply color(nf-grey-10, nf-color-grey-10);
+  }
+}

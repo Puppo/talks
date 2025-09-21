@@ -1,0 +1,7 @@
+---
+config: common.config
+document:
+  title: 'Master Template'
+  abstract: Master template for testing. Never deployed to production.
+  author: common.author
+  company: common.company
