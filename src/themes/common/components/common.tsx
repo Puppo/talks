@@ -6,7 +6,7 @@ import {
   type CSSClassToken
 } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
-import { type Slide } from '../../common/models.js'
+import { type Slide } from '../../common/models.ts'
 
 interface TextProps {
   text: string

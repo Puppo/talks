@@ -2,7 +2,7 @@ import { Image, cleanCssClasses, useClient, useSlide, type SlideProps } from '@p
 import { Fragment, type VNode } from 'preact'
 import { Text } from '../../common/components/common.js'
 import { Item } from '../../common/components/item.js'
-import { type Slide } from '../../common/models.js'
+import { type Slide } from '../../common/models.ts'
 import { Accent, SlideWrapper } from '../components/common.js'
 
 export default function HelloLayout({ className, style }: SlideProps): VNode {

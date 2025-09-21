@@ -1,7 +1,7 @@
 import { cleanCssClasses, Code, Image, QRCode, useClient, useSlide } from '@perseveranza-pets/freya/client'
 import { Fragment, type ComponentChildren, type VNode } from 'preact'
 import { useCallback, useEffect, useMemo, useState } from 'preact/hooks'
-import { type Grid, type Item as ItemDefinition, type Items as ItemsDefinition } from '../models.js'
+import { type Grid, type Item as ItemDefinition, type Items as ItemsDefinition } from '../models.ts'
 import { Text } from './common.js'
 import { SvgIcon } from './icons.js'
 
@@ -83,7 +83,7 @@ export function Item(props: ItemProps): VNode {
 
       {!imageUrl && !icon && !qr && code && <Code {...code} />}
 
-      {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing */}
+      {}
       {!code && (title || text || children) && (
         <div
           className={cleanCssClasses('theme@item__text', horizontal && 'theme@item__text--horizontal', textClassName)}
@@ -124,7 +124,6 @@ export function Items({
 
   const validEntries = useMemo(() => entries.filter(Boolean), [entries])
   const visibleEntries = useMemo(() => {
-    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
     if (sequence !== true || navigator || typeof window === 'undefined') {
       return validEntries
     }
@@ -154,7 +153,6 @@ export function Items({
   )
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
     if (sequence !== true || navigator || presenter || typeof window === 'undefined') {
       return
     }
@@ -167,7 +165,6 @@ export function Items({
   }, [handleNavigation])
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
     if (sequence !== true || navigator || presenter || typeof window === 'undefined') {
       return
     }

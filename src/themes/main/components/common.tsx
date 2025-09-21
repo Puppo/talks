@@ -2,7 +2,7 @@ import { Progress, QRCode, Svg, cleanCssClasses, useClient, useSlide } from '@pe
 import { type ComponentChildren, type JSX, type VNode } from 'preact'
 import { Text } from '../../common/components/common.js'
 import { SvgIcon } from '../../common/components/icons.js'
-import { type Slide } from '../../common/models.js'
+import { type Slide } from '../../common/models.ts'
 
 interface SlideWrapperProps {
   slide: Slide

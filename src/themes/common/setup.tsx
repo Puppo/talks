@@ -3,7 +3,7 @@ import { ensureRenderedCode, resolveImageUrl, type Talk, type Theme } from '@per
 import { resolve } from 'node:path'
 import { wrapTalkClasses } from './components/common.js'
 import { resolveIcon } from './components/icons.js'
-import { type DecorationsClasses, type ItemClasses, type Slide, type SlideClasses } from './models.js'
+import { type DecorationsClasses, type ItemClasses, type Slide, type SlideClasses } from './models.ts'
 
 interface Icon {
   width: number

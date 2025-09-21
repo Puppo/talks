@@ -2,7 +2,7 @@ import { cleanCssClasses, useClient, useSlide, type SlideProps } from '@persever
 import { type VNode } from 'preact'
 import { ComplexContent, Text } from '../../common/components/common.js'
 import { Items } from '../../common/components/item.js'
-import { type Slide } from '../../common/models.js'
+import { type Slide } from '../../common/models.ts'
 import { Accent, SlideWrapper } from '../components/common.js'
 
 export default function HalfLayout({ className, style }: SlideProps): VNode {
