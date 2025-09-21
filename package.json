@@ -2,12 +2,12 @@
   "name": "talks",
   "version": "1.0.0",
   "description": "Public Tech Talks",
-  "homepage": "https://github.com/ShogunPanda/talks",
-  "repository": "https://github.com/ShogunPanda/talks",
+  "homepage": "https://github.com/Puppo/talks",
+  "repository": "https://github.com/Puppo/talks",
   "bugs": {
-    "url": "https://github.com/ShogunPanda/talks/issues"
+    "url": "https://github.com/Puppo/talks/issues"
   },
-  "author": "Shogun <shogun@cowtech.it>",
+  "author": "Puppo <luca@delpuppo.net>",
   "license": "Apache-2.0",
   "licenses": [
     {
