@@ -31,7 +31,7 @@
     "postdeploy": "node --import tsx src/scripts/postdeploy.ts && cd dist/deploy && netlify deploy --site $NETLIFY_SITE_ID --dir site --prod",
     "verify": "node --import tsx src/scripts/verify.ts",
     "list": "find src/talks -type d -depth 1 -exec basename {} \\; | sort",
-    "convert-images": "go-webp remove=false change=false excludeFolders='.freya,dist,node_modules'",
+    "convert-images": "node --import tsx src/scripts/convert-images.ts",
     "optimize-images": "fd -e .webp -x cwebp {} -o {} -short",
     "fix-downloads-visibility": "nodemon -e jpg,png,webp --exec chflags nohidden .",
     "generate-cfp": "node --import tsx src/scripts/generate-cfp.ts"
@@ -49,6 +49,7 @@
     "eslint": "^9.18.0",
     "go-webp": "^1.3.1",
     "prettier": "^3.4.2",
+    "sharp": "^0.34.4",
     "stylelint": "^16.12.0",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3"

@@ -61,7 +61,7 @@ items:
     - title: Manual debugging, a tedious process
       text: The developer has to go through the code line by line to find and fix bugs.
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/developer.webp'
 decorations:
   logo: white
 ---
@@ -78,7 +78,7 @@ decorations:
 layout: half
 title: A Helping Hand
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/ai_assistance.webp'
 items:
   entries:
     - title: AI suggests code snippets as you type
@@ -113,7 +113,7 @@ items:
     - title: It acts as a team member, not just a tool
       text: 
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/agents.webp'
 decorations:
   logo: white
 ---
