@@ -1,27 +1,7 @@
 ---
 layout: cover
-# ---
-
-# ---
-
-# ---
-# layout: separator
-# title: All hope abandon ye who enter here!
-# image:
-#   url: '@talk/hell.webp'
-# options:
-#   background: green
-
-# ---
-# layout: image
-# image:
-#   url: '@talk/marco.webp'
-# decorations:
-#   logo: white
-
 ---
 layout: hello
-# ---
 
 options:
   author:
@@ -45,7 +25,7 @@ layout: image
 title: The Old Way
 subtitle: The Manual Process
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/developer_wall.webp'
 decorations:
   logo: total-white
 ---
@@ -70,7 +50,7 @@ layout: image
 title: The AI Assistant
 subtitle: A Helping Hand
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/ai_assistance_wall.webp'
 decorations:
   logo: total-white
 ---
@@ -87,6 +67,7 @@ items:
       text: The AI can create standard code structures, saving time on repetitive tasks
     - title: It answers quick questions about APIs and frameworks
       text: The AI can provide instant answers to common coding questions
+  sequence: true
 decorations:
   logo: white
 className:
@@ -97,7 +78,7 @@ layout: image
 title: The New Frontier
 subtitle: The Agent
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/agents_wall.webp'
 decorations:
   logo: total-white
 ---
@@ -107,11 +88,12 @@ title: The Agent
 items:
   entries:
     - title: The agent takes complex instructions and executes multi-step tasks
-      text: 
+      text: It can understand and follow detailed prompts to complete tasks
     - title: It can manage project workflows autonomously
-      text: 
+      text: The agent can handle tasks like setting up environments, managing dependencies, and deploying applications
     - title: It acts as a team member, not just a tool
-      text: 
+      text: The agent collaborates with developers, contributing to the project in meaningful ways
+  sequence: true
 image:
   url: '@talk/agents.webp'
 decorations:
@@ -121,7 +103,7 @@ decorations:
 layout: image
 title: The Interactive "To-Do List" Challenge
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/todo_wall.webp'
 decorations:
   logo: total-white
 ---
@@ -161,7 +143,7 @@ items:
     - title: Clear, constrained instructions lead to better results
       text: Providing detailed and focused prompts helps the agent deliver more accurate and relevant code
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/the_art_of_prompt.webp'
 decorations:
   logo: white
 ---
@@ -197,7 +179,7 @@ items:
     - title: Agents can create issue
       text: The agent can identify bugs, suggest features, and create issues in the project management system.
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/agent_as_team_member_1.webp'
 decorations:
   logo: white
 ---
@@ -212,7 +194,7 @@ items:
     - title: Helping with project management and documentation
       text: The agent can help organize tasks, update documentation, and ensure that the project stays on track.
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/agent_as_team_member_2.webp'
 decorations:
   logo: white
 className:
@@ -228,7 +210,7 @@ items:
     - title: Spec Driven Development
       text: makes your specification the center of your engineering process [Learn more](https://github.com/github/spec-kit)
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/homework.webp'
 decorations:
   logo: white
 ---
@@ -236,7 +218,7 @@ decorations:
 layout: image
 title: Demo Time!
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/demo_time.webp'
 decorations:
   logo: total-white
 ---
@@ -267,7 +249,7 @@ decorations:
 layout: separator
 title: Questions
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/questions.webp'
 ---
 layout: end
 # ---

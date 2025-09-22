@@ -32,7 +32,7 @@ export default function HelloLayout({ className, style }: SlideProps): VNode {
       defaultLogoColor="white"
     >
       <h1 className={cleanCssClasses('theme@hello__title')}>
-        Hello, I'm <span className={cleanCssClasses('theme@hello__title__name')}>{name}</span>!<Accent />
+        Hi 👋, I'm <span className={cleanCssClasses('theme@hello__title__name')}>{name}</span>!<Accent />
       </h1>
 
       <aside className={cleanCssClasses('theme@hello__hobbies-wrapper')}>

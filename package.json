@@ -28,7 +28,7 @@
     "lint:css": "stylelint --cache src/**/*.css",
     "typecheck": "tsc -p . --noEmit",
     "deploy": "freya deploy",
-    "postdeploy": "node --import tsx src/scripts/postdeploy.ts && cd dist/deploy && netlify deploy --site $NETLIFY_SITE_ID --dir site --prod",
+    "postdeploy": "cd dist/deploy && netlify deploy --site $NETLIFY_SITE_ID --dir site --prod",
     "verify": "node --import tsx src/scripts/verify.ts",
     "list": "find src/talks -type d -depth 1 -exec basename {} \\; | sort",
     "convert-images": "node --import tsx src/scripts/convert-images.ts",
