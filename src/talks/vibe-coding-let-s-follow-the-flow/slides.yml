@@ -228,7 +228,7 @@ items:
   entries:
     - title: Development is changing
       text: The role of developers is evolving with the integration of AI and automation.
-    - title: Less focus on rote tasks, more on high-level design and creativity
+    - title: Less focus on write tasks, more on high-level design and creativity
       text: Developers can now focus on more complex and creative aspects of software development.
   sequence: true
 decorations:
