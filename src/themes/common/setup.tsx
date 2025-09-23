@@ -23,10 +23,15 @@ function camelCase(source: any): string {
 }
 
 const baseIcons = [
-  'desktop',
-  'file-pdf',
-  'lightbulb-on',
-  'puzzle-piece',
+  'desktop@free/solid:desktop',
+  'file-pdf@free/solid:file-pdf',
+  'lightbulb@free/solid:lightbulb',
+  'puzzle-piece@free/solid:puzzle-piece',
+  'network-wired@free/solid:network-wired',
+  'chart-network@free/regular:chart-network',
+  'chevron-left@free/solid:chevron-left',
+  'chevron-right@free/solid:chevron-right',
+  'chevron-up@free/solid:chevron-up',
 
   'linkedin@free/brands:linkedin',
   'twitter@free/brands:x-twitter',

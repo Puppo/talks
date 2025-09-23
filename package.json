@@ -37,7 +37,9 @@
     "generate-cfp": "node --import tsx src/scripts/generate-cfp.ts"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.0.1",
     "@fortawesome/free-brands-svg-icons": "^7.0.1",
+    "@fortawesome/free-regular-svg-icons": "^7.0.1",
     "@fortawesome/free-solid-svg-icons": "^7.0.1",
     "@perseveranza-pets/freya": "^0.74.2"
   },
