@@ -11,6 +11,9 @@ options:
       - where: Nearform_
         what: Senior Software Engineer
         url: https://nearform.com
+      - where: GDE
+        what: Web Technologies
+        url: https://developers.google.com/profile/u/108827659498805956148
     email: luca@delpuppo.net
     website: https://delpuppo.net
     twitter: puppo92
@@ -111,10 +114,11 @@ decorations:
 title: Let's play a game! 1/2
 items:
   entries:
-    - index: 1
+    - icon: face-meh
       title: Senior Developer
-    - index: 2
+    - icon: face-frown
       title: Junior Developer
+  sequence: true
   horizontal: true
   className: talk@narrow-grid
 ---
@@ -122,11 +126,11 @@ items:
 title: Let's play a game! 2/2
 items:
   entries:
-    - index: 1
+    - icon: bolt
       title: bolt.new
-    - index: 2
+    - icon: google
       title: Firebase Studio
-    - index: 3
+    - icon: github
       title: GitHub Copilot
   horizontal: true
   className: talk@narrow-grid

@@ -1,7 +1,7 @@
 ---
 style: style.css
 urls:
-  development: 'https://test.local:4200'
+  development: 'https://0.0.0.0:4200'
   production: 'https://talks.delpuppo.net'
 fonts:
   sources:
