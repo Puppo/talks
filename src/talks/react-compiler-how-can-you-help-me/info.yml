@@ -1,0 +1,11 @@
+---
+config: common.config
+document:
+  title: 'React Compiler, how can you help me?'
+  titleFormatted: |
+    React Compiler
+    how can you help me?
+  abstract: |
+    In this talk, we will explore the capabilities of the React Compiler and how it can enhance our development workflow.
+  author: common.author
+  company: common.company

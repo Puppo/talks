@@ -1,0 +1,300 @@
+---
+layout: cover
+---
+layout: hello
+---
+layout: nearform
+---
+
+layout: separator
+title: Why are we here to talk about React Compiler?
+image:
+  url: '@talk/question_1.webp'
+---
+
+layout: image
+title: Long story short
+image:
+  url: '@talk/long_story_short.webp'
+decorations:
+  logo: total-white
+---
+
+title: React Story
+items:
+  entries:
+    - title: "2013: Birth of React"
+      text: "Invented to fix AngularJS"
+      index: 1
+    - title: "2019: React Hooks"
+      text: "Invented to fix React's"
+      index: 2
+    - title: "2021: React Suspense"
+      text: "Invented to fix React again"
+      index: 3
+    - title: "2024: React Compiler"
+      text: "Invented to fix React again again"
+      index: 4
+  sequence: true
+decorations:
+  logo: white
+---
+
+title: "🔴 2019: React Hooks 🔴"
+items:
+  entries:
+    - title: memo
+      text: "Avoid re-rendering"
+      index: 1
+    - title: useMemo
+      text: "Optimize expensive calculations"
+      index: 2
+    - title: useCallback
+      text: "Memoize callback functions"
+      index: 3
+  sequence: true
+decorations:
+  logo: white
+---
+
+layout: half
+title: The Burden of Manual Memoization
+items:
+  entries:
+    - icon: chevron-right
+      title: Parent State Changes
+      text: "Triggers re-render of Parent"
+    - icon: chevron-right
+      title: ALL Children Re-render
+      text: "Even if props/state didn't change"
+    - icon: chevron-right
+      title: Slow UI 🐢
+      text: "Causes slow UI updates"
+image:
+  url: '@talk/slow.webp'
+className:
+  root: theme@half--reverse
+---
+
+layout: image
+title: Let's see it in action
+image:
+  url: '@talk/demo_1.webp'
+decorations:
+  logo: total-white
+---
+
+layout: separator
+title: We have a new hero in town
+subtitle: React Compiler
+image:
+  url: '@talk/hero.webp'
+---
+
+title: Install it
+code:
+  language: sh
+  content: |
+    npm install -D babel-plugin-react-compiler@rc
+  highlight: 1,1
+decorations:
+  number: 1
+---
+
+title: Enable it
+code:
+  language: typescript
+  content: |
+    import react from '@vitejs/plugin-react'
+    import { defineConfig } from 'vite'
+
+    export default defineConfig({
+      plugins: [
+        react({
+          babel: {
+            plugins: [['babel-plugin-react-compiler']],
+          },
+        }),
+      ],
+    })
+
+  highlight: 1-1,6-9
+decorations:
+  number: 2
+---
+
+layout: half
+title: Let's be precise
+items:
+  entries:
+    - icon: poo
+      title: It's not a real Compiler
+      text: ⁉️ another mistake?
+    - icon: chevron-right
+      title: It's a Babel Plugin
+      text: Transforms your code
+    - icon: chevron-right
+      title: Adds optimizations
+      text: Like auto-memoization
+  sequence: true
+image:
+  url: '@talk/nit-pick.webp'
+---
+
+layout: image
+title: Let's see it in action
+image:
+  url: '@talk/demo_2.webp'
+decorations:
+  logo: total-white
+---
+
+layout: image
+title: What can go wrong?
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: total-white
+---
+
+title: Caveats & Best Practices
+items:
+  entries:
+    - title: The compiler isn't magic
+      index: 1
+    - title: It relies on you following the Rules of React.
+      index: 2
+    - title: State is Immutable.
+      index: 3
+  sequence: true
+decorations:
+  logo: white
+---
+layout: quote
+quote:
+  sentence: Never modify objects or arrays directly.
+  author: A good React developer
+
+---
+
+layout: code
+title: State must be immutable
+code:
+  language: typescript
+  highlight: '4-6'
+  numbers: true
+  content: |
+    const handleBirthday = () => {
+      // MISTAKE! Modifying
+      // state directly.
+      user.age += 1;
+      setUser(user); 
+      // React won't see this 
+      // as a state change.
+    };
+---
+
+layout: image
+title: Escape from Optimizations
+image:
+  url: '@theme/panda.webp'
+decorations:
+  logo: total-white
+---
+
+layout: code
+title: State must be immutable
+code:
+  language: typescript
+  highlight: '2-3'
+  numbers: true
+  content: |
+    const handleBirthday = () => {
+      'use no memo';
+      user.age += 1;
+      setUser(user); 
+    };
+---
+
+layout: image
+title: Let's see it in action
+image:
+  url: '@talk/demo_2.webp'
+decorations:
+  logo: total-white
+---
+
+title: Conclusion 1/2
+items:
+  entries:
+    - title: React Compiler is here to help you
+      text: No more manual memoization
+    - title: React Compiler is not magic
+      text: Follow the Rules of React
+    - title: React Compiler is just a tool
+      text: ‼️ Test, measure, verify the output ‼️
+  sequence: true
+decorations:
+  logo: white
+---
+
+title: Conclusion 2/2
+items:
+  entries:
+    - title: React Compiler still in RC
+      text: It's stable but not perfect
+    - title: Give it a try!
+      text: Start using it in your projects
+  sequence: true
+decorations:
+  logo: white
+---
+title: Links
+items:
+  entries:
+    - title: React Compiler
+      text: https://react.dev/learn/react-compiler/
+    - title: I tried React Compiler today, and guess what... 😉
+      text: https://www.developerway.com/posts/i-tried-react-compiler
+decorations:
+  logo: white
+---
+
+title: Videos 1/2
+items:
+  entries:
+    - title: React Compiler Explained in 3 Minutes (Goodbye, re-renders)
+      text: https://www.youtube.com/watch?v=40osg7LoShc
+    - title: React Compiler Internals
+      text: https://www.youtube.com/watch?v=Pw8w2O5Y0no
+    - title: Ready for everyday use?
+      text: https://www.youtube.com/watch?v=guKq_qumTV8
+decorations:
+  logo: white
+---
+
+title: Videos 2/2
+items:
+  entries:
+    - title: The Problem With the React Compiler
+      text: https://www.youtube.com/watch?v=14MZJtGAiVs
+    - title: They made React great again? 🎡
+      text: https://www.youtube.com/watch?v=4k6Xgjqkad4
+decorations:
+  logo: white
+---
+
+layout: end
+---
+
+layout: byebye
+---
+layout: separator
+title: Questions
+image:
+  url: '@talk/questions.webp'
+---
+
+layout: cover
+# ---
+

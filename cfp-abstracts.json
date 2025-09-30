@@ -13,5 +13,10 @@
     "name": "ChromeDevTools—are you confident in your expertise?",
     "keyword": "cfp§3",
     "text": "ChromeDevTools—are you confident in your expertise?\n\nIn this talk, we will explore the capabilities of ChromeDevTools and how they can enhance our development workflow. We'll discuss the importance of mastering these tools to improve debugging, performance optimization, and overall productivity."
+  },
+  {
+    "name": "React Compiler, how can you help me?",
+    "keyword": "cfp§4",
+    "text": "React Compiler, how can you help me?\n\nIn this talk, we will explore the capabilities of the React Compiler and how it can enhance our development workflow."
   }
 ]

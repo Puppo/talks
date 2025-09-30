@@ -32,6 +32,8 @@ const baseIcons = [
   'chevron-left@free/solid:chevron-left',
   'chevron-right@free/solid:chevron-right',
   'chevron-up@free/solid:chevron-up',
+  'minus@free/solid:minus',
+  'poo@free/solid:poo',
   'user@free/regular:user',
   'face-meh@free/regular:face-meh',
   'face-frown@free/regular:face-frown',
