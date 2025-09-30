@@ -253,16 +253,17 @@ image:
 decorations:
   logo: total-white
 ---
-layout: separator
-title: Questions
-image:
-  url: '@talk/questions.webp'
----
 
 layout: end
 ---
 
 layout: byebye
+---
+
+layout: separator
+title: Questions
+image:
+  url: '@talk/questions.webp'
 
 # ---
 
