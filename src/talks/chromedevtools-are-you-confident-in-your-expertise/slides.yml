@@ -62,5 +62,8 @@ layout: separator
 title: Questions
 image:
   url: '@talk/questions.webp'
+---
+
+layout: cover
 # ---
 
