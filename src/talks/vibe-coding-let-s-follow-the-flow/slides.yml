@@ -2,24 +2,6 @@
 layout: cover
 ---
 layout: hello
-
-options:
-  author:
-    name: Luca Del Puppo
-    description: Senior Software Engineer, Nearform_
-    roles:
-      - where: Nearform_
-        what: Senior Software Engineer
-        url: https://nearform.com
-      - where: GDE
-        what: Web Technologies
-        url: https://developers.google.com/profile/u/108827659498805956148
-    email: luca@delpuppo.net
-    website: https://delpuppo.net
-    twitter: puppo92
-    github: puppo
-    linkedin: lucadelpuppo
-
 ---
 layout: nearform
 ---
@@ -43,6 +25,7 @@ items:
       text: The developer spends time looking up how to use different functions and libraries.
     - title: Manual debugging, a tedious process
       text: The developer has to go through the code line by line to find and fix bugs.
+  sequence: true
 image:
   url: '@talk/developer.webp'
 decorations:
@@ -104,9 +87,9 @@ decorations:
 ---
 
 layout: image
-title: The Interactive "To-Do List" Challenge
+title: Let's play a game!
 image:
-  url: '@talk/todo_wall.webp'
+  url: '@talk/lets_play_a_game.webp'
 decorations:
   logo: total-white
 ---
@@ -135,6 +118,13 @@ items:
   horizontal: true
   className: talk@narrow-grid
 ---
+layout: image
+title: Prototyping <> Development
+image:
+  url: '@talk/prototyping_vs_developing.webp'
+decorations:
+  logo: total-white
+---
 
 layout: half
 title: The Art of Prompting
@@ -142,10 +132,11 @@ items:
   entries:
     - title: Write clear and specific instructions
       text: The difference between "Write a to-do list app" and "Using React and Tailwind CSS, create a To-Do list component that manages state and is accessible to screen readers."
-    - title: The developer’s role is shifting from "code writer" to instruction engineer
+    - title: Is the developer’s role shifting from "code writer" to instruction engineer?
       text: Crafting effective prompts is becoming a crucial skill for developers
     - title: Clear, constrained instructions lead to better results
       text: Providing detailed and focused prompts helps the agent deliver more accurate and relevant code
+  sequence: true
 image:
   url: '@talk/the_art_of_prompt.webp'
 decorations:
@@ -159,8 +150,9 @@ items:
       text: By providing context, the agent can make informed decisions and avoid unnecessary mistakes.
     - title: It ensures the solution aligns with the project’s high-level goals
       text: Context allows the agent to understand the bigger picture and deliver solutions that fit within the overall project objectives
-    - title: A developer’s value is in understanding the problem, not just writing the code
-      text: Developers bring critical thinking and problem-solving skills that go beyond mere code generation.
+    - title: Context is king 👑
+      text: The more context you provide, the better the agent can perform.
+  sequence: true
 ---
 
 title: "The Spec File: Beyond the Prompt"
@@ -172,6 +164,7 @@ items:
       text: It includes all relevant information, such as project goals, constraints, and requirements
     - title: It's the ultimate form of context, enabling the agent to act autonomously with full awareness
       text: The spec file empowers the agent to make decisions and execute tasks without constant human intervention
+  sequence: true
 ---
 
 layout: half
@@ -182,6 +175,7 @@ items:
       text: The agent can understand and navigate the entire project structure, making it a more effective collaborator.
     - title: Agents can create issue
       text: The agent can identify bugs, suggest features, and create issues in the project management system.
+  sequence: true
 image:
   url: '@talk/agent_as_team_member_1.webp'
 decorations:
@@ -197,6 +191,7 @@ items:
       
     - title: Helping with project management and documentation
       text: The agent can help organize tasks, update documentation, and ensure that the project stays on track.
+  sequence: true
 image:
   url: '@talk/agent_as_team_member_2.webp'
 decorations:
@@ -250,11 +245,24 @@ items:
 decorations:
   logo: white
 ---
+
+layout: image
+title: Enjoy the journey!
+image:
+  url: '@talk/enjoy_the_journey.webp'
+decorations:
+  logo: total-white
+---
 layout: separator
 title: Questions
 image:
   url: '@talk/questions.webp'
 ---
+
 layout: end
+---
+
+layout: byebye
+
 # ---
 

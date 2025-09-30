@@ -8,9 +8,5 @@ document:
   abstract: |
     In this talk, we will explore the concept of 'vibe coding' and how it can enhance our development process. We'll discuss the importance of maintaining a positive and collaborative atmosphere within our teams, and how this can lead to more effective problem-solving and innovation.
     
-  author:
-    name: 'Luca Del Puppo'
-    description: Senior Software Engineer, Nearform_
-    twitter: nearform
-    email: info@nearform.com
+  author: common.author
   company: common.company
