@@ -114,7 +114,7 @@ items:
     - icon: google
       title: Firebase Studio
     - icon: github
-      title: GitHub Copilot
+      title: GitHub Spark
   horizontal: true
   className: talk@narrow-grid
 ---
