@@ -1,0 +1,66 @@
+---
+layout: cover
+---
+layout: hello
+---
+layout: nearform
+---
+
+layout: separator
+title: Who work with JavaScript?
+image:
+  url: '@talk/question_1.webp'
+---
+
+layout: separator
+title: Who usually uses DevTools?
+image:
+  url: '@talk/question_2.webp'
+className:
+  root: theme@separator--reverse
+---
+
+layout: separator
+title: How many of you debug using console.log?
+image:
+  url: '@talk/question_3.webp'
+---
+
+layout: image
+title: I love you all!
+image:
+  url: '@talk/i_love_you_all.webp'
+decorations:
+  logo: total-white
+---
+
+layout: image
+title: Let's get started!
+image:
+  url: '@talk/demo_time.webp'
+decorations:
+  logo: total-white
+---
+
+title: Links
+items:
+  entries:
+    - title: Chrome DevTools Docs
+      text: https://developer.chrome.com/docs/devtools
+    - title: Chrome for Developers YouTube Channel
+      text: https://www.youtube.com/@ChromeDevs
+decorations:
+  logo: white
+---
+
+layout: end
+---
+
+layout: byebye
+---
+layout: separator
+title: Questions
+image:
+  url: '@talk/questions.webp'
+# ---
+

@@ -1,0 +1,13 @@
+---
+config: common.config
+document:
+  title: 'ChromeDevTools—are you confident in your expertise?'
+  titleFormatted: |
+    ChromeDevTools
+    are you confident in your expertise?
+  abstract: |
+    In this talk, we will explore the capabilities of ChromeDevTools and how they can enhance our development workflow.
+    We'll discuss the importance of mastering these tools to improve debugging, performance optimization, and overall productivity.
+    
+  author: common.author
+  company: common.company
