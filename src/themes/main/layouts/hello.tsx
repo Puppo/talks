@@ -18,8 +18,8 @@ export default function HelloLayout({ className, style }: SlideProps): VNode {
   const author = slide.options.author ?? documentAuthor
 
   const name = author.name.split(' ')[0]
-  const hobbiesImage = resolveImage('nearform', id, '@theme/hobbies.webp')
-  const avatarImage = resolveImage('nearform', id, '@theme/avatar-with-shadow.webp')
+  const hobbiesImage = resolveImage('main', id, '@theme/hobbies.webp')
+  const avatarImage = resolveImage('main', id, '@theme/avatar-with-shadow.webp')
 
   slide.decorations.permalink = 'white'
 

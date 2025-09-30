@@ -19,7 +19,7 @@ export default function ImageLayout({ className, style }: SlideProps): VNode {
     decorations: { logo }
   } = slide
 
-  const imageUrl = resolveImage('nearform', id, image?.url)
+  const imageUrl = resolveImage('main', id, image?.url)
 
   if (typeof slide.decorations.permalink === 'undefined' && (logo === 'white' || logo === 'total-white')) {
     slide.decorations.permalink = 'white'

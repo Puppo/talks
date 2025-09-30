@@ -22,7 +22,7 @@ export default function DefaultLayout({ className, style }: SlideProps): VNode {
     className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
-  const imageUrl = resolveImage('nearform', id, image?.url)
+  const imageUrl = resolveImage('main', id, image?.url)
 
   return (
     <SlideWrapper slide={slide} index={index} className={cleanCssClasses(className, rootClassName)} style={style}>

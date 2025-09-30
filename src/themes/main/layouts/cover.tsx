@@ -32,7 +32,7 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
   slide.decorations.logo = 'total-white'
   slide.decorations.permalink = false
 
-  const backgroundImage = resolveImage('nearform', id, '@theme/bg-green.webp')
+  const backgroundImage = resolveImage('main', id, '@theme/bg-green.webp')
 
   return (
     <SlideWrapper

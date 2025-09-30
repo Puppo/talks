@@ -35,7 +35,7 @@ export function Item(props: ItemProps): VNode {
     code: codeClassName
   } = className ?? {}
 
-  const imageUrl = image ? resolveImage('nearform', talk.id, image) : undefined
+  const imageUrl = image ? resolveImage('main', talk.id, image) : undefined
 
   if (code && codeClassName) {
     code.className ??= {}

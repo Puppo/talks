@@ -21,7 +21,7 @@ export default function SeparatorLayout({ className, style }: SlideProps): VNode
 
   const { foreground } = slide.options
 
-  const imageUrl = resolveImage('nearform', id, image?.url)
+  const imageUrl = resolveImage('main', id, image?.url)
 
   // if (!foreground && background?.match(/(midnight|midnight-80|midnight-50|purple|purple-80|blue|blue-80|grey-80)$/)) {
   //   foreground = 'white'

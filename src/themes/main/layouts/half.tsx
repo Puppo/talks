@@ -17,7 +17,7 @@ export default function HalfLayout({ className, style }: SlideProps): VNode {
     className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
-  const imageUrl = resolveImage('nearform', talk.id, image?.url)
+  const imageUrl = resolveImage('main', talk.id, image?.url)
 
   if (
     typeof slide.decorations.permalink === 'undefined' &&

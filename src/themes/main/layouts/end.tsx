@@ -26,7 +26,7 @@ export default function EndLayout({ className, style }: SlideProps): VNode {
     className: { root: rootClassName, title: titleClassName, subtitle: subtitleClassName }
   } = slide
 
-  const pandaImageUrl = resolveImage('nearform', id, image?.url ?? '@theme/capybara.webp')
+  const pandaImageUrl = resolveImage('main', id, image?.url ?? '@theme/capybara.webp')
 
   return (
     <SlideWrapper

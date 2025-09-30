@@ -22,7 +22,7 @@ export default function SideLayout({ className, style }: SlideProps): VNode {
     className: { root: rootClassName }
   } = slide
 
-  const imageUrl = resolveImage('nearform', id, image?.url)
+  const imageUrl = resolveImage('main', id, image?.url)
 
   return (
     <SlideWrapper
