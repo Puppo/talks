@@ -152,7 +152,7 @@ decorations:
 layout: image
 title: What can go wrong?
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/wrong.webp'
 decorations:
   logo: total-white
 ---
@@ -197,13 +197,13 @@ code:
 layout: image
 title: Escape from Optimizations
 image:
-  url: '@theme/panda.webp'
+  url: '@talk/esc.webp'
 decorations:
   logo: total-white
 ---
 
 layout: code
-title: State must be immutable
+title: Annotation to escape optimizations
 code:
   language: typescript
   highlight: '2-3'
@@ -214,6 +214,53 @@ code:
       user.age += 1;
       setUser(user); 
     };
+---
+
+layout: image
+title: Let's see it in action
+image:
+  url: '@talk/demo_2.webp'
+decorations:
+  logo: total-white
+---
+
+layout: image
+title: Check React Compiler is working properly
+image:
+  url: '@talk/healthcheck.webp'
+decorations:
+  logo: total-white
+---
+
+layout: code
+title: Health check npm script
+code:
+  language: sh
+  highlight: '1'
+  numbers: true
+  content: |
+    npx react-compiler-healthcheck@latest
+---
+
+layout: code
+title: ESLint React Hooks plugin
+code:
+  language: sh
+  highlight: '1'
+  numbers: true
+  content: |
+    npm i -D eslint-plugin-react-hooks@latest
+---
+layout: code
+title: Check the build artifacts
+code:
+  language: javascript
+  highlight: '2'
+  numbers: true
+  content: |
+    ...
+    Symbol.for("react.memo_cache_sentinel")
+    ...
 ---
 
 layout: image
