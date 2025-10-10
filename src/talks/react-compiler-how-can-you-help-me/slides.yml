@@ -334,6 +334,15 @@ decorations:
 layout: end
 ---
 
+title: GitHub Repo
+items:
+  entries:
+    - qr: https://github.com/Puppo/react-compiler-talk
+      title: React Compiler Talk
+      text: Explore the code and examples
+  horizontal: true
+---
+
 layout: byebye
 ---
 layout: separator
