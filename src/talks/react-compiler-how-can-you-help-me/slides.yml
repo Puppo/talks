@@ -95,7 +95,7 @@ title: Install it
 code:
   language: sh
   content: |
-    npm install -D babel-plugin-react-compiler@rc
+    npm install -D babel-plugin-react-compiler@latest
   highlight: 1,1
 decorations:
   number: 1
@@ -288,8 +288,8 @@ decorations:
 title: Conclusion 2/2
 items:
   entries:
-    - title: React Compiler still in RC
-      text: It's stable but not perfect
+    - title: React Compiler <s>still in RC</s> is HERE
+      text: It's stable <s>but not perfect</s>
     - title: Give it a try!
       text: Start using it in your projects
   sequence: true
