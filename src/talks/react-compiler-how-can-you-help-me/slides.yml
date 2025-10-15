@@ -170,59 +170,6 @@ items:
 decorations:
   logo: white
 ---
-layout: quote
-quote:
-  sentence: Never modify objects or arrays directly.
-  author: A good React developer
-
----
-
-layout: code
-title: State must be immutable
-code:
-  language: typescript
-  highlight: '4-6'
-  numbers: true
-  content: |
-    const handleBirthday = () => {
-      // MISTAKE! Modifying
-      // state directly.
-      user.age += 1;
-      setUser(user); 
-      // React won't see this 
-      // as a state change.
-    };
----
-
-layout: image
-title: Escape from Optimizations
-image:
-  url: '@talk/esc.webp'
-decorations:
-  logo: total-white
----
-
-layout: code
-title: Annotation to escape optimizations
-code:
-  language: typescript
-  highlight: '2-3'
-  numbers: true
-  content: |
-    const handleBirthday = () => {
-      'use no memo';
-      user.age += 1;
-      setUser(user); 
-    };
----
-
-layout: image
-title: Let's see it in action
-image:
-  url: '@talk/demo_2.webp'
-decorations:
-  logo: total-white
----
 
 layout: image
 title: Check React Compiler is working properly
@@ -271,6 +218,45 @@ decorations:
   logo: total-white
 ---
 
+layout: image
+title: This is cool but...
+subtitle: It works well for greenfield projects
+image:
+  url: '@talk/greenfield.webp'
+decorations:
+  logo: total-white
+---
+
+layout: image
+title: What about legacy code?
+image:
+  url: '@talk/poo.webp'
+decorations:
+  logo: total-white
+---
+
+title: Incremental Adoption Strategy
+items:
+  entries:
+    - title: Babel overrides
+      text: Apply the compiler to specific directories
+    - title: Opt-in with “use memo”
+      text: Only compile components that explicitly opt in
+    - title: Runtime gating
+      text: Control compilation with feature flags
+  sequence: true
+decorations:
+  logo: white
+---
+
+layout: image
+title: Let's see it in action
+image:
+  url: '@talk/demo_2.webp'
+decorations:
+  logo: total-white
+---
+
 title: Conclusion 1/2
 items:
   entries:
@@ -295,6 +281,14 @@ items:
   sequence: true
 decorations:
   logo: white
+---
+
+layout: half
+title: Let's be precise
+content:
+  - This is my opinion about React Compiler
+image:
+  url: '@talk/react_compiler.webp'
 ---
 title: Links
 items:
