@@ -1,0 +1,111 @@
+---
+layout: cover
+---
+layout: hello
+---
+layout: nearform
+---
+layout: separator
+title: This is a common situation nowadays
+subtitle: I know Bob is facing your same challenges.
+image:
+  url: '@talk/bob_developer.webp'
+className:
+  root: theme@separator--reverse
+decorations:
+  logo: black
+---
+title: Developer should take care of 1/2
+items:
+  entries:
+    - title: User Experience
+      icon: chevron-right
+    - title: Performance
+      icon: chevron-right
+    - title: Accessibility
+      icon: chevron-right
+    - title: SEO
+      icon: chevron-right
+  sequence: true
+decorations:
+  logo: white
+---
+title: Developer should take care of 2/2
+items:
+  entries:
+    - title: Best Practices
+      icon: chevron-right
+    - title: Security
+      icon: chevron-right
+    - title: SSR
+      icon: chevron-right
+  sequence: true
+decorations:
+  logo: white
+---
+
+layout: separator
+title: How can we debug all of them?
+image:
+  url: '@talk/question_2.webp'
+className:
+  root: theme@separator--reverse
+---
+layout: separator
+title: Chrome DevTools exposes useful features to debug them
+image:
+  url: '@talk/dev_tool.webp'
+---
+title: Different tabs 1/2
+items:
+  entries:
+    - title: Performance
+      icon: chevron-right
+    - title: Accessibility / Accessibility Tree
+      icon: chevron-right
+    - title: Lighthouse
+      icon: chevron-right
+  sequence: true
+decorations:
+  logo: white
+---
+title: Different tabs 2/2
+items:
+  entries:
+    - title: Network
+      icon: chevron-right
+    - title: Coverage
+      icon: chevron-right
+    - title: MCP Server
+      icon: chevron-right
+  sequence: true
+decorations:
+  logo: white
+---
+layout: image
+title: Let's get started!
+image:
+  url: '@talk/demo_time.webp'
+decorations:
+  logo: total-white
+---
+
+title: Links
+items:
+  entries:
+    - title: Chrome DevTools Docs
+      text: https://developer.chrome.com/docs/devtools
+    - title: Chrome for Developers YouTube Channel
+      text: https://www.youtube.com/@ChromeDevs
+decorations:
+  logo: white
+---
+
+layout: end
+---
+
+layout: byebye
+---
+layout: cover
+# ---
+

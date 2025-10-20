@@ -1,0 +1,13 @@
+---
+config: common.config
+document:
+  title: 'Chrome DevTools, for super fast SSR applications!'
+  titleFormatted: |
+    ChromeDevTools
+    for super fast SSR applications
+  abstract: |
+    In this talk, we will explore the capabilities of ChromeDevTools and how use them to optimize the performance of server-side rendered (SSR) applications.
+    We will cover techniques for accessibility and performance debugging and improvements.
+    
+  author: common.author
+  company: common.company
