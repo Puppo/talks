@@ -15,7 +15,7 @@ className:
 decorations:
   logo: black
 ---
-title: Developer should take care of 1/2
+title: Developers should take care of 1/2
 items:
   entries:
     - title: User Experience
@@ -30,7 +30,7 @@ items:
 decorations:
   logo: white
 ---
-title: Developer should take care of 2/2
+title: Developers should take care of 2/2
 items:
   entries:
     - title: Best Practices
