@@ -135,8 +135,18 @@ items:
     - title: Cost-Effective
       text: Zero API costs everything run in the user's environment 🥳
       index: 4
+  sequence: true
 decorations:
   logo: white
+---
+
+title: But the Web standards evolve slowly
+image:
+  url: '@talk/slow_web.webp'
+decorations:
+  icon: lightbulb
+  logo: false
+  permalink: false
 ---
 
 layout: separator
@@ -157,6 +167,7 @@ items:
     - title: Vision
       text: Run LLMs locally just by opening a webpage—zero environment setup
       icon: chevron-right
+  sequence: true
 decorations:
   logo: white
 ---
@@ -173,6 +184,7 @@ items:
     - title: Caching
       text: The model weights (quantized) and WASM modules are downloaded once and cached locally
       icon: chevron-right
+  sequence: true
 decorations:
   logo: white
 ---
@@ -189,6 +201,7 @@ items:
     - title: Key Takeaway
       text: WebLLM proved that full LLM inference is technically feasible within the standard, open-source web stack
       index: 3
+  sequence: true
 decorations:
   logo: white
 ---
@@ -267,6 +280,7 @@ items:
     - title: Goals
       text: Seamless, deeply integrated, focused on the browsing context
       icon: chevron-right
+  sequence: true
 decorations:
   logo: white
 ---
@@ -372,6 +386,13 @@ code:
     }
 ---
 
+title: Typescript types
+code:
+  language: sh
+  content: |
+    npm install -D @types/dom-chromium-ai
+---
+
 layout: separator
 title: "Demo of Gemini Nano in Action 🧑‍💻"
 options:
@@ -408,14 +429,26 @@ decorations:
   logo: white
 ---
 
+title: But with slow adoption
+image:
+  url: '@talk/slow_web.webp'
+decorations:
+  icon: lightbulb
+  logo: false
+  permalink: false
+---
+
 layout: end
 ---
 
-title: GitHub Repo
+title: GitHub Repos
 items:
   entries:
     - qr: https://github.com/Puppo/ai-in-the-browser
       title: AI in the Browser
+      text: Explore the code and examples
+    - qr: https://github.com/Puppo/recipe-radar-with-ai
+      title: Recipe Radar with AI
       text: Explore the code and examples
   horizontal: true
 ---
