@@ -1,0 +1,11 @@
+---
+config: common.config
+document:
+  title: 'AI in the Browser: Am I Still Waiting for It?'
+  titleFormatted: |
+    AI in the Browser
+    Am I Still Waiting for It?
+  abstract: |
+    In this talk, we will explore the current state of AI in the browser and discuss whether we are truly leveraging its potential or still waiting for it to fully materialize.
+  author: common.author
+  company: common.company
