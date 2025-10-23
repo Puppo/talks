@@ -113,7 +113,7 @@ title: "The Need for Local Intelligence"
 items:
   entries:
     - title: Definition
-      text: Local LLMs are models downloaded and run directly on the user's device (PC, phone, tablet)"
+      text: Local LLMs are models downloaded and run directly on the user's device (PC, phone, tablet)
     - title: The Enabler
       text: Breakthroughs in Model Quantization - reducing the model's precision to drastically cut size and memory demands while preserving capability
 decorations:
