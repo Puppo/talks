@@ -404,6 +404,8 @@ items:
   entries:
     - title: Built-in AI Documentation
       text: https://developer.chrome.com/docs/ai/built-in
+    - title: Build a guessing game with the Prompt API
+      text: https://developer.chrome.com/blog/ai-guessing-game?hl=en
     - title: Practical built-in AI with Gemini Nano in Chrome
       text: https://www.youtube.com/watch?v=CjpZCWYrSxM
     - title: Lessons learned from being customer zero of Chrome's built-in APIs
