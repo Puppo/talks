@@ -1,0 +1,10 @@
+/* stylelint-disable-next-line selector-class-pattern */
+.talk@ {
+  &narrow-grid {
+    row-gap: 0;
+
+    &__link {
+      font-size: 0.8em;
+    }
+  }
+}

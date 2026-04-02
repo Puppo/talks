@@ -1,0 +1,73 @@
+---
+layout: cover
+---
+layout: hello
+---
+layout: nearform
+---
+layout: image
+title: DEMO!
+image:
+  url: '@talk/demo.webp'
+decorations:
+  logo: total-white
+---
+title: Open Source Frameworks
+items:
+  entries:
+    - index: 1
+      title: LangChain
+      text: Quick start agents with any model provider
+    - index: 2
+      title: LangGraph
+      text: Build reliable agents with low-level control
+    - index: 3
+      title: Deep Agents
+      text: Build long-running agents for complex tasks
+
+---
+title: Platform Products (LangSmith 🤑) 
+items:
+  entries:
+    - index: 1
+      title: Observability
+      text: See exactly what your agents are doing
+    - index: 2
+      title: Evaluation
+      text: Score and improve agent performance
+    - index: 3
+      title: Deployment
+      text: Ship and scale agents in production
+    - index: 4
+      title: Fleet
+      text: Agents for the whole company
+---
+title: Source code
+items:
+  entries:
+    - qr: https://github.com/Puppo/agents-made-simple
+      title: GitHub Repository
+      text: AI Agents Made Simple
+  horizontal: true
+decorations:
+  number: 1
+---
+title: Links
+items:
+  entries:
+    - title: LangChain Docs
+      text: https://docs.langchain.com/
+    - title: LangChain YouTube Channel
+      text: https://www.youtube.com/@LangChainDefault with vertical items
+decorations:
+  logo: white
+---
+
+layout: end
+---
+
+layout: byebye
+---
+layout: cover
+# ---
+

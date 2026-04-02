@@ -1,0 +1,11 @@
+---
+config: common.config
+document:
+  title: 'AI Agents Made Simple'
+  titleFormatted: |
+    AI Agents Made Simple
+  abstract: |
+    In this talk, we will explore the capabilities of AI agents and how to use them effectively with LangChain.
+    
+  author: common.author
+  company: common.company
