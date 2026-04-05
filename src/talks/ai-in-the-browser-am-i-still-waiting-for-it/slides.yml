@@ -242,11 +242,11 @@ code:
     console.log(reply.usage);
 ---
 
-layout: separator
-title: "Demo of WebLLM in Action 🧑‍💻"
-options:
-  background: nf-purple-50
----
+# layout: separator
+# title: "Demo of WebLLM in Action 🧑‍💻"
+# options:
+#   background: nf-purple-50
+# ---
 
 title: Links and Videos
 items:
@@ -391,6 +391,57 @@ code:
   language: sh
   content: |
     npm install -D @types/dom-chromium-ai
+---
+
+layout: separator
+title: "WebMCP: The Agentic Web 🤖"
+options:
+  background: nf-green-50
+---
+
+title: "What is WebMCP?"
+items:
+  entries:
+    - title: A proposed browser standard
+      text: Allows web developers to expose their app functionality as "tools" that AI agents and assistive technologies can invoke
+      icon: chevron-right
+    - title: MCP-inspired, browser-native
+      text: "Web pages become like MCP servers, but tools run in client-side JavaScript — no backend server needed"
+      icon: chevron-right
+    - title: Two APIs
+      text: "Declarative API for standard HTML form actions, and Imperative API for complex dynamic interactions"
+      icon: chevron-right
+    - title: Human-in-the-loop
+      text: Designed for cooperative workflows where users and agents collaborate within the same web interface
+      icon: chevron-right
+  sequence: true
+decorations:
+  logo: white
+---
+
+title: "WebMCP for Developers"
+code:
+  language: js
+  content: |
+    if ("modelContext" in window.navigator) {
+      window.navigator.modelContext.registerTool({
+        name: "add-todo",
+        description: "Add a new todo item to the list",
+        inputSchema: {
+          type: "object",
+          properties: {
+            text: { type: "string", description: "The text of the todo item" }
+          },
+          required: ["text"]
+        },
+        execute({ text }, agent) {
+          addTodo(text);
+          return {
+            content: [{ type: "text", text: `Todo "${text}" added!` }]
+          };
+        }
+      });
+    }
 ---
 
 layout: separator
