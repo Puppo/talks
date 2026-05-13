@@ -1,0 +1,44 @@
+---
+layout: cover
+---
+layout: hello
+---
+layout: nearform
+---
+title: Workshop Repository
+items:
+  entries:
+    - qr: https://github.com/Puppo/adk-js-codelabs
+      title: GitHub Repository
+      text: github.com/Puppo/adk-js-codelabs
+  horizontal: true
+---
+title: Credits
+items:
+  entries:
+    - qr: <placeholder for API key registration URL>
+      title: Credits
+      text: <placeholder for API key registration URL>
+  horizontal: true
+---
+title: Get your API Key
+items:
+  entries:
+    - qr: https://bit.ly/4tvWKgK
+      title: API Keys
+      text: bit.ly/4tvWKgK
+  horizontal: true
+---
+title: ADK Course - Python
+items:
+  entries:
+    - qr: https://github.com/mauripsale/doc-adk-training/
+      title: ADK Course - Python
+      text: github.com/mauripsale/doc-adk-training/
+  horizontal: true
+---
+layout: end
+---
+layout: byebye
+---
+layout: cover
