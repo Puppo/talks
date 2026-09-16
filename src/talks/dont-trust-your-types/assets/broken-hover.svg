@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1120" viewBox="0 0 2000 1120">
+  <rect width="2000" height="1120" fill="#111827"/>
+  <rect width="2000" height="64" fill="#1f2937"/>
+  <circle cx="34" cy="32" r="10" fill="#ef4444"/><circle cx="66" cy="32" r="10" fill="#f59e0b"/><circle cx="98" cy="32" r="10" fill="#22c55e"/>
+  <text x="150" y="40" fill="#d1d5db" font-family="ui-monospace,monospace" font-size="24">organization-route.ts</text>
+  <rect x="0" y="64" width="1180" height="1056" fill="#0f172a"/>
+  <rect x="1180" y="64" width="820" height="1056" fill="#111827"/>
+  <g font-family="ui-monospace,monospace" font-size="27">
+    <text x="52" y="128" fill="#64748b">1</text><text x="100" y="128" fill="#c084fc">const</text><text x="190" y="128" fill="#e5e7eb"> route = defineRoute(</text>
+    <text x="52" y="174" fill="#64748b">2</text><text x="100" y="174" fill="#e5e7eb">  { method: </text><text x="260" y="174" fill="#86efac">'GET'</text><text x="340" y="174" fill="#e5e7eb">, url: </text><text x="445" y="174" fill="#86efac">'/organizations/:organizationId'</text><text x="960" y="174" fill="#e5e7eb">,</text>
+    <text x="52" y="220" fill="#64748b">3</text><text x="100" y="220" fill="#e5e7eb">    handler: async (request) =&gt; {</text>
+    <text x="52" y="266" fill="#64748b">4</text><text x="100" y="266" fill="#e5e7eb">      request.params.organizationId</text>
+    <text x="52" y="312" fill="#64748b">5</text><text x="100" y="312" fill="#e5e7eb">    },</text>
+    <text x="52" y="358" fill="#64748b">6</text><text x="100" y="358" fill="#e5e7eb">  }</text>
+    <text x="52" y="404" fill="#64748b">7</text><text x="100" y="404" fill="#e5e7eb">)</text>
+    <text x="52" y="490" fill="#64748b">8</text><text x="100" y="490" fill="#c084fc">app</text><text x="150" y="490" fill="#e5e7eb">.register(route)</text>
+  </g>
+  <rect x="590" y="248" width="610" height="116" rx="8" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+  <text x="620" y="283" fill="#94a3b8" font-family="ui-monospace,monospace" font-size="22">(property) params: any</text>
+  <text x="620" y="320" fill="#fca5a5" font-family="ui-monospace,monospace" font-size="20">⚠ type information was lost</text>
+  <rect x="1220" y="132" width="720" height="454" rx="10" fill="#f8fafc"/>
+  <text x="1260" y="184" fill="#0f172a" font-family="ui-monospace,monospace" font-size="25">route.tst.ts</text>
+  <text x="1260" y="236" fill="#334155" font-family="ui-monospace,monospace" font-size="21">expect(route).type.toBe&lt;</text>
+  <text x="1260" y="270" fill="#2563eb" font-family="ui-monospace,monospace" font-size="21">  RouteDefinition&lt;OrganizationRoute&gt;</text>
+  <text x="1260" y="304" fill="#334155" font-family="ui-monospace,monospace" font-size="21">&gt;()</text>
+  <line x1="1260" y1="326" x2="1900" y2="326" stroke="#ef4444" stroke-width="4"/>
+  <text x="1260" y="372" fill="#b91c1c" font-family="ui-monospace,monospace" font-size="23">FAIL  Type 'any' is not the same as</text>
+  <text x="1260" y="410" fill="#b91c1c" font-family="ui-monospace,monospace" font-size="23">       'OrganizationRoute'</text>
+  <text x="1260" y="482" fill="#64748b" font-family="ui-monospace,monospace" font-size="19">1 failed · 0 passed</text>
+  <rect x="1220" y="650" width="720" height="390" rx="10" fill="#020617"/>
+  <text x="1260" y="704" fill="#22c55e" font-family="ui-monospace,monospace" font-size="22">$ npx tstyche</text>
+  <text x="1260" y="752" fill="#f87171" font-family="ui-monospace,monospace" font-size="21">fail ./route.tst.ts</text>
+  <text x="1260" y="810" fill="#fca5a5" font-family="ui-monospace,monospace" font-size="20">Error: expected route contract</text>
+  <text x="1260" y="844" fill="#fca5a5" font-family="ui-monospace,monospace" font-size="20">to preserve request.params</text>
+  <text x="1260" y="930" fill="#94a3b8" font-family="ui-monospace,monospace" font-size="20">uses TypeScript 5.9.3</text>
+</svg>

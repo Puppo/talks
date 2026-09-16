@@ -1,0 +1,269 @@
+---
+layout: cover
+---
+layout: hello
+---
+layout: nearform
+---
+title: "A green build can still ship a broken developer experience"
+content:
+  - "We will debate semicolons for hours."
+  - "Then we treat generic inference as an act of faith."
+  - "A refactor from T to any can erase autocomplete without breaking the build."
+decorations:
+  icon: lightbulb
+  number: 1
+---
+title: "Runtime behavior ≠ type-time contract"
+items:
+  entries:
+    - title: Runtime tests
+      text: "Does the Fastify route return the right response?"
+      icon: chevron-right
+    - title: Type tests
+      text: "Can a consumer call the route with the right params, query, and reply?"
+      icon: chevron-right
+    - title: The gap
+      text: "JavaScript can behave perfectly while the public types quietly decay."
+      icon: chevron-right
+  sequence: true
+decorations:
+  number: 2
+---
+layout: image
+title: "The editor is where your API is experienced"
+image:
+  url: '@talk/broken-hover.svg'
+decorations:
+  logo: false
+  permalink: false
+---
+layout: separator
+title: "Make route contracts executable"
+subtitle: "Type testing with TSTyche"
+options:
+  background: nf-green-50
+---
+title: "What TSTyche brings to the table"
+items:
+  entries:
+    - title: "A test runner for types"
+      text: "Familiar test files, assertions, focused failures."
+      index: 1
+    - title: "The TypeScript language service"
+      text: "The same type-checking view behind editor hovers."
+      index: 2
+    - title: "Compatibility targets"
+      text: "Run one contract suite against more than one TypeScript version."
+      index: 3
+  sequence: true
+decorations:
+  number: 3
+---
+layout: code
+title: "First test in 60 seconds"
+code:
+  language: sh
+  numbers: true
+  content: |
+    npm add -D tstyche
+
+    # route.tst.ts
+    npx tstyche
+decorations:
+  number: 4
+---
+layout: code
+title: "A tiny Fastify package with a public contract"
+className:
+  root: talk@code-tight
+code:
+  language: ts
+  numbers: true
+  highlight: '1-6, 9-14'
+  content: |
+    import type { FastifyPluginAsync, RouteGenericInterface } from 'fastify'
+
+    export type RouteContract = RouteGenericInterface
+    export type RouteDefinition<T extends RouteContract> =
+      FastifyRouteOptions<T>
+
+    export type RouteFactory = <T extends RouteContract>(
+      definition: RouteDefinition<T>,
+    ) => FastifyPluginAsync
+
+    export const route: RouteFactory = definition => async fastify => {
+      fastify.route(definition)
+    }
+decorations:
+  number: 5
+---
+layout: code
+title: "The regression is one character wide"
+className:
+  root: talk@code-tight
+code:
+  language: ts
+  numbers: true
+  highlight: '4'
+  content: |
+    // Before: inference carries the consumer's route contract
+    export type RouteDefinition<T extends RouteContract> =
+      FastifyRouteOptions<T>
+
+    // After a harmless-looking refactor...
+    export type RouteDefinition<T extends RouteContract> =
+      FastifyRouteOptions<any>
+
+    // The app still starts. The user's hover now says: any.
+decorations:
+  number: 6
+---
+layout: code
+title: "Equality catches the silent any"
+className:
+  root: talk@code-tight
+code:
+  language: ts
+  numbers: true
+  highlight: '8-10'
+  content: |
+    import { expect, test } from 'tstyche'
+    import { route } from 'fastify-route-contracts'
+    import type { RouteDefinition } from 'fastify-route-contracts'
+
+    type OrganizationRoute = {
+      Params: { organizationId: string }
+      Querystring: { include?: 'members' | 'projects' }
+      Reply: { id: string; name: string }
+    }
+
+    test('organization route keeps its contract', () => {
+      expect(route).type.toBe<RouteFactory>()
+      expect(organizationDefinition).type.toBe<
+        RouteDefinition<OrganizationRoute>
+      >()
+    })
+decorations:
+  number: 7
+---
+layout: code
+title: "Can a consumer call it?"
+className:
+  root: talk@code-tight
+code:
+  language: ts
+  numbers: true
+  highlight: '5-8, 11-14'
+  content: |
+    test('route factory accepts the intended definition', () => {
+      expect(route).type.toBeCallableWith(organizationDefinition)
+      expect(route).type.not.toBeCallableWith({
+        method: 'GET',
+        url: '/organizations/:organizationId',
+        handler: async () => ({ id: 42, name: 'Acme' }),
+      })
+    })
+
+    test('the route handler sees the same contract', () => {
+      expect(organizationDefinition.handler).type.toBe<
+        OrganizationRouteHandler
+      >()
+    })
+decorations:
+  number: 8
+---
+title: "Invalid usage is documentation"
+items:
+  entries:
+    - title: "The happy path"
+      text: "A consumer knows which params, query values, and reply shape are supported."
+      index: 1
+    - title: "The boundary"
+      text: "A wrong query value or reply payload is rejected before runtime."
+      index: 2
+    - title: "The diagnostic"
+      text: "When the exact error matters, check it with @ts-expect-error and its message."
+      index: 3
+  sequence: true
+decorations:
+  number: 9
+---
+layout: code
+title: "One suite, multiple TypeScript versions"
+code:
+  language: sh
+  numbers: true
+  highlight: '2'
+  content: |
+    # The package supports both compiler generations
+    npx tstyche --target '5.4 || 5.9'
+
+    # Or let CI cover every supported minor release
+    npx tstyche --target '>=5.4'
+decorations:
+  number: 10
+---
+layout: code
+title: "Make CI protect the package contract"
+code:
+  language: json
+  numbers: true
+  highlight: '5-6, 10'
+  content: |
+    {
+      "scripts": {
+        "test:types": "tstyche",
+        "test:types:compat": "tstyche --target '5.4 || 5.9'"
+      },
+      "devDependencies": {
+        "tstyche": "latest"
+      }
+    }
+decorations:
+  number: 11
+---
+title: "The feedback loop is deliberately small"
+items:
+  entries:
+    - title: "Edit"
+      text: "Change the generic or the declaration file."
+      icon: chevron-right
+    - title: "Hover"
+      text: "See the consumer-facing type in VS Code."
+      icon: chevron-right
+    - title: "Test"
+      text: "TSTyche checks the same language-service view."
+      icon: chevron-right
+    - title: "Ship"
+      text: "CI prevents a type contract from regressing silently."
+      icon: chevron-right
+  sequence: true
+decorations:
+  number: 12
+---
+layout: separator
+title: "Types are active documentation"
+subtitle: "Start with the most complicated Fastify generic your users depend on."
+options:
+  background: nf-purple-50
+---
+title: "Keep exploring"
+items:
+  entries:
+    - title: TSTyche
+      text: https://tstyche.org
+      icon: chevron-right
+    - title: Fastify TypeScript
+      text: https://fastify.dev/docs/latest/Reference/TypeScript/
+      icon: chevron-right
+  className: talk@source-list
+decorations:
+  number: 13
+---
+layout: end
+---
+layout: byebye
+---
+layout: cover
+# ---
