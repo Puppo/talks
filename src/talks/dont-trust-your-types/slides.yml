@@ -33,13 +33,13 @@ decorations:
 layout: image
 title: "The editor is where your API is experienced"
 image:
-  url: '@talk/broken-hover.svg'
+  url: '@talk/broken-hover.webp'
 decorations:
   logo: false
   permalink: false
 ---
 layout: separator
-title: "Make route contracts executable"
+title: "Make contracts executable"
 subtitle: "Type testing with TSTyche"
 options:
   background: nf-green-50
@@ -80,7 +80,6 @@ className:
 code:
   language: ts
   numbers: true
-  highlight: '1-6, 9-14'
   content: |
     import type { FastifyPluginAsync, RouteGenericInterface } from 'fastify'
 
@@ -105,7 +104,7 @@ className:
 code:
   language: ts
   numbers: true
-  highlight: '4'
+  highlight: '3,7'
   content: |
     // Before: inference carries the consumer's route contract
     export type RouteDefinition<T extends RouteContract> =
@@ -126,7 +125,6 @@ className:
 code:
   language: ts
   numbers: true
-  highlight: '8-10'
   content: |
     import { expect, test } from 'tstyche'
     import { route } from 'fastify-route-contracts'
