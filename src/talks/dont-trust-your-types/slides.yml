@@ -81,11 +81,14 @@ code:
   language: ts
   numbers: true
   content: |
-    import type { FastifyPluginAsync, RouteGenericInterface } from 'fastify'
+    import type { FastifyPluginAsync, RouteGenericInterface, RouteOptions } from 'fastify'
 
     export type RouteContract = RouteGenericInterface
     export type RouteDefinition<T extends RouteContract> =
-      FastifyRouteOptions<T>
+      RouteOptions<T>
+
+    // re-exported so consumers can write equality tests against the underlying type
+    export type { RouteOptions }
 
     export type RouteFactory = <T extends RouteContract>(
       definition: RouteDefinition<T>,
@@ -108,11 +111,11 @@ code:
   content: |
     // Before: inference carries the consumer's route contract
     export type RouteDefinition<T extends RouteContract> =
-      FastifyRouteOptions<T>
+      RouteOptions<T>
 
     // After a harmless-looking refactor...
     export type RouteDefinition<T extends RouteContract> =
-      FastifyRouteOptions<any>
+      RouteOptions<any>
 
     // The app still starts. The user's hover now says: any.
 decorations:
@@ -125,10 +128,14 @@ className:
 code:
   language: ts
   numbers: true
+  highlight: '16-19'
   content: |
     import { expect, test } from 'tstyche'
     import { route } from 'fastify-route-contracts'
-    import type { RouteDefinition } from 'fastify-route-contracts'
+    import type {
+      RouteDefinition,
+      RouteOptions
+    } from 'fastify-route-contracts'
 
     type OrganizationRoute = {
       Params: { organizationId: string }
@@ -136,10 +143,19 @@ code:
       Reply: { id: string; name: string }
     }
 
-    test('organization route keeps its contract', () => {
-      expect(route).type.toBe<RouteFactory>()
-      expect(organizationDefinition).type.toBe<
-        RouteDefinition<OrganizationRoute>
+    const organizationDefinition: RouteDefinition<OrganizationRoute> = {
+      method: 'GET',
+      url: '/organizations/:organizationId',
+      handler: async request => ({
+        id: request.params.organizationId,
+        name: 'Acme'
+      })
+    }
+
+    test('RouteDefinition preserves its generic', () => {
+      // Fails the moment RouteDefinition<T> widens to RouteOptions<any>.
+      expect<RouteDefinition<OrganizationRoute>>().type.toBe<
+        RouteOptions<OrganizationRoute>
       >()
     })
 decorations:
@@ -152,8 +168,11 @@ className:
 code:
   language: ts
   numbers: true
-  highlight: '5-8, 11-14'
+  highlight: '4-9'
   content: |
+    import { expect, test } from 'tstyche'
+    import { route } from 'fastify-route-contracts'
+
     test('route factory accepts the intended definition', () => {
       expect(route).type.toBeCallableWith(organizationDefinition)
       expect(route).type.not.toBeCallableWith({
@@ -162,28 +181,36 @@ code:
         handler: async () => ({ id: 42, name: 'Acme' }),
       })
     })
-
-    test('the route handler sees the same contract', () => {
-      expect(organizationDefinition.handler).type.toBe<
-        OrganizationRouteHandler
-      >()
-    })
 decorations:
   number: 8
 ---
-title: "Invalid usage is documentation"
-items:
-  entries:
-    - title: "The happy path"
-      text: "A consumer knows which params, query values, and reply shape are supported."
-      index: 1
-    - title: "The boundary"
-      text: "A wrong query value or reply payload is rejected before runtime."
-      index: 2
-    - title: "The diagnostic"
-      text: "When the exact error matters, check it with @ts-expect-error and its message."
-      index: 3
-  sequence: true
+layout: code
+title: "Reject bad input before runtime"
+className:
+  root: talk@code-tight
+code:
+  language: ts
+  numbers: true
+  highlight: '9-12'
+  content: |
+    import { expect, test } from 'tstyche'
+    import { route } from 'fastify-route-contracts'
+
+    test('a bad reply shape is rejected', () => {
+      expect(route).type.not.toBeCallableWith({
+        method: 'GET',
+        url: '/organizations/:organizationId',
+        handler: async () => ({ id: 42, name: 'Acme' }),
+      })
+    })
+
+    test('a missing route param is rejected', () => {
+      expect(route).type.not.toBeCallableWith({
+        method: 'GET',
+        url: '/organizations',
+        handler: async () => ({ id: 'x', name: 'Acme' }),
+      })
+    })
 decorations:
   number: 9
 ---
