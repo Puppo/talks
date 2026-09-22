@@ -1,0 +1,11 @@
+---
+config: common.config
+document:
+  title: "Don't Trust Your Types: Type Testing with TSTyche"
+  titleFormatted: |
+    Don't Trust Your Types
+    Type Testing with TSTyche
+  abstract: |
+    TypeScript can make a Fastify package feel safe while a small refactor silently erases its public contract. This talk introduces type testing with TSTyche and shows how to protect route inference, invalid usage, and TypeScript-version compatibility.
+  author: common.author
+  company: common.company

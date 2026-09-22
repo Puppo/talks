@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1120" font-family="'Fira Code', 'Source Code Pro', monospace">
+  <defs>
+    <style>
+      .code-text { fill: #d4d4d4; font-size: 26px; }
+      .code-keyword { fill: #c586c0; }
+      .code-const { fill: #569cd6; }
+      .code-fn { fill: #dcdcaa; }
+      .code-string { fill: #ce9178; }
+      .code-prop { fill: #9cdcfe; }
+      .code-comment { fill: #6a9955; font-style: italic; }
+      .code-fail { fill: #f48771; font-weight: 700; }
+      .line-num { fill: #6b7280; font-size: 24px; }
+      .traffic-red { fill: #ff5f57; }
+      .traffic-yellow { fill: #febc2e; }
+      .traffic-green { fill: #28c840; }
+      .tab-title { fill: #d4d4d4; font-size: 22px; }
+      .term-cmd { fill: #28c840; }
+    </style>
+  </defs>
+
+  <!-- ============== LEFT: editor ============== -->
+  <g transform="translate(40, 40)">
+    <!-- macOS-style window header -->
+    <rect x="0" y="0" width="920" height="44" rx="6" fill="#1e1e1e" />
+    <circle cx="22" cy="22" r="8" class="traffic-red" />
+    <circle cx="50" cy="22" r="8" class="traffic-yellow" />
+    <circle cx="78" cy="22" r="8" class="traffic-green" />
+    <text x="115" y="30" class="tab-title">src/routes/organization-route.ts</text>
+
+    <!-- editor body -->
+    <rect x="0" y="50" width="920" height="1030" rx="0 0 10 10" fill="#1e1e1e" stroke="#2d2d2d" stroke-width="2" />
+
+    <!-- inner tab -->
+    <rect x="0" y="50" width="920" height="50" fill="#252526" />
+    <text x="36" y="82" class="tab-title">organization-route.ts</text>
+    <circle cx="880" cy="75" r="6" fill="#969696" />
+
+    <!-- code lines -->
+    <g transform="translate(20, 160)">
+      <!-- line 1: const route = route({ -->
+      <text x="36" y="0" class="line-num">1</text>
+      <text x="78" y="0" class="code-text">
+        <tspan class="code-keyword">const</tspan>
+        <tspan> route </tspan>
+        <tspan>= </tspan>
+        <tspan class="code-fn">route</tspan>
+        <tspan>({</tspan>
+      </text>
+
+      <!-- line 2: method: 'GET', -->
+      <text x="36" y="88" class="line-num">2</text>
+      <text x="78" y="88" class="code-text">
+        <tspan>{ </tspan>
+        <tspan class="code-prop">method</tspan>
+        <tspan>: </tspan>
+        <tspan class="code-string">'GET'</tspan>
+        <tspan>,</tspan>
+      </text>
+
+      <!-- line 3: url: '/organizations/:organizationId', -->
+      <text x="36" y="176" class="line-num">3</text>
+      <text x="78" y="176" class="code-text">
+        <tspan class="code-prop">url</tspan>
+        <tspan>: </tspan>
+        <tspan class="code-string">'/organizations/:organizationId'</tspan>
+        <tspan>,</tspan>
+      </text>
+
+      <!-- line 4: handler: async (request) => ({ -->
+      <text x="36" y="264" class="line-num">4</text>
+      <text x="78" y="264" class="code-text">
+        <tspan class="code-prop">handler</tspan>
+        <tspan>: </tspan>
+        <tspan class="code-keyword">async</tspan>
+        <tspan> (</tspan>
+        <tspan class="code-prop">request</tspan>
+        <tspan>) =&gt; ({</tspan>
+      </text>
+
+      <!-- line 5: request.params.organizationId -->
+      <text x="36" y="352" class="line-num">5</text>
+      <text x="138" y="352" class="code-text">
+        <tspan class="code-prop">request</tspan>
+        <tspan>.</tspan>
+        <tspan class="code-fail">params</tspan>
+        <tspan>.</tspan>
+        <tspan class="code-fail">organizationId</tspan>
+      </text>
+
+      <!-- line 6: }) -->
+      <text x="36" y="440" class="line-num">6</text>
+      <text x="78" y="440" class="code-text">
+        <tspan>})</tspan>
+      </text>
+
+      <!-- line 7: }) -->
+      <text x="36" y="528" class="line-num">7</text>
+      <text x="78" y="528" class="code-text">
+        <tspan>})</tspan>
+      </text>
+
+      <!-- line 8: blank -->
+      <text x="36" y="616" class="line-num">8</text>
+
+      <!-- line 9: app.register(organizationRoute) -->
+      <text x="36" y="704" class="line-num">9</text>
+      <text x="78" y="704" class="code-text">
+        <tspan class="code-prop">app</tspan>
+        <tspan>.register(</tspan>
+        <tspan class="code-prop">organizationRoute</tspan>
+        <tspan>)</tspan>
+      </text>
+    </g>
+
+    <!-- hover callout pointing to "params" on line 5 -->
+    <g>
+      <!-- arrow from params area to callout, fully inside editor -->
+      <path d="M 580 480 Q 540 520 530 580" stroke="#f48771" stroke-width="3" fill="none" />
+      <polygon points="525,572 522,587 540,580" fill="#f48771" />
+
+      <!-- callout box, contained within editor panel -->
+      <rect x="420" y="580" width="460" height="190" rx="8" fill="#3b1f1f" stroke="#f48771" stroke-width="2" />
+      <circle cx="445" cy="605" r="6" fill="#f48771" />
+      <text x="465" y="612" class="tab-title" fill="#f48771">editor hover</text>
+      <text x="445" y="670" class="code-text">
+        <tspan>(property) </tspan>
+        <tspan class="code-prop">params</tspan>
+        <tspan>: </tspan>
+        <tspan class="code-fail">any</tspan>
+      </text>
+      <text x="445" y="730" class="code-comment" font-size="22">the route contract disappeared</text>
+    </g>
+  </g>
+
+  <!-- ============== RIGHT: TSTyche failure ============== -->
+  <g transform="translate(1020, 40)">
+    <!-- top tab/reporter header -->
+    <rect x="0" y="0" width="920" height="44" rx="6" fill="#f5f5f5" />
+    <circle cx="880" cy="22" r="6" fill="#f48771" />
+
+    <g transform="translate(0, 70)">
+      <!-- light panel: TSTyche reporter -->
+      <rect x="0" y="0" width="920" height="430" rx="10" fill="#fafafa" stroke="#dddddd" stroke-width="1" />
+
+      <!-- tab inside -->
+      <text x="32" y="50" class="code-text" fill="#222">route.tst.ts</text>
+      <line x1="32" y1="74" x2="888" y2="74" stroke="#f48771" stroke-width="2" />
+
+      <!-- expectation (wrap to two lines so it fits) -->
+      <text x="32" y="130" class="code-text" fill="#222">
+        <tspan class="code-fn">expect</tspan>
+        <tspan>&lt;</tspan>
+        <tspan class="code-prop">RouteDefinition</tspan>
+        <tspan>&lt;</tspan>
+        <tspan class="code-prop">OrganizationRoute</tspan>
+        <tspan>&gt;&gt;()</tspan>
+      </text>
+      <text x="32" y="170" class="code-text" fill="#222">
+        <tspan>  .</tspan>
+        <tspan class="code-prop">type</tspan>
+        <tspan>.</tspan>
+        <tspan class="code-fn">toBe</tspan>
+        <tspan>&lt;</tspan>
+        <tspan class="code-prop">RouteOptions</tspan>
+        <tspan>&lt;</tspan>
+        <tspan class="code-prop">OrganizationRoute</tspan>
+        <tspan>&gt;&gt;()</tspan>
+      </text>
+
+      <line x1="32" y1="200" x2="888" y2="200" stroke="#e5e5e5" stroke-width="1" />
+
+      <!-- fail badge -->
+      <rect x="32" y="220" width="120" height="50" rx="4" fill="#c62828" />
+      <text x="92" y="252" text-anchor="middle" class="code-text" fill="#fff" font-weight="700">FAIL</text>
+
+      <text x="172" y="244" class="code-text" fill="#c62828">
+        <tspan>Type 'any' is not the same as</tspan>
+        <tspan x="172" dy="34">'OrganizationRoute'</tspan>
+      </text>
+
+      <!-- counter -->
+      <text x="32" y="370" class="code-text" fill="#888">1 failed · 0 passed</text>
+    </g>
+
+    <!-- terminal (dark) -->
+    <g transform="translate(0, 540)">
+      <rect x="0" y="0" width="920" height="380" rx="10" fill="#1e1e1e" stroke="#2d2d2d" stroke-width="2" />
+
+      <text x="32" y="60" class="code-text">
+        <tspan class="term-cmd">$</tspan>
+        <tspan> npx </tspan>
+        <tspan class="code-fn">tstyche</tspan>
+      </text>
+
+      <text x="32" y="130" class="code-text">
+        <tspan class="code-fail">fail</tspan>
+        <tspan> ./route.tst.ts</tspan>
+      </text>
+
+      <text x="32" y="220" class="code-text">
+        <tspan>Error: expected route contract</tspan>
+        <tspan x="32" dy="38">to preserve </tspan>
+        <tspan class="code-prop">request.params</tspan>
+      </text>
+
+      <line x1="32" y1="300" x2="888" y2="300" stroke="#2d2d2d" stroke-width="1" />
+
+      <text x="32" y="350" class="code-comment">TypeScript 5.9.3 · contract test failed</text>
+    </g>
+  </g>
+</svg>
