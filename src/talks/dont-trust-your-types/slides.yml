@@ -74,24 +74,6 @@ decorations:
   number: 4
 ---
 layout: code
-title: "Give your coding agent the TSTyche playbook"
-className:
-  root: talk@code-tight
-code:
-  language: sh
-  numbers: true
-  highlight: '1,4-6'
-  content: |
-    npx skills add tstyche/tstyche-skills
-
-    # Choose the workflow you need
-    # tstyche-type-tests        assertions, inference, compatibility
-    # tstyche-project-setup     config, CLI, watch mode, CI
-    # tstyche-programmatic-api  runners, reporters, embedded runs
-decorations:
-  number: 5
----
-layout: code
 title: "A tiny Fastify package with a public contract"
 className:
   root: talk@code-tight
@@ -116,7 +98,7 @@ code:
       fastify.route(definition)
     }
 decorations:
-  number: 6
+  number: 5
 ---
 layout: code
 title: "The regression is one character wide"
@@ -137,7 +119,7 @@ code:
 
     // The app still starts. The user's hover now says: any.
 decorations:
-  number: 7
+  number: 6
 ---
 layout: code
 title: "Equality catches the silent any"
@@ -177,7 +159,7 @@ code:
       >()
     })
 decorations:
-  number: 8
+  number: 7
 ---
 layout: code
 title: "Can a consumer call it?"
@@ -200,7 +182,7 @@ code:
       })
     })
 decorations:
-  number: 9
+  number: 8
 ---
 layout: code
 title: "Reject bad input before runtime"
@@ -230,7 +212,7 @@ code:
       })
     })
 decorations:
-  number: 10
+  number: 9
 ---
 layout: code
 title: "One suite, multiple TypeScript versions"
@@ -245,7 +227,7 @@ code:
     # Or let CI cover every supported minor release
     npx tstyche --target '>=5.4'
 decorations:
-  number: 11
+  number: 10
 ---
 layout: code
 title: "Make CI protect the package contract"
@@ -264,7 +246,7 @@ code:
       }
     }
 decorations:
-  number: 12
+  number: 11
 ---
 title: "The feedback loop is deliberately small"
 items:
@@ -283,13 +265,49 @@ items:
       icon: chevron-right
   sequence: true
 decorations:
-  number: 13
+  number: 12
 ---
 layout: separator
 title: "Types are active documentation"
 subtitle: "Start with the most complicated Fastify generic your users depend on."
 options:
   background: nf-purple-50
+---
+layout: code
+title: "Give your coding agent the TSTyche playbook"
+className:
+  root: talk@code-tight
+code:
+  language: sh
+  numbers: true
+  highlight: '1,4-6'
+  content: |
+    npx skills add tstyche/tstyche-skills
+
+    # Choose the workflow you need
+    # tstyche-type-tests        assertions, inference, compatibility
+    # tstyche-project-setup     config, CLI, watch mode, CI
+    # tstyche-programmatic-api  runners, reporters, embedded runs
+decorations:
+  number: 13
+---
+layout: code
+title: "Live demo: make the type contract fail"
+className:
+  root: talk@code-tight
+code:
+  language: sh
+  numbers: true
+  highlight: '1,4-6'
+  content: |
+    git clone https://github.com/Puppo/dont-trust-your-types
+    cd dont-trust-your-types
+
+    npm test              # runtime stays green
+    npm run test:types    # the contract catches the refactor
+    npm run test:types:compat
+decorations:
+  number: 14
 ---
 title: "Keep exploring"
 items:
@@ -300,9 +318,12 @@ items:
     - title: Fastify TypeScript
       text: https://fastify.dev/docs/latest/Reference/TypeScript/
       icon: chevron-right
+    - title: Talk demo repo
+      text: https://github.com/Puppo/dont-trust-your-types
+      icon: chevron-right
   className: talk@source-list
 decorations:
-  number: 14
+  number: 15
 ---
 layout: end
 ---
