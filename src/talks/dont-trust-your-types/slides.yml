@@ -61,6 +61,24 @@ decorations:
   number: 3
 ---
 layout: code
+title: "Give your coding agent the TSTyche playbook"
+className:
+  root: talk@code-tight
+code:
+  language: sh
+  numbers: true
+  highlight: '1,4-6'
+  content: |
+    npx skills add tstyche/tstyche-skills
+
+    # Choose the workflow you need
+    # tstyche-type-tests        assertions, inference, compatibility
+    # tstyche-project-setup     config, CLI, watch mode, CI
+    # tstyche-programmatic-api  runners, reporters, embedded runs
+decorations:
+  number: 4
+---
+layout: code
 title: "First test in 60 seconds"
 code:
   language: sh
@@ -71,7 +89,7 @@ code:
     # route.tst.ts
     npx tstyche
 decorations:
-  number: 4
+  number: 5
 ---
 layout: code
 title: "A tiny Fastify package with a public contract"
@@ -98,7 +116,7 @@ code:
       fastify.route(definition)
     }
 decorations:
-  number: 5
+  number: 6
 ---
 layout: code
 title: "The regression is one character wide"
@@ -119,7 +137,7 @@ code:
 
     // The app still starts. The user's hover now says: any.
 decorations:
-  number: 6
+  number: 7
 ---
 layout: code
 title: "Equality catches the silent any"
@@ -159,7 +177,7 @@ code:
       >()
     })
 decorations:
-  number: 7
+  number: 8
 ---
 layout: code
 title: "Can a consumer call it?"
@@ -182,7 +200,7 @@ code:
       })
     })
 decorations:
-  number: 8
+  number: 9
 ---
 layout: code
 title: "Reject bad input before runtime"
@@ -212,7 +230,7 @@ code:
       })
     })
 decorations:
-  number: 9
+  number: 10
 ---
 layout: code
 title: "One suite, multiple TypeScript versions"
@@ -227,7 +245,7 @@ code:
     # Or let CI cover every supported minor release
     npx tstyche --target '>=5.4'
 decorations:
-  number: 10
+  number: 11
 ---
 layout: code
 title: "Make CI protect the package contract"
@@ -246,7 +264,7 @@ code:
       }
     }
 decorations:
-  number: 11
+  number: 12
 ---
 title: "The feedback loop is deliberately small"
 items:
@@ -265,7 +283,7 @@ items:
       icon: chevron-right
   sequence: true
 decorations:
-  number: 12
+  number: 13
 ---
 layout: separator
 title: "Types are active documentation"
@@ -284,7 +302,7 @@ items:
       icon: chevron-right
   className: talk@source-list
 decorations:
-  number: 13
+  number: 14
 ---
 layout: end
 ---
