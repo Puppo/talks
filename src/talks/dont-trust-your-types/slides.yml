@@ -269,7 +269,7 @@ decorations:
 ---
 layout: separator
 title: "Types are active documentation"
-subtitle: "Start with the most complicated Fastify generic your users depend on."
+subtitle: "Start with the public type contract your users depend on."
 options:
   background: nf-purple-50
 ---
