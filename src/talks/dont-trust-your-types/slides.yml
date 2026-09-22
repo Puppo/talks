@@ -61,6 +61,19 @@ decorations:
   number: 3
 ---
 layout: code
+title: "First test in 60 seconds"
+code:
+  language: sh
+  numbers: true
+  content: |
+    npm add -D tstyche
+
+    # route.tst.ts
+    npx tstyche
+decorations:
+  number: 4
+---
+layout: code
 title: "Give your coding agent the TSTyche playbook"
 className:
   root: talk@code-tight
@@ -75,19 +88,6 @@ code:
     # tstyche-type-tests        assertions, inference, compatibility
     # tstyche-project-setup     config, CLI, watch mode, CI
     # tstyche-programmatic-api  runners, reporters, embedded runs
-decorations:
-  number: 4
----
-layout: code
-title: "First test in 60 seconds"
-code:
-  language: sh
-  numbers: true
-  content: |
-    npm add -D tstyche
-
-    # route.tst.ts
-    npx tstyche
 decorations:
   number: 5
 ---
