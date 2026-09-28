@@ -11,7 +11,7 @@ import { type VNode } from 'preact'
 import { Text } from '../../common/components/common.js'
 import { SvgIcon } from '../../common/components/icons.js'
 import { type Slide } from '../../common/models.ts'
-import { SlideWrapper } from '../components/common.js'
+import { Accent, SlideWrapper } from '../components/common.js'
 
 export default function CoverLayout({ className, style }: SlideProps): VNode {
   const {
@@ -32,7 +32,7 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
   slide.decorations.logo = 'total-white'
   slide.decorations.permalink = false
 
-  const backgroundImage = resolveImage('main', id, '@theme/bg-green.webp')
+  const backgroundImage = resolveImage('main', id, '@theme/bg-cover.webp')
 
   return (
     <SlideWrapper
@@ -48,6 +48,7 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
         <main className={cleanCssClasses('theme@cover__header')}>
           <h1 className={cleanCssClasses('theme@cover__header__title', titleClassName)}>
             <Text text={titleFormatted ?? title} />
+            <Accent />
           </h1>
 
           <h2 className={cleanCssClasses('theme@cover__header__author')}>
@@ -61,9 +62,9 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
           </h2>
         </main>
 
-        {/* <h3 className={cleanCssClasses('theme@cover__copyright')}>
-          &#169; Copyright {new Date().getFullYear()} Nearform_ Ltd. All Rights Reserved.
-        </h3> */}
+        <h6 className={cleanCssClasses('theme@cover__copyright')}>
+          &#169; Copyright {new Date().getFullYear()} Nearform Ltd. All rights reserved.
+        </h6>
 
         <aside className={cleanCssClasses('theme@cover__qrs')}>
           <QRCode

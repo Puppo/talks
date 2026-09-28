@@ -1,9 +1,11 @@
 :root {
   --nf-padding: 0.4--sp;
-  --nf-font-inter: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  --nf-font-bitter: Bitter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --nf-font-inter:
+    Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  /* Brand: Inter is the primary font; Bitter is reserved for pull-out statements, quotes and empathetic messages */
+  --nf-font-bitter: Bitter, Georgia, 'Times New Roman', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --nf-font-fira-code: 'Fira Code', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
   font-family: var(--nf-font-inter);
   font-weight: 300;
@@ -21,6 +23,10 @@
   &slide {
     --nf-icon-size: 0.5--sp;
     padding: var(--nf-padding);
+  }
+
+  &progress {
+    background-color: var(--nf-color-green);
   }
 }
 
@@ -41,6 +47,16 @@
       height: 0.5rem;
       background-color: var(--nf-color-green);
     }
+  }
+
+  /* Short green bar used above lead paragraphs */
+  &lead-rule {
+    display: block;
+    width: 0.4--sp;
+    height: 0.04--sp;
+    margin: 0 0 0.15--sp;
+    border: 0;
+    background-color: var(--nf-color-green);
   }
 
   &callout {
@@ -89,7 +105,6 @@
 
     &__index {
       color: var(--nf-color-blue);
-      font-family: var(--nf-font-bitter);
     }
 
     &__icon--horizontal,
@@ -208,7 +223,7 @@
     }
 
     &__title {
-      font-family: var(--nf-font-bitter);
+      font-weight: 300;
     }
 
     &__subtitle {
@@ -224,13 +239,13 @@
     justify-content: center;
 
     &--dark {
-      background-color: var(--freya-color-windi-blue-600);
+      background-color: var(--nf-color-midnight);
       color: white;
     }
 
     &--light {
-      background-color: white;
-      color: black;
+      background-color: var(--nf-color-green-10);
+      color: var(--nf-color-midnight);
     }
 
     &__title {
@@ -265,24 +280,23 @@
         display: block;
         max-width: 85%;
         font-family: var(--nf-font-bitter);
-        font-weight: 700;
-        font-style: italic;
+        font-weight: 400;
 
         &--dark {
           color: white;
         }
 
         &--light {
-          color: var(--freya-blue);
+          color: var(--nf-color-blue);
         }
       }
 
       &__author {
         font-size: 0.6em;
-        font-weight: 700;
+        font-weight: 400;
 
         &--dark {
-          color: var(--freya-color-windi-amber-300);
+          color: var(--nf-color-green);
         }
 
         &--light {
@@ -302,11 +316,11 @@
         left: 2--sp;
 
         &--dark {
-          --nf-icon-primary-color: var(--freya-color-windi-blue-500);
+          --nf-icon-primary-color: var(--nf-color-navy-light);
         }
 
         &--light {
-          --nf-icon-primary-color: var(--freya-color-windi-grey-300);
+          --nf-icon-primary-color: var(--nf-color-green-30);
         }
       }
 
@@ -316,11 +330,11 @@
         transform: rotate(180deg);
 
         &--dark {
-          --nf-icon-primary-color: var(--freya-color-windi-blue-500);
+          --nf-icon-primary-color: var(--nf-color-navy-light);
         }
 
         &--light {
-          --nf-icon-primary-color: var(--freya-color-windi-grey-300);
+          --nf-icon-primary-color: var(--nf-color-green-30);
         }
       }
     }
@@ -405,9 +419,8 @@
 
     &__title {
       margin-bottom: 0;
-      font-family: var(--nf-font-bitter);
       font-size: 33--pt;
-      font-weight: 700;
+      font-weight: 300;
     }
 
     &__subtitle {
@@ -430,9 +443,8 @@
       border-bottom: 0.06--sp solid var(--nf-color-green);
       background-color: var(--nf-color-midnight);
       color: white;
-      font-family: var(--nf-font-bitter);
       font-size: 20--pt;
-      font-weight: 700;
+      font-weight: 600;
       text-align: center;
 
       &--reverse {
@@ -448,8 +460,8 @@
 
   /* Special slides */
   &cover {
-    background-color: var(--nf-color-green);
-    color: var(--nf-color-midnight);
+    background-color: var(--nf-color-midnight);
+    color: white;
 
     &__background {
       position: absolute;
@@ -482,35 +494,35 @@
         display: block;
         max-width: 6--sp;
         margin-bottom: 0;
-        color: var(--nf-color-midnight);
-        font-family: var(--nf-font-bitter);
+        color: white;
         font-size: 35--pt;
-        font-weight: 700;
+        font-weight: 300;
       }
 
       &__author {
         grid-area: b;
         margin-top: 0.15--sp;
         margin-bottom: 0;
-        color: var(--nf-color-midnight);
-        font-family: var(--nf-font-bitter);
+        color: white;
         font-size: 16--pt;
 
         &__name {
-          font-weight: 700;
+          font-weight: 500;
         }
 
         &__description {
           display: inline-block;
           margin-left: 1ch;
-          font-weight: 400;
+          font-weight: 300;
         }
       }
     }
 
     &__copyright {
-      font-size: 10--pt;
-      font-weight: 300;
+      margin: 0;
+      color: white;
+      font-size: 8--pt;
+      font-weight: 400;
     }
 
     &__qrs {
@@ -542,7 +554,7 @@
           &,
           &:hover,
           &:visited {
-            color: var(--nf-color-midnight);
+            color: white;
           }
 
           &:hover {
@@ -729,7 +741,6 @@
     &__subtitle {
       grid-area: subtitle;
       margin-bottom: 0;
-      font-family: var(--nf-font-bitter);
     }
 
     &__cta {
@@ -811,7 +822,7 @@
     }
 
     &__title {
-      font-family: var(--nf-font-bitter);
+      font-weight: 600;
     }
 
     &__subtitle {
@@ -833,9 +844,8 @@
       padding: 0.05--sp var(--nf-padding);
       background-color: var(--nf-color-midnight);
       color: white;
-      font-family: var(--nf-font-bitter);
       font-size: 12--pt;
-      font-weight: 700;
+      font-weight: 600;
     }
 
     &__social {
@@ -903,7 +913,7 @@
   }
 
   &mission-completed {
-    --nf-icon-primary-color: var(--freya-color-windi-blue-500);
+    --nf-icon-primary-color: var(--nf-color-blue);
     bottom: -0.02--sp;
     left: 1--sp;
     width: 2--sp;
