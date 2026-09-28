@@ -1,8 +1,8 @@
+import { setTimeout as sleep } from 'timers/promises'
 import { type BuildContext } from '@perseveranza-pets/dante'
 import { filterWhitelistedTalks, getAllTalks, getTalk, getTheme, setWhitelistedTalks } from '@perseveranza-pets/freya'
 import { program, type Command } from 'commander'
 import { chromium, type Browser, type BrowserContext, type Page } from 'playwright'
-import { setTimeout as sleep } from 'timers/promises'
 
 type BrowserEnvironment = [Browser, BrowserContext, Page]
 

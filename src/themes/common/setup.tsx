@@ -1,6 +1,6 @@
+import { resolve } from 'node:path'
 import { type BuildContext } from '@perseveranza-pets/dante'
 import { ensureRenderedCode, resolveImageUrl, type Talk, type Theme } from '@perseveranza-pets/freya'
-import { resolve } from 'node:path'
 import { wrapTalkClasses } from './components/common.js'
 import { resolveIcon } from './components/icons.js'
 import { type DecorationsClasses, type ItemClasses, type Slide, type SlideClasses } from './models.ts'

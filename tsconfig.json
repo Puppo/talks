@@ -12,11 +12,11 @@
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
+    "allowImportingTsExtensions": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strictNullChecks": true,
     "useUnknownInCatchVariables": false,
-    "baseUrl": ".",
     "lib": ["dom", "dom.iterable", "esnext"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]
