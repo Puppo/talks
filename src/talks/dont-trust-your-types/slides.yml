@@ -128,7 +128,6 @@ className:
 code:
   language: ts
   numbers: true
-  highlight: '16-19'
   content: |
     import { expect, test } from 'tstyche'
     import { route } from 'fastify-route-contracts'
@@ -191,7 +190,7 @@ className:
 code:
   language: ts
   numbers: true
-  highlight: '9-12'
+  highlight: '12-18'
   content: |
     import { expect, test } from 'tstyche'
     import { route } from 'fastify-route-contracts'
@@ -234,7 +233,7 @@ title: "Make CI protect the package contract"
 code:
   language: json
   numbers: true
-  highlight: '5-6, 10'
+  highlight: '3-4, 6-8'
   content: |
     {
       "scripts": {
