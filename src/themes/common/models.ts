@@ -91,6 +91,7 @@ export interface Options {
   background?: string
   accent?: string
   variant?: BreakerVariant // Used by the main.breaker layout
+  lead?: boolean // Used by the main.default layout
   author?: Record<string, string> // Used by the main.hello layout
   decorations?: boolean
 }
