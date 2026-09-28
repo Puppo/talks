@@ -619,6 +619,8 @@
         }
 
         &__image {
+          --nf-icon-primary-color: var(--nf-color-midnight);
+          --nf-icon-secondary-color: var(--nf-color-midnight);
           width: 22%;
           height: auto;
         }
