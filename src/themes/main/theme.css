@@ -159,15 +159,15 @@
     z-index: -1;
     bottom: -0.7--sp;
     left: 1--sp;
-    color: var(--nf-color-grey-30);
+    color: var(--nf-color-blue-10);
     font-size: 250--pt;
-    font-weight: 800;
+    font-weight: 300;
     line-height: 1em;
     vertical-align: baseline;
   }
 
   &slide-icon {
-    --nf-icon-primary-color: var(--nf-color-grey-30);
+    --nf-icon-primary-color: var(--nf-color-blue-10);
     position: absolute;
     z-index: -1;
     bottom: -0.7--sp;
