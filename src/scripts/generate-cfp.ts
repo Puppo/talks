@@ -1,8 +1,8 @@
+import { writeFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
 import { type BuildContext } from '@perseveranza-pets/dante'
 import { filterWhitelistedTalks, getAllTalks, getTalk, setWhitelistedTalks } from '@perseveranza-pets/freya'
 import { program, type Command } from 'commander'
-import { writeFile } from 'node:fs/promises'
-import { resolve } from 'node:path'
 
 interface Options {
   only: string
