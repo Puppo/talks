@@ -561,3 +561,20 @@ image:
   url: '@theme/panda.webp'
 options:
   background: nf-grey-10
+
+---
+layout: breaker
+title: Breaker slide
+
+---
+layout: breaker
+title: Breaker slide
+subtitle: Dolor id enim magna quis aute ex esse officia amet.
+options:
+  variant: purple
+
+---
+layout: breaker
+title: Breaker slide
+options:
+  variant: particles

@@ -4,10 +4,12 @@
 @import '@freya/colors/windi/300.css';
 
 :root {
+  /* Brand palette (2026): hero shades Midnight Navy and Green, supported by Purple and Blue */
   --nf-color-white: white;
   --nf-color-black: black;
   --nf-color-midnight: #000e38;
   --nf-color-midnight-80: #0c3d60;
+  --nf-color-navy-light: #31416f;
   --nf-color-midnight-50: #526288;
   --nf-color-midnight-30: #97a1b8;
   --nf-color-midnight-10: #f4f8fa;
@@ -15,11 +17,11 @@
   --nf-color-green-80: #33eaae;
   --nf-color-green-50: #78eec5;
   --nf-color-green-30: #b2f7e1;
-  --nf-color-green-10: #e5fcf5;
+  --nf-color-green-10: #ddfbf2;
   --nf-color-purple: #8950ff;
   --nf-color-purple-80: #a173ff;
   --nf-color-purple-50: #c4a7ff;
-  --nf-color-purple-30: #dccaff;
+  --nf-color-purple-30: #ddcaff;
   --nf-color-purple-10: #f3edff;
   --nf-color-blue: #166bff;
   --nf-color-blue-80: #4589ff;
@@ -52,6 +54,7 @@
 
     @apply color(nf-midnight, nf-color-midnight);
     @apply color(nf-midnight-80, nf-color-midnight-80);
+    @apply color(nf-navy-light, nf-color-navy-light);
     @apply color(nf-midnight-50, nf-color-midnight-50);
     @apply color(nf-midnight-30, nf-color-midnight-30);
     @apply color(nf-midnight-10, nf-color-midnight-10);

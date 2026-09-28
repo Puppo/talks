@@ -33,6 +33,8 @@ export default function DefaultLayout({ className, style }: SlideProps): VNode {
         </h1>
       )}
 
+      {slide.options.lead && <hr className={cleanCssClasses('theme@lead-rule')} />}
+
       {content?.filter(Boolean).map((c: string | object, contentIndex: number) => {
         const key = `content:${index}:${contentIndex}`
 
@@ -41,7 +43,14 @@ export default function DefaultLayout({ className, style }: SlideProps): VNode {
         }
 
         return (
-          <h4 key={key} className={cleanCssClasses('theme@default__subtitle', subtitleClassName)}>
+          <h4
+            key={key}
+            className={cleanCssClasses(
+              'theme@default__subtitle',
+              slide.options.lead && 'theme@default__subtitle--lead',
+              subtitleClassName
+            )}
+          >
             <Text text={c} />
           </h4>
         )

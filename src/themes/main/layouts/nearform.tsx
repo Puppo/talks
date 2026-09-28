@@ -58,7 +58,7 @@ export default function NearformLayout({ className, style }: SlideProps): VNode 
             'theme@nearform__categories__category--with-border'
           )}
         >
-          Product Solutions
+          Product solutions
         </h4>
         <h4
           className={cleanCssClasses(
@@ -66,7 +66,7 @@ export default function NearformLayout({ className, style }: SlideProps): VNode 
             'theme@nearform__categories__category--with-border'
           )}
         >
-          Modern Platforms
+          Modern platforms
         </h4>
         <h4
           className={cleanCssClasses(
@@ -74,9 +74,9 @@ export default function NearformLayout({ className, style }: SlideProps): VNode 
             'theme@nearform__categories__category--with-border'
           )}
         >
-          Data & AI Solutions
+          Data & AI solutions
         </h4>
-        <h4 className={cleanCssClasses('theme@nearform__categories__category')}>Enhanced Capability</h4>
+        <h4 className={cleanCssClasses('theme@nearform__categories__category')}>Enhanced capability</h4>
       </footer>
     </SlideWrapper>
   )
