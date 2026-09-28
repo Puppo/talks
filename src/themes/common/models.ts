@@ -84,10 +84,13 @@ export interface Decorations {
   className: DecorationsClasses
 }
 
+export type BreakerVariant = 'green' | 'purple' | 'particles'
+
 export interface Options {
   foreground?: string
   background?: string
   accent?: string
+  variant?: BreakerVariant // Used by the main.breaker layout
   author?: Record<string, string> // Used by the main.hello layout
   decorations?: boolean
 }
