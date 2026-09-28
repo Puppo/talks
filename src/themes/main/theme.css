@@ -498,6 +498,8 @@
       color: white;
       font-size: 18--pt;
       font-weight: 300;
+      /* Keeps the subtitle legible over the busier parts of the wave backgrounds */
+      text-shadow: 0 0.1em 0.4em rgb(0 14 56 / 80%);
     }
   }
 
