@@ -5,63 +5,63 @@ layout: hello
 ---
 layout: nearform
 ---
-title: "A green build can still ship a broken developer experience"
+title: 'A green build can still ship a broken developer experience'
 content:
-  - "We will debate semicolons for hours."
-  - "Then we treat generic inference as an act of faith."
-  - "A refactor from T to any can erase autocomplete without breaking the build."
+  - 'We will debate semicolons for hours.'
+  - 'Then we treat generic inference as an act of faith.'
+  - 'A refactor from T to any can erase autocomplete without breaking the build.'
+options:
+  lead: true
 decorations:
   icon: lightbulb
   number: 1
 ---
-title: "Runtime behavior ≠ type-time contract"
+title: 'Runtime behavior ≠ type-time contract'
 items:
   entries:
     - title: Runtime tests
-      text: "Does the Fastify route return the right response?"
+      text: 'Does the Fastify route return the right response?'
       icon: chevron-right
     - title: Type tests
-      text: "Can a consumer call the route with the right params, query, and reply?"
+      text: 'Can a consumer call the route with the right params, query, and reply?'
       icon: chevron-right
     - title: The gap
-      text: "JavaScript can behave perfectly while the public types quietly decay."
+      text: 'JavaScript can behave perfectly while the public types quietly decay.'
       icon: chevron-right
   sequence: true
 decorations:
   number: 2
 ---
 layout: image
-title: "The editor is where your API is experienced"
+title: 'The editor is where your API is experienced'
 image:
   url: '@talk/broken-hover.webp'
 decorations:
   logo: false
   permalink: false
 ---
-layout: separator
-title: "Make contracts executable"
-subtitle: "Type testing with TSTyche"
-options:
-  background: nf-green-50
+layout: breaker
+title: 'Make contracts executable'
+subtitle: 'Type testing with TSTyche'
 ---
-title: "What TSTyche brings to the table"
+title: 'What TSTyche brings to the table'
 items:
   entries:
-    - title: "A test runner for types"
-      text: "Familiar test files, assertions, focused failures."
+    - title: 'A test runner for types'
+      text: 'Familiar test files, assertions, focused failures.'
       index: 1
-    - title: "The TypeScript language service"
-      text: "The same type-checking view behind editor hovers."
+    - title: 'The TypeScript language service'
+      text: 'The same type-checking view behind editor hovers.'
       index: 2
-    - title: "Compatibility targets"
-      text: "Run one contract suite against more than one TypeScript version."
+    - title: 'Compatibility targets'
+      text: 'Run one contract suite against more than one TypeScript version.'
       index: 3
   sequence: true
 decorations:
   number: 3
 ---
 layout: code
-title: "First test in 60 seconds"
+title: 'First test in 60 seconds'
 code:
   language: sh
   numbers: true
@@ -74,7 +74,7 @@ decorations:
   number: 4
 ---
 layout: code
-title: "A tiny Fastify package with a public contract"
+title: 'A tiny Fastify package with a public contract'
 className:
   root: talk@code-tight
 code:
@@ -101,7 +101,7 @@ decorations:
   number: 5
 ---
 layout: code
-title: "The regression is one character wide"
+title: 'The regression is one character wide'
 className:
   root: talk@code-tight
 code:
@@ -122,7 +122,7 @@ decorations:
   number: 6
 ---
 layout: code
-title: "Equality catches the silent any"
+title: 'Equality catches the silent any'
 className:
   root: talk@code-tight
 code:
@@ -161,7 +161,7 @@ decorations:
   number: 7
 ---
 layout: code
-title: "Can a consumer call it?"
+title: 'Can a consumer call it?'
 className:
   root: talk@code-tight
 code:
@@ -184,7 +184,7 @@ decorations:
   number: 8
 ---
 layout: code
-title: "Reject bad input before runtime"
+title: 'Reject bad input before runtime'
 className:
   root: talk@code-tight
 code:
@@ -214,7 +214,7 @@ decorations:
   number: 9
 ---
 layout: code
-title: "One suite, multiple TypeScript versions"
+title: 'One suite, multiple TypeScript versions'
 code:
   language: sh
   numbers: true
@@ -229,7 +229,7 @@ decorations:
   number: 10
 ---
 layout: code
-title: "Make CI protect the package contract"
+title: 'Make CI protect the package contract'
 code:
   language: json
   numbers: true
@@ -247,33 +247,33 @@ code:
 decorations:
   number: 11
 ---
-title: "The feedback loop is deliberately small"
+title: 'The feedback loop is deliberately small'
 items:
   entries:
-    - title: "Edit"
-      text: "Change the generic or the declaration file."
+    - title: 'Edit'
+      text: 'Change the generic or the declaration file.'
       icon: chevron-right
-    - title: "Hover"
-      text: "See the consumer-facing type in VS Code."
+    - title: 'Hover'
+      text: 'See the consumer-facing type in VS Code.'
       icon: chevron-right
-    - title: "Test"
-      text: "TSTyche checks the same language-service view."
+    - title: 'Test'
+      text: 'TSTyche checks the same language-service view.'
       icon: chevron-right
-    - title: "Ship"
-      text: "CI prevents a type contract from regressing silently."
+    - title: 'Ship'
+      text: 'CI prevents a type contract from regressing silently.'
       icon: chevron-right
   sequence: true
 decorations:
   number: 12
 ---
-layout: separator
-title: "Types are active documentation"
-subtitle: "Start with the public type contract your users depend on."
+layout: breaker
+title: 'Types are active documentation'
+subtitle: 'Start with the public type contract your users depend on.'
 options:
-  background: nf-purple-50
+  variant: purple
 ---
 layout: code
-title: "Give your coding agent the TSTyche playbook"
+title: 'Give your coding agent the TSTyche playbook'
 className:
   root: talk@code-tight
 code:
@@ -291,7 +291,7 @@ decorations:
   number: 13
 ---
 layout: code
-title: "Live demo: make the type contract fail"
+title: 'Live demo: make the type contract fail'
 className:
   root: talk@code-tight
 code:
@@ -308,7 +308,7 @@ code:
 decorations:
   number: 14
 ---
-title: "Keep exploring"
+title: 'Keep exploring'
 items:
   entries:
     - title: TSTyche

@@ -20,3 +20,16 @@
     }
   }
 }
+
+/* Quieter, brand-tinted slide numbers for this deck only */
+/* stylelint-disable-next-line selector-class-pattern */
+.theme@ {
+  &number {
+    color: var(--nf-color-blue-10);
+    font-weight: 300;
+  }
+
+  &slide-icon {
+    --nf-icon-primary-color: var(--nf-color-blue-10);
+  }
+}
