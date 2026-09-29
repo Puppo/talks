@@ -1,13 +1,28 @@
 import { Svg, cleanCssClasses, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
 import { type Slide } from '../../common/models.ts'
-import { Accent, SlideWrapper } from '../components/common.js'
+import { SlideWrapper } from '../components/common.js'
+
+const stats = [
+  ['10+', 'Years experience'],
+  ['400+', 'Nearformers'],
+  ['28', 'Countries'],
+  ['700+', 'Engagements'],
+  ['380+', 'Customers']
+]
+
+const openSource = [
+  ['15m+', 'Downloads', 'Over 15 million downloads every week'],
+  ['1192k+', 'Contributions', 'Thousands of contributions every year'],
+  ['166+', 'Packages', 'We maintain many popular packages for the community']
+]
 
 export default function NearformLayout({ className, style }: SlideProps): VNode {
   const { slide, index } = useSlide<Slide>()
 
-  slide.decorations.logo = false
-  slide.decorations.permalink = 'white'
+  if (typeof slide.decorations.logo === 'undefined') {
+    slide.decorations.logo = 'white'
+  }
 
   return (
     <SlideWrapper
@@ -17,67 +32,55 @@ export default function NearformLayout({ className, style }: SlideProps): VNode 
       style={style}
     >
       <main className={cleanCssClasses('theme@nearform__contents')}>
-        <h1 className={cleanCssClasses('theme@nearform__title')}>
-          Introducing <span>Nearform</span>
-          <Accent />
-        </h1>
+        <section className={cleanCssClasses('theme@nearform__about')}>
+          <h4 className={cleanCssClasses('theme@nearform__description')}>
+            We’re an independent team of engineers, designers and strategists who build digital solutions and enhanced
+            capability at pace for ambitious enterprises seeking enduring business impact.
+          </h4>
 
-        <h4 className={cleanCssClasses('theme@nearform__subtitle')}>
-          We’re a global consultancy of experienced engineers working in lean teams, designing and building high quality
-          digital products at speed and scale to realise business and end user value.
-        </h4>
-
-        <aside className={cleanCssClasses('theme@nearform__cta')}>
-          <div className={cleanCssClasses('theme@nearform__cta__description')}>
-            <dl>
-              <dt className={cleanCssClasses('theme@nearform__cta__description__number')}>10+ </dt>
-              <dd className={cleanCssClasses('theme@nearform__cta__description__name')}>Years experience</dd>
-              <dt className={cleanCssClasses('theme@nearform__cta__description__number')}>400+</dt>
-              <dd className={cleanCssClasses('theme@nearform__cta__description__name')}>Nearformers</dd>
-              <dt className={cleanCssClasses('theme@nearform__cta__description__number')}>
-                28<span className={cleanCssClasses('theme@nearform__cta__description__number__spacer')}>+</span>
-              </dt>
-              <dd className={cleanCssClasses('theme@nearform__cta__description__name')}>Countries</dd>
-              <dt className={cleanCssClasses('theme@nearform__cta__description__number')}>700+</dt>
-              <dd className={cleanCssClasses('theme@nearform__cta__description__name')}>Engagements</dd>
-              <dt className={cleanCssClasses('theme@nearform__cta__description__number')}>380+</dt>
-              <dd className={cleanCssClasses('theme@nearform__cta__description__name')}>Customers</dd>
-            </dl>
-          </div>
-
-          <h3 className={cleanCssClasses('theme@nearform__cta__hiring')}>We are hiring!</h3>
-        </aside>
+          <dl className={cleanCssClasses('theme@nearform__stats')}>
+            {stats.map(([number, name]) => (
+              <div key={name} className={cleanCssClasses('theme@nearform__stats__stat')}>
+                <dt className={cleanCssClasses('theme@nearform__stats__number')}>{number}</dt>
+                <dd className={cleanCssClasses('theme@nearform__stats__name')}>{name}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
 
         <Svg src="@theme/world.svg" className={cleanCssClasses('theme@nearform__globe')} />
-      </main>
 
-      <footer className={cleanCssClasses('theme@nearform__categories')}>
-        <h4
-          className={cleanCssClasses(
-            'theme@nearform__categories__category',
-            'theme@nearform__categories__category--with-border'
-          )}
-        >
-          Product solutions
-        </h4>
-        <h4
-          className={cleanCssClasses(
-            'theme@nearform__categories__category',
-            'theme@nearform__categories__category--with-border'
-          )}
-        >
-          Modern platforms
-        </h4>
-        <h4
-          className={cleanCssClasses(
-            'theme@nearform__categories__category',
-            'theme@nearform__categories__category--with-border'
-          )}
-        >
-          Data & AI solutions
-        </h4>
-        <h4 className={cleanCssClasses('theme@nearform__categories__category')}>Enhanced capability</h4>
-      </footer>
+        <aside className={cleanCssClasses('theme@nearform__open-source')}>
+          <h4 className={cleanCssClasses('theme@nearform__open-source__title')}>
+            Nearform’s commitment to Open Source
+          </h4>
+
+          <ul className={cleanCssClasses('theme@nearform__open-source__entries')}>
+            {openSource.map(([number, name, description]) => (
+              <li key={name} className={cleanCssClasses('theme@nearform__open-source__entry')}>
+                <div className={cleanCssClasses('theme@nearform__open-source__card')}>
+                  <strong className={cleanCssClasses('theme@nearform__open-source__number')}>{number}</strong>
+                  <span className={cleanCssClasses('theme@nearform__open-source__name')}>{name}</span>
+                </div>
+                <p
+                  className={cleanCssClasses(
+                    'theme@nearform__open-source__card',
+                    'theme@nearform__open-source__description'
+                  )}
+                >
+                  {description}
+                </p>
+              </li>
+            ))}
+          </ul>
+
+          <p className={cleanCssClasses('theme@nearform__hiring')}>
+            We’re hiring! <a href="https://www.nearform.com/careers/">nearform.com/careers</a>
+          </p>
+
+          <Svg src="@theme/logo-with-text-white.svg" className={cleanCssClasses('theme@nearform__logo')} />
+        </aside>
+      </main>
     </SlideWrapper>
   )
 }
