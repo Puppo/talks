@@ -167,7 +167,7 @@ className:
 code:
   language: ts
   numbers: true
-  highlight: '4-9'
+  highlight: '1-9'
   content: |
     import { expect, test } from 'tstyche'
     import { route } from 'fastify-route-contracts'
@@ -190,7 +190,7 @@ className:
 code:
   language: ts
   numbers: true
-  highlight: '12-18'
+  highlight: '1-18'
   content: |
     import { expect, test } from 'tstyche'
     import { route } from 'fastify-route-contracts'
@@ -218,7 +218,7 @@ title: 'One suite, multiple TypeScript versions'
 code:
   language: sh
   numbers: true
-  highlight: '2'
+  highlight: '2,5'
   content: |
     # The package supports both compiler generations
     npx tstyche --target '5.4 || 5.9'
