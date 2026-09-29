@@ -62,10 +62,6 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
           </h2>
         </main>
 
-        <h6 className={cleanCssClasses('theme@cover__copyright')}>
-          &#169; Copyright {new Date().getFullYear()} Nearform Ltd. All rights reserved.
-        </h6>
-
         <aside className={cleanCssClasses('theme@cover__qrs')}>
           <QRCode
             data={`${urls[isProduction ? 'production' : 'development']}/${id}`}
