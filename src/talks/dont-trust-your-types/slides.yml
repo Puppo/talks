@@ -28,7 +28,7 @@ items:
     - title: The gap
       text: 'JavaScript can behave perfectly while the public types quietly decay.'
       icon: chevron-right
-  sequence: true
+  sequence: false
 decorations:
   number: 2
 ---
@@ -56,7 +56,7 @@ items:
     - title: 'Compatibility targets'
       text: 'Run one contract suite against more than one TypeScript version.'
       index: 3
-  sequence: true
+  sequence: false
 decorations:
   number: 3
 ---
@@ -167,18 +167,31 @@ className:
 code:
   language: ts
   numbers: true
-  highlight: '1-9'
   content: |
     import { expect, test } from 'tstyche'
     import { route } from 'fastify-route-contracts'
+    import type {
+      RouteDefinition,
+      RouteOptions
+    } from 'fastify-route-contracts'
+
+    type OrganizationRoute = {
+      Params: { organizationId: string }
+      Querystring: { include?: 'members' | 'projects' }
+      Reply: { id: string; name: string }
+    }
+
+    const organizationDefinition: RouteDefinition<OrganizationRoute> = {
+      method: 'GET',
+      url: '/organizations/:organizationId',
+      handler: async request => ({
+        id: request.params.organizationId,
+        name: 'Acme'
+      })
+    }
 
     test('route factory accepts the intended definition', () => {
       expect(route).type.toBeCallableWith(organizationDefinition)
-      expect(route).type.not.toBeCallableWith({
-        method: 'GET',
-        url: '/organizations/:organizationId',
-        handler: async () => ({ id: 42, name: 'Acme' }),
-      })
     })
 decorations:
   number: 8
@@ -190,10 +203,19 @@ className:
 code:
   language: ts
   numbers: true
-  highlight: '1-18'
   content: |
     import { expect, test } from 'tstyche'
     import { route } from 'fastify-route-contracts'
+    import type {
+      RouteDefinition,
+      RouteOptions
+    } from 'fastify-route-contracts'
+
+    type OrganizationRoute = {
+      Params: { organizationId: string }
+      Querystring: { include?: 'members' | 'projects' }
+      Reply: { id: string; name: string }
+    }
 
     test('a bad reply shape is rejected', () => {
       expect(route).type.not.toBeCallableWith({
@@ -262,7 +284,7 @@ items:
     - title: 'Ship'
       text: 'CI prevents a type contract from regressing silently.'
       icon: chevron-right
-  sequence: true
+  sequence: false
 decorations:
   number: 12
 ---
