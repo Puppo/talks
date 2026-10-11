@@ -36,7 +36,7 @@ async function generateCFP(talks: Set<string>, output: string): Promise<void> {
 program
   .name('generate-cfp')
   .option('-o, --only <string>', 'A comma separated list of talks to build.', '')
-  .option('-O, --output', 'If to compare local and remote version', '../cfp-abstracts.json')
+  .option('-O, --output <path>', 'The output JSON file, relative to the working directory.', 'cfp-abstracts.json')
   .addHelpCommand(false)
   .showSuggestionAfterError(true)
   .allowUnknownOption(false)

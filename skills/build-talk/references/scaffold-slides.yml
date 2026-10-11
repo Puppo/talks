@@ -1,0 +1,31 @@
+---
+layout: cover
+# ---
+
+---
+layout: hello
+# ---
+
+---
+layout: nearform
+# ---
+
+# Add content slides between `nearform` and `end`.
+# Each slide starts with `---` and ends with the next `---` or EOF.
+# Pick layouts documented in src/talks/__master/slides.yml:
+#   - default, code, half, image, side, separator, quote, breaker.
+# Use `@talk/<file>` for per-talk images and `@theme/<file>` for theme assets.
+
+---
+layout: end
+# ---
+
+---
+layout: byebye
+# ---
+
+---
+layout: cover
+# ---
+# Closing placeholder — mirrors `__master/slides.yml` boilerplate.
+# Topic: <slug>
