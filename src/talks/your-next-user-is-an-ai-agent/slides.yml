@@ -1,0 +1,1000 @@
+---
+layout: cover
+className:
+  qr: talk@unpublished-qr
+notes: |-
+  Takeaway: A new kind of user still serves a person.
+
+  Time: 20 seconds.
+
+  Open with the title. This DevFest talk follows one journey: planning a conference day. This edition is awaiting companion-app integration. The default publication QR codes are hidden until a public deck exists.
+
+  Transition: Introduce yourself.
+decorations:
+  permalink: false
+
+---
+layout: hello
+notes: |-
+  Takeaway: The examples come from a web developer’s perspective.
+
+  Time: 20 seconds.
+
+  Use the shared biography. Keep the introduction brief; the audience needs basic TypeScript, not agent-framework experience.
+
+  Transition: Acknowledge Nearform.
+decorations:
+  permalink: false
+
+---
+layout: nearform
+notes: |-
+  Takeaway: Building usable software remains the job.
+
+  Time: 20 seconds.
+
+  Use the existing company slide without extending the introduction.
+
+  Transition: Start with a task everyone in the room recognizes.
+decorations:
+  permalink: false
+
+---
+layout: quote
+title: 'A familiar request'
+quote:
+  sentence: Help me plan my day at this conference.
+  author: A person with a goal
+  icons: false
+notes: |-
+  Takeaway: Start with a user journey, not a model.
+
+  Time: 45 seconds.
+
+  Read the complete recurring prompt: “Help me plan my day at this conference. I'm interested in web development and AI. Avoid overlapping sessions, preserve the sessions I've already selected, and explain the trade-offs.” Introduce the DevFest Venezia companion. The programme capture is pending; no session names or edition-specific facts are asserted here.
+
+  Transition: Who can carry out that request?
+decorations:
+  permalink: false
+
+---
+title: 'One application, different ways to act'
+content:
+  - <span class="talk@eyebrow">01 / Your website has a new user</span>
+items:
+  entries:
+    - title: Human UI
+      text: A person reads, filters, and chooses.
+      className:
+        root: talk@role talk@person talk@compact-item
+    - title: Browser agent
+      text: An agent operates the visible interface.
+      className:
+        root: talk@role talk@agent talk@compact-item
+    - title: Embedded agent
+      text: The application owns the orchestration loop.
+      className:
+        root: talk@role talk@agent talk@compact-item
+    - title: Visiting agent
+      text: The user’s assistant calls exposed tools.
+      className:
+        root: talk@role talk@app talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Agent location and interaction method are separate choices.
+
+  Time: 55 seconds.
+
+  These modes can coexist. An embedded agent can use WebMCP too; browser UI interaction is not an obsolete first step. Our route: interface → loop → tools → control → evidence. Colours and explicit labels identify the person, agent, and application throughout.
+
+  Transition: First, try the interface we already have.
+
+  Sources (checked 2026-10-12):
+  - https://www.kulikowski.me/blog/the-spectrum-of-agentic-interactions
+  - https://www.kulikowski.me/blog/bring-your-own-agent
+decorations:
+  permalink: false
+
+---
+layout: separator
+title: 'The agent starts with the interface'
+subtitle: DEMO 01 · Browse → filter → inspect<br><br>Pending integration · browser run + programme capture
+options:
+  background: nf-midnight
+  foreground: white
+notes: |-
+  Takeaway: An agent must interpret the interface before acting.
+
+  Time: 180 seconds.
+
+  Demo A: 30-second setup plus 150-second browser run. Use the recurring prompt and the reviewed starting agenda. Point out the information the agent needs: time, language, track, and existing selections. Stop before applying a replacement. If no real capture is integrated, explain the intended checks rather than pretending to run the application.
+
+  Transition: Return to slide 7: what did it need to understand?
+decorations:
+  permalink: false
+  logo: white
+
+---
+title: 'What did the agent need to understand?'
+content:
+  - <span class="talk@pending">Pending integration · annotated programme screenshot</span>
+items:
+  entries:
+    - title: Meaning
+      text: Labels, session details, and clear navigation.
+      className:
+        root: talk@compact-item
+    - title: Constraints
+      text: Overlapping times and sessions already selected.
+      className:
+        root: talk@compact-item
+    - title: State
+      text: What changed, what is pending, and what was saved.
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Clear interfaces help people and make actions interpretable.
+
+  Time: 50 seconds.
+
+  Reserve the real screenshot for these three annotations. Accessibility is a human requirement, not an agent feature, and does not guarantee an agent will succeed. Show observable actions rather than hidden model reasoning.
+
+  Transition: The browser actions came from a repeated decision process.
+
+  Sources (checked 2026-10-12):
+  - https://www.kulikowski.me/blog/accessibility-the-agentic-webs-most-overlooked-gain
+decorations:
+  permalink: false
+
+---
+title: 'Inside the agent loop'
+content:
+  - <span class="talk@eyebrow">02 / How an agent takes action</span>
+  - Goal + history → decision → tool → result ↺
+items:
+  entries:
+    - title: 1 · Agent
+      text: Ask the model for the next action.
+      className:
+        root: talk@role talk@agent talk@compact-item
+    - title: 2 · Application
+      text: Validate and execute the tool call.
+      className:
+        root: talk@role talk@app talk@compact-item
+    - title: 3 · Agent
+      text: Read the result; continue or finish.
+      className:
+        root: talk@role talk@agent talk@compact-item
+  horizontal: true
+  className: talk@compact-items
+notes: |-
+  Takeaway: The result becomes input to the next decision.
+
+  Time: 60 seconds.
+
+  The application dispatches tool calls and retains their results with call identifiers. A final answer ends the run. A bounded budget and cancellation stop it safely. The location of this loop does not determine whether model inference runs locally or remotely.
+
+  Transition: Connect each step to the actual TypeScript implementation.
+
+  Sources (checked 2026-10-12):
+  - https://bandarra.me/posts/bringing-the-agent-loop-to-the-web
+decorations:
+  permalink: false
+
+---
+title: 'The loop in TypeScript'
+content:
+  - <span class="talk@pending">Pending integration · 8–15 lines from the companion app</span>
+items:
+  entries:
+    - title: Decide
+      text: Send history and available tools to the model.
+      className:
+        root: talk@compact-item
+    - title: Execute
+      text: Record each call; dispatch through validated handlers.
+      className:
+        root: talk@compact-item
+    - title: Continue
+      text: Append results; stop on completion, cancellation, or budget.
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: A short loop connects model decisions to application actions.
+
+  Time: 60 seconds.
+
+  This is an excerpt slot, not a claimed implementation. Replace these steps with 8–15 lines from the actual app and record the source commit. Preserve call/result pairing and terminal conditions. Do not paste an invented SDK interface or an unbounded while(true) loop. The optional appendix explains limits.
+
+  Transition: Watch those handlers update the same application.
+
+  Sources (checked 2026-10-12):
+  - https://bandarra.me/posts/bringing-the-agent-loop-to-the-web
+decorations:
+  permalink: false
+
+---
+layout: separator
+title: 'Actions change the application'
+subtitle: DEMO 02 · Call → visible state → result<br><br>Pending integration · embedded agent + activity panel
+options:
+  background: nf-midnight
+  foreground: white
+notes: |-
+  Takeaway: Tools and the UI must agree about application state.
+
+  Time: 210 seconds.
+
+  Demo B: 30-second setup plus 180-second embedded run. Keep the agenda and activity panel visible. Compare the selected-session state with tool results. A proposal may be visible without replacing the saved agenda. The pending screenshot must show that distinction.
+
+  Transition: Return to slide 11: what if the assistant belongs to the user?
+decorations:
+  permalink: false
+  logo: white
+
+---
+layout: separator
+title: 'What if the user brings their own agent?'
+subtitle: The assistant brings the conversation.<br>The application brings its capabilities.
+options:
+  background: nf-green
+  foreground: nf-midnight
+notes: |-
+  Takeaway: A site-specific chatbot is not the only integration.
+
+  Time: 40 seconds.
+
+  The visiting assistant can have the user’s broader context. The site should expose useful, bounded actions and return evidence; it does not need to own that assistant. Do not imply every visiting client supports the same APIs.
+
+  Transition: Make the application’s actions explicit.
+
+  Sources (checked 2026-10-12):
+  - https://www.kulikowski.me/blog/bring-your-own-agent
+decorations:
+  permalink: false
+  logo: black
+
+---
+title: 'Make capabilities explicit'
+content:
+  - <span class="talk@eyebrow">03 / Give your application a tool interface</span>
+  - WebMCP exposes tools. It does not supply the model or loop.
+items:
+  entries:
+    - title: Read
+      text: Find sessions · inspect details · read the agenda.
+      className:
+        root: talk@role talk@app talk@compact-item
+    - title: Propose
+      text: Prepare a change and explain its trade-offs.
+      className:
+        root: talk@role talk@agent talk@compact-item
+    - title: Decide
+      text: The person approves or rejects the proposed change.
+      className:
+        root: talk@role talk@person talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Expose useful intentions backed by existing application rules.
+
+  Time: 70 seconds.
+
+  This is the proposed capability map, not a registered tool listing. Both UI handlers and tools should use the same business logic. A description and schema help interpretation; runtime validation and authorization still belong to the application. Actual names and schemas are pending.
+
+  Transition: A form can be an entry point.
+
+  Sources (checked 2026-10-12):
+  - https://developer.chrome.com/docs/ai/webmcp/build-tools
+  - https://developer.chrome.com/docs/ai/webmcp/imperative-api
+decorations:
+  permalink: false
+
+---
+title: 'Start with a form'
+content:
+  - <span class="talk@eyebrow">Documentation pattern · app form pending integration</span>
+code:
+  language: html
+  content: |-
+    <form toolname="search_sessions"
+      tooldescription="Find conference sessions"
+      action="/sessions" method="get">
+      <label for="query">Topic</label>
+      <input id="query" name="query" type="search" required>
+      <button type="submit">Search</button>
+    </form>
+  className:
+    root: talk@code
+  rendered: |-
+    <pre class="freya@code talk@code" style="--dante-bg: #282c34; --dante-fg: #abb2bf"><span class="freya@code__line talk@code-line">&lt;form toolname=&quot;search_sessions&quot;</span>
+    <span class="freya@code__line talk@code-line">  tooldescription=&quot;Find conference sessions&quot;</span>
+    <span class="freya@code__line talk@code-line">  action=&quot;/sessions&quot; method=&quot;get&quot;&gt;</span>
+    <span class="freya@code__line talk@code-line">  &lt;label for=&quot;query&quot;&gt;Topic&lt;/label&gt;</span>
+    <span class="freya@code__line talk@code-line">  &lt;input id=&quot;query&quot; name=&quot;query&quot; type=&quot;search&quot; required&gt;</span>
+    <span class="freya@code__line talk@code-line">  &lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;</span>
+    <span class="freya@code__line talk@code-line">&lt;/form&gt;</span></pre>
+notes: |-
+  Takeaway: Form annotations can describe an existing interaction.
+
+  Time: 50 seconds.
+
+  This original illustrative example uses the documented form attributes; /sessions is illustrative, not an implemented route. Without toolautosubmit, the documented flow leaves submission to the person. Replace this with the app’s actual form and confirm browser/client behaviour before rehearsal. Search submission is separate from approval to replace an agenda.
+
+  Transition: For application actions, use an imperative handler.
+
+  Sources (checked 2026-10-12):
+  - https://developer.chrome.com/docs/ai/webmcp/declarative-api
+decorations:
+  permalink: false
+
+---
+title: 'Expose an application action'
+content:
+  - <span class="talk@pending">Pending integration · actual TypeScript registration + result</span>
+  - 'API entry point: <code>document.modelContext.registerTool</code>'
+items:
+  entries:
+    - title: Contract
+      text: Name + description + input schema.
+      className:
+        root: talk@compact-item
+    - title: Handler
+      text: Validate → apply the shared rule → update visible state.
+      className:
+        root: talk@compact-item
+    - title: Evidence
+      text: Return what happened, or why it could not happen.
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: A tool is an application boundary, not permission to skip rules.
+
+  Time: 70 seconds.
+
+  Reserve this slot for the app’s actual registration, schema, execute handler, and result. Keep the projected excerpt at 8–15 lines and move the full schema into the appendix. Current API documentation uses document.modelContext. Annotations describe behaviour; they are not our approval enforcement.
+
+  Transition: Use the same request through that contract.
+
+  Sources (checked 2026-10-12):
+  - https://developer.chrome.com/docs/ai/webmcp/imperative-api
+decorations:
+  permalink: false
+
+---
+layout: separator
+title: 'Same request, structured tools'
+subtitle: DEMO 03 · Discover → inspect → propose<br><br>Pending integration · visiting-agent run + call trace
+options:
+  background: nf-midnight
+  foreground: white
+notes: |-
+  Takeaway: A tool contract connects the visiting agent to the same journey.
+
+  Time: 240 seconds.
+
+  Demo C: 30-second setup plus 210-second run. Reset to the same initial agenda used in Demo A. Read the recurring prompt unchanged. Show discovered tools, arguments, results, and the resulting proposal. Do not claim a speed or reliability improvement without measured, comparable runs.
+
+  Transition: Return to slide 16 with the proposal awaiting a decision.
+decorations:
+  permalink: false
+  logo: white
+
+---
+title: 'Who gets to decide?'
+content:
+  - <span class="talk@eyebrow">04 / Keep the person in control</span>
+  - <span class="talk@pending">Pending integration · proposal diff + approval/rejection capture</span>
+items:
+  entries:
+    - title: Agent · propose
+      text: Show additions, removals, preserved choices, and trade-offs.
+      className:
+        root: talk@role talk@agent talk@compact-item
+    - title: Person · decide
+      text: Approve, reject, or ask for a revision.
+      className:
+        root: talk@role talk@person talk@compact-item
+    - title: Application · enforce
+      text: Commit only the approved change against current state.
+      className:
+        root: talk@role talk@app talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Approval must govern the actual state change.
+
+  Time: 180 seconds.
+
+  Demo D: 30-second explanation plus 150-second control sequence. Reject once: the saved agenda must remain unchanged. Revise, inspect, then approve. The app must verify approval against the specific proposal and current agenda, even if a tool description is misleading. If the UI changes while approval is pending, require a refreshed proposal.
+
+  Transition: What happens when the request cannot be completed?
+decorations:
+  permalink: false
+
+---
+title: 'Failure should help the next step'
+content:
+  - <span class="talk@pending">Pending integration · real conflict or verified unavailable field</span>
+items:
+  entries:
+    - title: Conflict
+      text: Identify the overlapping sessions; preserve saved choices.
+      className:
+        root: talk@compact-item
+    - title: Missing information
+      text: Say what is unknown; ask for a preference or relax a constraint.
+      className:
+        root: talk@compact-item
+    - title: Recovery
+      text: Return a useful next action, not a false success.
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Explain constraints without inventing facts.
+
+  Time: 90 seconds.
+
+  Choose the failure from the reviewed event snapshot. Do not assume recording availability is missing, or invent capacity, prices, or reservations. A proposed conflict scenario is acceptable planning material; it is not an observed result. After a failed write, verify whether any state changed before retrying.
+
+  Transition: Even a successful-looking run needs an outcome check.
+
+  Sources (checked 2026-10-12):
+  - https://developer.chrome.com/docs/ai/webmcp/build-tools
+decorations:
+  permalink: false
+
+---
+title: '“Done” is a claim'
+content:
+  - <span class="talk@eyebrow">05 / Prove the task succeeded</span>
+  - <span class="talk@pending">Pending integration · persisted agenda + evaluation output</span>
+items:
+  entries:
+    - title: Application tests
+      text: Rules, persistence, rejection, and stale approvals.
+      className:
+        root: talk@compact-item
+    - title: Model evaluations
+      text: Repeat journeys; inspect final constraints and trade-offs.
+      className:
+        root: talk@compact-item
+    - title: Browser integration
+      text: Real client, tool discovery, UI agreement, and reload.
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Verify the saved outcome, not just the call log.
+
+  Time: 140 seconds.
+
+  Read back the agenda after reloading. All session IDs must exist in the reviewed dataset; selected times must not overlap; original selections must survive unless an explicitly approved replacement permits a change. Rejection must preserve the original agenda. Report expected assertions separately from actual results; no scores exist yet.
+
+  Transition: Then look for journeys the call log never captured.
+
+  Sources (checked 2026-10-12):
+  - https://developer.chrome.com/docs/ai/webmcp/evals
+decorations:
+  permalink: false
+
+---
+title: 'Learn from journeys that fail'
+content:
+  - <span class="talk@pending">Pending integration · local capability report + repeat evaluation</span>
+items:
+  entries:
+    - title: Observe the gap
+      text: Record the unmet capability and minimal local context.
+      className:
+        root: talk@compact-item
+    - title: Improve the contract
+      text: Review descriptions, missing actions, and recovery paths.
+      className:
+        root: talk@compact-item
+    - title: Evaluate again
+      text: Repeat the failed journey after the change.
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Invocation logs do not capture every unmet need.
+
+  Time: 100 seconds.
+
+  Our intended report is local and reviewed, not an automatic external support ticket. Include the goal, available capabilities, and failure category; omit secrets and unrelated conversation history. A report is evidence to investigate, not a mandate to implement whatever an agent requests. This is an application design inspired by feedback-loop experiments, not a standard WebMCP reporting API.
+
+  Transition: Close with a change the audience can try on Monday.
+
+  Sources (checked 2026-10-12):
+  - https://bandarra.me/posts/webmcp-feedback-loop
+decorations:
+  permalink: false
+
+---
+title: 'Design for the agent. Keep the person in control.'
+content:
+  - Start with your application. Keep its rules. Make the outcome visible.
+items:
+  entries:
+    - title: Understandable capabilities
+      text: Choose one existing user journey.
+      className:
+        root: talk@role talk@app talk@compact-item
+    - title: Controllable actions
+      text: Expose a few tools; enforce meaningful approval.
+      className:
+        root: talk@role talk@person talk@compact-item
+    - title: Verifiable outcomes
+      text: Read the final state and evaluate the constraints.
+      className:
+        root: talk@role talk@agent talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Understandable capabilities, controllable actions, verifiable outcomes.
+
+  Time: 100 seconds.
+
+  Return to the conference-day request. The success criterion is a useful, conflict-free, approved agenda—not a persuasive answer. Point to the reference appendix and repository. Integration remains pending; do not advertise an unavailable live demo. The final thanks/contact slides fit within this closing allocation.
+
+  Transition: Thank the audience; Q&A is outside the 30-minute slot.
+decorations:
+  permalink: false
+
+---
+layout: end
+notes: |-
+  Takeaway: Thank you.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  Pause briefly. This slide is included in the preceding closing time.
+
+  Transition: Show contact details.
+decorations:
+  permalink: false
+
+---
+layout: byebye
+notes: |-
+  Takeaway: Continue the conversation.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  Use the shared contact slide. The appendix follows for questions, not as part of the timed narrative.
+
+  Transition: Open the relevant backup slide only if useful.
+decorations:
+  permalink: false
+
+---
+layout: separator
+title: 'Appendix'
+subtitle: Optional detail · setup · evidence · references
+options:
+  background: nf-midnight
+  foreground: white
+notes: |-
+  Takeaway: The main talk ends before this section.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  Keep the following material out of the timed run.
+
+  Transition: Choose a topic.
+decorations:
+  permalink: false
+  logo: white
+
+---
+title: 'A full schema needs the full contract'
+content:
+  - <span class="talk@pending">Pending integration · complete app tool schema and source commit</span>
+items:
+  entries:
+    - title: Inputs
+      text: Real session IDs, explicit required fields, bounded values.
+      className:
+        root: talk@compact-item
+    - title: State
+      text: Allowed starting state, approval boundary, stale-state behaviour.
+      className:
+        root: talk@compact-item
+    - title: Outputs
+      text: Applied state or proposal ID; actionable failure details.
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Schemas must match the implementation.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  This slot holds the full registered schema once the app exists. Check runtime input validation, authorization, and side effects against each exposed operation. A read-only hint must describe actual behaviour. Avoid a generic execute-anything tool.
+
+  Transition: Return to slide 14.
+
+  Sources (checked 2026-10-12):
+  - https://developer.chrome.com/docs/ai/webmcp/imperative-api
+decorations:
+  permalink: false
+
+---
+title: 'WebMCP setup is part of the demo'
+content:
+  - Experimental / evolving API · verify support before each event
+items:
+  entries:
+    - title: Documented support · 12 Oct 2026
+      text: Chrome origin trial from 149; local testing flag available.
+      className:
+        root: talk@compact-item
+    - title: Local setup
+      text: chrome://flags/#enable-webmcp-testing → enable → relaunch.
+      className:
+        root: talk@compact-item
+    - title: Rehearsed environment
+      text: 'Pending: exact browser build, client, model, and app commit.'
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Documented availability is not evidence of a rehearsed integration.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  The Chrome overview was updated 2026-10-07. This deck records a documentation check, not a successful WebMCP run. Record the exact environment, feature availability, origin-trial/flag settings, model identifier, and successful client integration before rehearsal. If unsupported, retain the human UI and use a clearly labelled recorded fallback only once it exists.
+
+  Transition: Return to slide 15.
+
+  Sources (checked 2026-10-12):
+  - https://developer.chrome.com/docs/ai/webmcp
+decorations:
+  permalink: false
+
+---
+title: 'A loop needs an exit'
+content:
+  - The UI must show stopped, failed, pending, or completed.
+items:
+  entries:
+    - title: Bound the work
+      text: Limit turns, elapsed time, and repeated failures.
+      className:
+        root: talk@compact-item
+    - title: Cancel cooperatively
+      text: Propagate cancellation to in-flight operations.
+      className:
+        root: talk@compact-item
+    - title: Check the outcome
+      text: Cancellation does not undo a completed mutation.
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Stopping orchestration and reverting state are different operations.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  The app must retain the correct call/result association and expose a stop control. A timeout should produce a visible state, not an endless spinner. After interruption, read the actual agenda before retrying. Budget values belong to the real app; the stage runbook uses an independent stall cutoff.
+
+  Transition: Return to slide 9.
+decorations:
+  permalink: false
+
+---
+title: 'The loop and the model can live apart'
+content:
+  - Conceptual architecture · not a claim about the pending app
+items:
+  entries:
+    - title: Browser
+      text: Conversation state, UI, tool dispatch, user interaction.
+      className:
+        root: talk@role talk@agent talk@compact-item
+    - title: Server
+      text: Credentials, authorization, durable writes, remote-model access.
+      className:
+        root: talk@role talk@app talk@compact-item
+    - title: Shared rules
+      text: Human actions and agent calls follow the same constraints.
+      className:
+        root: talk@role talk@person talk@compact-item
+  horizontal: true
+  className: talk@compact-items
+notes: |-
+  Takeaway: Client-side orchestration does not imply local inference.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  This is one possible architecture. A server-side loop can also coordinate browser tools; choose based on the journey. Never embed provider secrets in shipped frontend code. Mark the implemented architecture after app integration.
+
+  Transition: Return to slide 8.
+
+  Sources (checked 2026-10-12):
+  - https://bandarra.me/posts/bringing-the-agent-loop-to-the-web
+decorations:
+  permalink: false
+
+---
+title: 'Keep the dataset honest'
+content:
+  - DevFest Venezia · event data integration pending
+items:
+  entries:
+    - title: Review a snapshot
+      text: Edition, source URLs, capture date, and dataset revision.
+      className:
+        root: talk@compact-item
+    - title: Preserve event structure
+      text: Time zone, tracks, languages, workshops, speakers, and breaks.
+      className:
+        root: talk@compact-item
+    - title: Label the rehearsal
+      text: 2025 data must never appear as a 2026 programme.
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Real data needs provenance and an edition label.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  The supplied event URLs could not all be retrieved during preparation; do not infer that the 2026 programme is absent. A human-reviewed local dataset is still required. Rehearsal should not depend on the official website being reachable. Check simultaneous tracks, multi-speaker sessions, and time interpretation.
+
+  Transition: Return to slide 4.
+decorations:
+  permalink: false
+
+---
+title: 'Approval belongs to the application'
+content:
+  - A schema or annotation is not an authorization check.
+items:
+  entries:
+    - title: Propose
+      text: Create an inspectable change tied to the current agenda.
+      className:
+        root: talk@compact-item
+    - title: Approve
+      text: Record the person’s decision for that exact change.
+      className:
+        root: talk@compact-item
+    - title: Commit
+      text: Recheck rules and current state; reject a stale proposal.
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: A tool cannot approve its own meaningful change.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  Test direct tool calls that attempt to skip approval. Rejection, cancellation, and stale-state detection must not accidentally persist a proposal. Show revision rather than silently applying a different change. These are intended acceptance criteria until the app is available.
+
+  Transition: Return to slide 16.
+decorations:
+  permalink: false
+
+---
+title: 'Evaluate constraints, not a preferred sentence'
+content:
+  - <span class="talk@pending">Pending integration · measured results; no scores reported</span>
+items:
+  entries:
+    - title: Happy path
+      text: Valid sessions · no overlap · saved choices preserved.
+      className:
+        root: talk@compact-item
+    - title: Control and recovery
+      text: Reject unchanged · revise · approve · reload · cancel safely.
+      className:
+        root: talk@compact-item
+    - title: Truthfulness
+      text: Missing information stays unknown; failures stay visible.
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: An evaluation needs a start state, assertions, and repeatable conditions.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  Include invalid IDs, duplicate calls, stale proposals, impossible requests, client discovery failure, and a tool result that disagrees with the UI. Distinguish deterministic rule tests, repeated model journeys, and real client/browser integration. Record model, prompts, dataset, app revision, number of runs, and failures.
+
+  Transition: Return to slide 18.
+
+  Sources (checked 2026-10-12):
+  - https://developer.chrome.com/docs/ai/webmcp/evals
+decorations:
+  permalink: false
+
+---
+title: 'Evidence to add before rehearsal'
+content:
+  - Pending integration · expected evidence, not captured results
+items:
+  entries:
+    - title: Interface + loop
+      text: Programme, annotated labels, loop excerpt, activity panel.
+      className:
+        root: talk@compact-item
+    - title: Tools + control
+      text: Form, registration, visiting trace, proposal diff, rejection.
+      className:
+        root: talk@compact-item
+    - title: Outcome + feedback
+      text: Reloaded agenda, eval output, capability report, recordings.
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: The PDF must show demo outcomes once captures exist.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  Use this checklist alongside speaker-notes.md. Replace slots with real captures and retain edition labels. Capture both rejection and approved persistence. Never render an invented screenshot that looks like the real application. Until then, share this PDF as a draft awaiting integration.
+
+  Transition: Open the source references.
+decorations:
+  permalink: false
+
+---
+title: 'References · APIs and evaluation'
+content:
+  - <span class="talk@eyebrow">Documentation checked · 12 October 2026</span>
+items:
+  entries:
+    - title: WebMCP overview
+      text: https://developer.chrome.com/docs/ai/webmcp
+      className:
+        root: talk@compact-item
+    - title: Imperative API
+      text: https://developer.chrome.com/docs/ai/webmcp/imperative-api
+      className:
+        root: talk@compact-item
+    - title: Declarative API
+      text: https://developer.chrome.com/docs/ai/webmcp/declarative-api
+      className:
+        root: talk@compact-item
+    - title: Test WebMCP with Evals
+      text: https://developer.chrome.com/docs/ai/webmcp/evals
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Use current primary sources for API details.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  The imperative page was updated 2026-09-21, declarative page 2026-09-25, and evals page 2026-05-28. Recheck before replacing pending app excerpts. The full source register includes inaccessible supplied references.
+
+  Transition: Continue to design references.
+decorations:
+  permalink: false
+
+---
+title: 'References · journeys and feedback'
+content: []
+items:
+  entries:
+    - title: Build useful tools
+      text: https://developer.chrome.com/docs/ai/webmcp/build-tools
+      className:
+        root: talk@compact-item
+    - title: The browser agent loop
+      text: https://bandarra.me/posts/bringing-the-agent-loop-to-the-web
+      className:
+        root: talk@compact-item
+    - title: Closing the feedback loop
+      text: https://bandarra.me/posts/webmcp-feedback-loop
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Tools should serve the journey.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  These sources informed the narrative; the companion application has not been captured or evaluated. The feedback proposal is experimental and does not define a standard reporting API.
+
+  Transition: Continue to interaction references.
+decorations:
+  permalink: false
+
+---
+title: 'References · interaction and accessibility'
+content: []
+items:
+  entries:
+    - title: Interaction modes
+      text: https://www.kulikowski.me/blog/the-spectrum-of-agentic-interactions
+      className:
+        root: talk@compact-item
+    - title: Bring your own agent
+      text: https://www.kulikowski.me/blog/bring-your-own-agent
+      className:
+        root: talk@compact-item
+    - title: Accessibility
+      text: https://www.kulikowski.me/blog/accessibility-the-agentic-webs-most-overlooked-gain
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: Different interaction modes can coexist.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  Treat these as design perspectives. Do not repeat unconditional claims that accessibility solves agent interaction or structured tools guarantee success.
+
+  Transition: Share the deck repository.
+decorations:
+  permalink: false
+
+---
+title: 'Source and integration status'
+content: []
+items:
+  entries:
+    - qr: https://github.com/Puppo/talks
+      title: Presentation repository
+      text: github.com/Puppo/talks
+      className:
+        root: talk@compact-item
+    - title: Companion app
+      text: Pending integration · URL, source commit, and captures.
+      className:
+        root: talk@compact-item
+    - title: This edition
+      text: Draft PDF · no demo results or performance claims.
+      className:
+        root: talk@compact-item
+  horizontal: false
+  className: talk@compact-items
+notes: |-
+  Takeaway: The deck is reusable; demonstration evidence remains pending.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  The repository link is real; the new deck has not been published. Do not add an invented companion repository or a public deck URL until available. All app integration items are listed in the speaker materials.
+
+  Transition: Return to the cover.
+decorations:
+  permalink: false
+
+---
+layout: cover
+className:
+  qr: talk@unpublished-qr
+notes: |-
+  Takeaway: Your next user is an AI agent.
+
+  Time: Optional / outside the 30-minute narrative.
+
+  Closing placeholder for your-next-user-is-an-ai-agent.
+
+  Transition: End.
+decorations:
+  permalink: false
