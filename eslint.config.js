@@ -1,21 +1,14 @@
 import { cowtech } from '@cowtech/eslint-config'
+import { fixupConfigRules } from '@eslint/compat'
 
 export default [
-  ...cowtech,
+  // Cowtech's legacy plugins still use rule APIs removed in ESLint 10.
+  ...fixupConfigRules(cowtech),
   {
     languageOptions: {
       parserOptions: {
         projectService: true
       }
     }
-  },
-  {
-    // Freya transpiles .tsx to .js without rewriting import specifiers, so imports must use .js
-    rules: {
-      'import/extensions': [2, 'ignorePackages', { js: 'always', ts: 'always', tsx: 'never' }]
-    }
-  },
-  {
-    ignores: ['.freya/*']
   }
 ]

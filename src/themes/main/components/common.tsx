@@ -1,7 +1,7 @@
 import { Progress, QRCode, Svg, cleanCssClasses, useClient, useSlide } from '@perseveranza-pets/freya/client'
-import { type ComponentChildren, type JSX, type VNode } from 'preact'
-import { Text } from '../../common/components/common.js'
-import { SvgIcon } from '../../common/components/icons.js'
+import { type ComponentChildren, type CSSProperties, type VNode } from 'preact'
+import { Text } from '../../common/components/common.tsx'
+import { SvgIcon } from '../../common/components/icons.tsx'
 import { type Slide } from '../../common/models.ts'
 
 interface SlideWrapperProps {
@@ -9,7 +9,7 @@ interface SlideWrapperProps {
   index: number
   defaultLogoColor?: 'black' | 'white'
   className?: string
-  style?: JSX.CSSProperties
+  style?: CSSProperties
   children: ComponentChildren | ComponentChildren[]
 }
 
@@ -82,6 +82,7 @@ export function SlideWrapper({ slide, index, style, className, defaultLogoColor,
   }
 
   // If you want to show QR again, remove this
+  slide.decorations ??= { className: {} }
   slide.decorations.permalink = false
 
   return (

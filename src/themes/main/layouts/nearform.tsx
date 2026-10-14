@@ -1,7 +1,7 @@
 import { Svg, cleanCssClasses, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
 import { type Slide } from '../../common/models.ts'
-import { SlideWrapper } from '../components/common.js'
+import { SlideWrapper } from '../components/common.tsx'
 
 const stats = [
   ['10+', 'Years experience'],
@@ -19,6 +19,7 @@ const openSource = [
 
 export default function NearformLayout({ className, style }: SlideProps): VNode {
   const { slide, index } = useSlide<Slide>()
+  slide.decorations ??= { className: {} }
 
   if (typeof slide.decorations.logo === 'undefined') {
     slide.decorations.logo = 'white'

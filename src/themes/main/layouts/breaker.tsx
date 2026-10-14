@@ -1,8 +1,8 @@
 import { Image, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
-import { Text } from '../../common/components/common.js'
+import { Text } from '../../common/components/common.tsx'
 import { type BreakerVariant, type Slide } from '../../common/models.ts'
-import { Accent, SlideWrapper } from '../components/common.js'
+import { Accent, SlideWrapper } from '../components/common.tsx'
 
 const backgrounds: Record<BreakerVariant, string> = {
   green: '@theme/bg-wave-green.webp',
@@ -16,6 +16,7 @@ export default function BreakerLayout({ className, style }: SlideProps): VNode {
     resolveImage
   } = useClient()
   const { slide, index } = useSlide<Slide>()
+  slide.decorations ??= { className: {} }
 
   const {
     title,

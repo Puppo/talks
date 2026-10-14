@@ -1,8 +1,8 @@
 import { cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
-import { Text } from '../../common/components/common.js'
+import { Text } from '../../common/components/common.tsx'
 import { type Slide } from '../../common/models.ts'
-import { SlideWrapper } from '../components/common.js'
+import { SlideWrapper } from '../components/common.tsx'
 
 export default function ImageLayout({ className, style }: SlideProps): VNode {
   const {
@@ -10,6 +10,7 @@ export default function ImageLayout({ className, style }: SlideProps): VNode {
     resolveImage
   } = useClient()
   const { slide, index } = useSlide<Slide>()
+  slide.decorations ??= { className: {} }
 
   const {
     title,
