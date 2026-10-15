@@ -36,7 +36,6 @@
 }
 
 @layer colors {
-  /* stylelint-disable-next-line selector-class-pattern */
   .theme@ {
     @apply color(white, freya-color-white);
     @apply color(black, freya-color-black);

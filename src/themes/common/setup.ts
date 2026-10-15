@@ -1,8 +1,8 @@
 import { resolve } from 'node:path'
 import { type BuildContext } from '@perseveranza-pets/dante'
 import { ensureRenderedCode, resolveImageUrl, type Talk, type Theme } from '@perseveranza-pets/freya'
-import { wrapTalkClasses } from './components/common.js'
-import { resolveIcon } from './components/icons.js'
+import { wrapTalkClasses } from './components/common.tsx'
+import { resolveIcon } from './components/icons.tsx'
 import { type DecorationsClasses, type ItemClasses, type Slide, type SlideClasses } from './models.ts'
 
 interface Icon {
@@ -28,7 +28,7 @@ const baseIcons = [
   'lightbulb@free/solid:lightbulb',
   'puzzle-piece@free/solid:puzzle-piece',
   'network-wired@free/solid:network-wired',
-  'chart-network@free/regular:chart-network',
+  'chart-network@free/solid:diagram-project',
   'chevron-left@free/solid:chevron-left',
   'chevron-right@free/solid:chevron-right',
   'chevron-up@free/solid:chevron-up',
@@ -61,7 +61,7 @@ export async function setupServer(context: BuildContext, theme: Theme, talk: Tal
 
     for (const item of slide.items?.entries ?? []) {
       if (item.code) {
-        await ensureRenderedCode(item.code)
+        await ensureRenderedCode(item.code, context.extensions.freya.exportingFormat ?? 'html')
       }
 
       if (item.icon) {
@@ -82,7 +82,7 @@ export async function setupServer(context: BuildContext, theme: Theme, talk: Tal
     for (const grid of slide.grids ?? []) {
       for (const item of grid.entries ?? []) {
         if (item.code) {
-          await ensureRenderedCode(item.code)
+          await ensureRenderedCode(item.code, context.extensions.freya.exportingFormat ?? 'html')
         }
 
         if (item.icon) {
@@ -120,7 +120,7 @@ export async function setupServer(context: BuildContext, theme: Theme, talk: Tal
         }
       }
 
-      await ensureRenderedCode(slide.code)
+      await ensureRenderedCode(slide.code, context.extensions.freya.exportingFormat ?? 'html')
     }
 
     if (slide.highlight?.className) {

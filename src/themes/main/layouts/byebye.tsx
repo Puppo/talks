@@ -1,9 +1,9 @@
 import { Image, cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
 import { Fragment, type VNode } from 'preact'
-import { Text } from '../../common/components/common.js'
-import { Item } from '../../common/components/item.js'
+import { Text } from '../../common/components/common.tsx'
+import { Item } from '../../common/components/item.tsx'
 import { type Slide } from '../../common/models.ts'
-import { Accent, SlideWrapper } from '../components/common.js'
+import { Accent, SlideWrapper } from '../components/common.tsx'
 
 export default function HelloLayout({ className, style }: SlideProps): VNode {
   const {

@@ -29,13 +29,14 @@ Every skill follows the standard `name` + `description` frontmatter so any agent
 | `src/talks/<slug>/` | One folder per real talk. **Slug is lowercase kebab-case.** |
 | `src/talks/<slug>/info.yml` | Talk metadata: `title`, `abstract`, `config`, references to shared `author` / `company`. |
 | `src/talks/<slug>/slides.yml` | Deck content as a YAML document with `---` separators between slides. |
-| `src/talks/<slug>/talk.css` | Per-talk CSS overrides, scoped under `.talk@`. Empty for most talks. |
+| `src/talks/<slug>/talk.css` | Per-talk CSS overrides, selectors prefixed with `.talk\@`. Empty for most talks. |
 | `src/talks/<slug>/assets/` | All images for the talk — `.webp` only in committed output. |
 | `src/talks/<slug>/assets/__originals/` | Source JPG/PNG before conversion. |
 | `src/talks/common.yml` | Shared `config`, `author`, `company`. Talks reference by key (`common.author`, `common.company`, `common.config`) — never duplicate. |
 | `src/themes/main/` | Freya theme: `layouts/`, `components/`, `assets/`, `theme.yml`. Don't edit casually. |
 | `src/themes/common/` | Shared theme content. |
-| `src/scripts/` | TypeScript Node scripts run via `node --import tsx` (verify, generate-cfp, convert-images, postdeploy, copy-image). |
+| `src/build/cli.ts` | Custom `freya` CLI commands (`generate-cfp`, `verify`), loaded by Freya via `setupCLI`. |
+| `src/scripts/` | Standalone Node scripts (convert-images, copy-image). |
 | `cfp-abstracts.json` | Generated CFP abstracts (one entry per talk). Regenerated via `npm run generate-cfp`. |
 | `cfp-generic.json` | Hand-curated speaker info (email, bio, links). |
 
@@ -123,8 +124,7 @@ Always reference **`common.author`** and **`common.company`** rather than inlini
 
 ### `talk.css` conventions
 
-- Always start with the `/* stylelint-disable-next-line selector-class-pattern */` directive on line 1.
-- Scope per-talk selectors under `.talk@ { … }` (e.g. `&narrow-grid { row-gap: 0; }`).
+- Prefix per-talk selectors with `.talk\@` (e.g. `.talk\@narrow-grid { row-gap: 0; }`). Native CSS nesting is fine for `&:hover`, `& > x`, `&.x`; Sass-style concatenation (`&__x`, `&--x`) is not supported.
 - Most talks only need a handful of overrides — keep the file empty unless you actually need it.
 
 ## Quality gates
