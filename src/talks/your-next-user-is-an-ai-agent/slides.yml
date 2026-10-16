@@ -114,6 +114,8 @@ notes: |-
 decorations:
   permalink: false
   logo: white
+className:
+  root: talk@stage-dark
 
 ---
 title: 'What did the agent need to understand?'
@@ -236,6 +238,8 @@ notes: |-
 decorations:
   permalink: false
   logo: white
+className:
+  root: talk@stage-dark
 
 ---
 layout: separator
@@ -258,6 +262,8 @@ notes: |-
 decorations:
   permalink: false
   logo: black
+className:
+  root: talk@stage-green
 
 ---
 title: 'Make capabilities explicit'
@@ -312,13 +318,13 @@ code:
   className:
     root: talk@code
   rendered: |-
-    <pre class="freya@code talk@code" style="--dante-bg: #282c34; --dante-fg: #abb2bf"><span class="freya@code__line talk@code-line">&lt;form toolname=&quot;search_sessions&quot;</span>
-    <span class="freya@code__line talk@code-line">  tooldescription=&quot;Find conference sessions&quot;</span>
-    <span class="freya@code__line talk@code-line">  action=&quot;/sessions&quot; method=&quot;get&quot;&gt;</span>
-    <span class="freya@code__line talk@code-line">  &lt;label for=&quot;query&quot;&gt;Topic&lt;/label&gt;</span>
-    <span class="freya@code__line talk@code-line">  &lt;input id=&quot;query&quot; name=&quot;query&quot; type=&quot;search&quot; required&gt;</span>
-    <span class="freya@code__line talk@code-line">  &lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;</span>
-    <span class="freya@code__line talk@code-line">&lt;/form&gt;</span></pre>
+    <pre class="freya@code talk@code" style="--dante-bg: #282c34; --dante-fg: #abb2bf"><span class="line talk@code-line">&lt;form toolname=&quot;search_sessions&quot;</span>
+    <span class="line talk@code-line">  tooldescription=&quot;Find conference sessions&quot;</span>
+    <span class="line talk@code-line">  action=&quot;/sessions&quot; method=&quot;get&quot;&gt;</span>
+    <span class="line talk@code-line">  &lt;label for=&quot;query&quot;&gt;Topic&lt;/label&gt;</span>
+    <span class="line talk@code-line">  &lt;input id=&quot;query&quot; name=&quot;query&quot; type=&quot;search&quot; required&gt;</span>
+    <span class="line talk@code-line">  &lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;</span>
+    <span class="line talk@code-line">&lt;/form&gt;</span></pre>
 notes: |-
   Takeaway: Form annotations can describe an existing interaction.
 
@@ -386,6 +392,8 @@ notes: |-
 decorations:
   permalink: false
   logo: white
+className:
+  root: talk@stage-dark
 
 ---
 title: 'Who gets to decide?'
@@ -597,6 +605,8 @@ notes: |-
 decorations:
   permalink: false
   logo: white
+className:
+  root: talk@stage-dark
 
 ---
 title: 'A full schema needs the full contract'

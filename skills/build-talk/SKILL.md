@@ -71,10 +71,8 @@ Either from the user prompt or by asking explicitly:
 4. **Write `slides.yml`** by copying `skills/build-talk/references/scaffold-slides.yml`. Replace the placeholder comment on the closing cover with `<slug>` so a future agent can locate it. Leave `# Add content slides here …` markers untouched.
 5. **Write `talk.css`** with the standard starter:
    ```css
-   /* stylelint-disable-next-line selector-class-pattern */
-   .talk@ {
-     /* Add per-talk overrides here when needed. Keep empty otherwise. */
-   }
+   /* Add per-talk overrides here when needed. Keep empty otherwise. */
+   /* .talk\@my-class { row-gap: 0; } */
    ```
 6. **Run the quality gates** (always; do not skip):
    - `npm run lint -- src/talks/<slug>`

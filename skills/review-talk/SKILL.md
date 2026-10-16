@@ -118,9 +118,8 @@ Flag inconsistencies that would make the deck look uncoordinated when projected 
 
 ### 10. `talk.css` shape
 
-- Must start with `/* stylelint-disable-next-line selector-class-pattern */` on line 1.
-- Per-talk selectors must be nested under `.talk@ { … }`.
-- ⚠️ Flag an empty `.talk@ { … }` block — it can be replaced with an empty file or omitted.
+- Per-talk selectors must be prefixed with `.talk\@` (e.g. `.talk\@narrow-grid`); Sass-style `&__x` / `&--x` concatenation is not supported.
+- ⚠️ Flag an empty `talk.css` wrapper block — it can be replaced with an empty file or omitted.
 
 ## Output format
 

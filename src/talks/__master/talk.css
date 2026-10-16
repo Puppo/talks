@@ -1,31 +1,26 @@
-/* stylelint-disable-next-line selector-class-pattern */
-.talk@ {
-  &quote {
-    &__primary-icon {
-      --nf-icon-primary-color: red;
-    }
+.talk\@quote__primary-icon {
+  --nf-icon-primary-color: red;
+}
 
-    &__secondary-icon {
-      --nf-icon-primary-color: green;
-    }
-  }
+.talk\@quote__secondary-icon {
+  --nf-icon-primary-color: green;
+}
 
-  &grid {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1ch;
-  }
+.talk\@grid {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1ch;
+}
 
-  &line-not-highlighted {
-    --dante-bg: red;
-    opacity: 1;
-  }
+.talk\@line-not-highlighted {
+  --dante-bg: red;
+  opacity: 1;
+}
 
-  &line-highlighted {
-    --dante-bg: green;
-  }
+.talk\@line-highlighted {
+  --dante-bg: green;
+}
 
-  &highlight {
-    background-color: var(--nf-color-purple);
-    color: var(--nf-color-white);
-  }
+.talk\@highlight {
+  background-color: var(--nf-color-purple);
+  color: var(--nf-color-white);
 }

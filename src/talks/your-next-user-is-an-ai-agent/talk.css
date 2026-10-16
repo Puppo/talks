@@ -1,59 +1,67 @@
 /* stylelint-disable-next-line selector-class-pattern */
-.talk@ {
-  &eyebrow {
-    color: var(--nf-color-midnight-50);
-    font-size: 0.6em;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
+.talk\@eyebrow {
+  color: var(--nf-color-midnight-50);
+  font-size: 0.6em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
 
-  &pending {
-    display: inline-block;
-    padding: 0.15em 0.5em;
-    border-left: 0.15em solid var(--nf-color-purple);
-    background-color: var(--nf-color-purple-10);
-    color: var(--nf-color-midnight);
-    font-size: 0.65em;
-    font-weight: 500;
-  }
+.talk\@pending {
+  display: inline-block;
+  padding: 0.15em 0.5em;
+  border-left: 0.15em solid var(--nf-color-purple);
+  background-color: var(--nf-color-purple-10);
+  color: var(--nf-color-midnight);
+  font-size: 0.65em;
+  font-weight: 500;
+}
 
-  &role {
-    padding-left: 0.2--sp;
-    border-left: 0.035--sp solid var(--nf-color-blue);
-  }
+.talk\@role {
+  padding-left: 0.2--sp;
+  border-left: 0.035--sp solid var(--nf-color-blue);
+}
 
-  &person {
-    border-color: var(--nf-color-green);
-  }
+.talk\@person {
+  border-color: var(--nf-color-green);
+}
 
-  &agent {
-    border-color: var(--nf-color-purple);
-  }
+.talk\@agent {
+  border-color: var(--nf-color-purple);
+}
 
-  &app {
-    border-color: var(--nf-color-blue);
-  }
+.talk\@app {
+  border-color: var(--nf-color-blue);
+}
 
-  &compact-items {
-    row-gap: 0.15--sp;
-  }
+.talk\@compact-items {
+  row-gap: 0.15--sp;
+}
 
-  &compact-item {
-    min-height: 0.6--sp;
-  }
+.talk\@compact-item {
+  min-height: 0.6--sp;
+}
 
-  &code {
-    font-size: 0.9em;
-  }
+.talk\@code {
+  font-size: 0.9em;
+}
 
-  &code-line {
-    display: block;
-    height: auto;
-    padding: 0.05em 1.2em;
-  }
+.talk\@code .talk\@code-line {
+  display: block;
+  height: auto;
+  padding: 0.05em 1.2em;
+}
 
-  &unpublished-qr {
-    display: none;
-  }
+.talk\@unpublished-qr {
+  display: none;
+}
+
+.talk\@stage-dark {
+  background-color: var(--nf-color-midnight);
+  color: var(--nf-color-white);
+}
+
+.talk\@stage-green {
+  background-color: var(--nf-color-green);
+  color: var(--nf-color-midnight);
 }
