@@ -85,7 +85,11 @@ export function SlideWrapper({ slide, index, style, className, defaultLogoColor,
   slide.decorations.permalink = false
 
   return (
-    <article className={cleanCssClasses('freya@slide', foregroundClass, backgroundClass, className)} style={style}>
+    <article
+      data-pptx="group"
+      className={cleanCssClasses('freya@slide', foregroundClass, backgroundClass, className)}
+      style={style}
+    >
       {children}
       <Progress current={index} />
       {decorations !== false && <Decorations defaultLogoColor={defaultLogoColor} />}

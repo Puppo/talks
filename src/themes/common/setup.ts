@@ -25,6 +25,7 @@ function camelCase(source: any): string {
 const baseIcons = [
   'desktop@free/solid:desktop',
   'file-pdf@free/solid:file-pdf',
+  'file-powerpoint@free/solid:file-powerpoint',
   'lightbulb@free/solid:lightbulb',
   'puzzle-piece@free/solid:puzzle-piece',
   'network-wired@free/solid:network-wired',

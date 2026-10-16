@@ -595,6 +595,7 @@
   display: inline-block;
   margin-top: 0.1--sp;
   font-size: 10--pt;
+  white-space: nowrap;
 
   &,
   &:hover,

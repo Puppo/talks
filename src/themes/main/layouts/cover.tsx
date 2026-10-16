@@ -85,6 +85,17 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
               label: cleanCssClasses('theme@cover__qrs__qr__label')
             }}
           />
+          <QRCode
+            data={`${urls[isProduction ? 'production' : 'development']}/pptx/${id}.pptx`}
+            image={<SvgIcon name="file-powerpoint" className={cleanCssClasses('theme@cover__qrs__qr__image')} />}
+            imageRatio={1}
+            label="Download PPTX"
+            className={{
+              root: cleanCssClasses('theme@cover__qrs__qr', qrClassName),
+              code: cleanCssClasses('theme@cover__qrs__qr__code'),
+              label: cleanCssClasses('theme@cover__qrs__qr__label')
+            }}
+          />
         </aside>
       </div>
     </SlideWrapper>

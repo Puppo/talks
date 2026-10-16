@@ -48,6 +48,7 @@ Every skill follows the standard `name` + `description` frontmatter so any agent
 | Local dev (single talk) | `npm run dev -- --only <slug>` |
 | Production build | `npm run build` (runs lint + typecheck after) |
 | Export PDF | `npm run pdf` |
+| Export PowerPoint | `npm run pptx` (output in `pptx/`, gitignored) |
 | Verify slides with Playwright | `npm run verify -- --only <slug>` (single talk) or `npm run verify` (all) |
 | Check ESLint | `npm run lint` |
 | Check CSS | `npm run lint:css` |
