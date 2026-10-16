@@ -1,4 +1,4 @@
-import { writeFile } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { setTimeout as sleep } from 'node:timers/promises'
 import { type BuildContext } from '@perseveranza-pets/dante'
@@ -123,7 +123,25 @@ async function verify(id: string, compare: boolean, remote: boolean, delay: numb
   await referenceBrowser[0]?.close()
 }
 
+// Netlify only reads netlify.toml from the repository root, so when the site is built by Netlify itself
+// the redirects Freya writes into dist/deploy/netlify.toml would be ignored. Mirror them into the
+// publish directory as a _redirects file, which Netlify always honours.
+async function writeNetlifyRedirects(directory: string): Promise<void> {
+  const toml = await readFile(resolve(process.cwd(), directory, 'deploy/netlify.toml'), 'utf-8')
+  const lines = [...toml.matchAll(/from = "([^"]+)"\s+to = "([^"]+)"\s+status = (\d+)/g)].map(
+    ([, from, to, status]) => `${from} ${to} ${status}`
+  )
+
+  await writeFile(resolve(process.cwd(), directory, 'deploy/site/_redirects'), lines.join('\n') + '\n')
+}
+
 export const setupCLI: SetupCLI = (program: Command, logger: Logger) => {
+  program.commands
+    .find(command => command.name() === 'deploy')
+    ?.hook('postAction', async (command: Command) => {
+      await writeNetlifyRedirects(command.opts().directory)
+    })
+
   program
     .command('generate-cfp')
     .description('Generates CFP abstracts for the selected talks')

@@ -1,0 +1,7 @@
+# Settings for builds run by Netlify itself (git-based deploys). `npm run deploy` is for local CLI deploys.
+[build]
+  command = "npx freya deploy"
+  publish = "dist/deploy/site"
+
+[build.environment]
+  NODE_VERSION = "24"
