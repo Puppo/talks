@@ -2,8 +2,8 @@ import { cleanCssClasses, Code, Image, QRCode, useClient, useSlide } from '@pers
 import { Fragment, type ComponentChildren, type VNode } from 'preact'
 import { useCallback, useEffect, useMemo, useState } from 'preact/hooks'
 import { type Grid, type Item as ItemDefinition, type Items as ItemsDefinition } from '../models.ts'
-import { Text } from './common.js'
-import { SvgIcon } from './icons.js'
+import { Text } from './common.tsx'
+import { SvgIcon } from './icons.tsx'
 
 interface ItemProps extends ItemDefinition {
   horizontal?: boolean
@@ -149,7 +149,7 @@ export function Items({
       messageEvent.data.cancel = true
       setStep(step + delta)
     },
-    [step, validEntries, setStep]
+    [step, validEntries, setStep, index]
   )
 
   useEffect(() => {
@@ -162,7 +162,7 @@ export function Items({
     return () => {
       window.removeEventListener('freya:slide:changed', handleNavigation)
     }
-  }, [handleNavigation])
+  }, [navigator, presenter, sequence, handleNavigation])
 
   useEffect(() => {
     if (sequence !== true || navigator || presenter || typeof window === 'undefined') {
@@ -170,7 +170,7 @@ export function Items({
     }
 
     setStep(index === previousIndex - 1 ? validEntries.length - 1 : 0)
-  }, [index, previousIndex, setStep])
+  }, [index, previousIndex, navigator, presenter, sequence, validEntries, setStep])
 
   return (
     <div

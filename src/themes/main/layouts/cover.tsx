@@ -8,10 +8,10 @@ import {
   type SlideProps
 } from '@perseveranza-pets/freya/client'
 import { type VNode } from 'preact'
-import { Text } from '../../common/components/common.js'
-import { SvgIcon } from '../../common/components/icons.js'
+import { Text } from '../../common/components/common.tsx'
+import { SvgIcon } from '../../common/components/icons.tsx'
 import { type Slide } from '../../common/models.ts'
-import { Accent, SlideWrapper } from '../components/common.js'
+import { Accent, SlideWrapper } from '../components/common.tsx'
 
 export default function CoverLayout({ className, style }: SlideProps): VNode {
   const {
@@ -79,6 +79,17 @@ export default function CoverLayout({ className, style }: SlideProps): VNode {
             image={<SvgIcon name="file-pdf" className={cleanCssClasses('theme@cover__qrs__qr__image')} />}
             imageRatio={1}
             label="Download PDF"
+            className={{
+              root: cleanCssClasses('theme@cover__qrs__qr', qrClassName),
+              code: cleanCssClasses('theme@cover__qrs__qr__code'),
+              label: cleanCssClasses('theme@cover__qrs__qr__label')
+            }}
+          />
+          <QRCode
+            data={`${urls[isProduction ? 'production' : 'development']}/pptx/${id}.pptx`}
+            image={<SvgIcon name="file-powerpoint" className={cleanCssClasses('theme@cover__qrs__qr__image')} />}
+            imageRatio={1}
+            label="Download PPTX"
             className={{
               root: cleanCssClasses('theme@cover__qrs__qr', qrClassName),
               code: cleanCssClasses('theme@cover__qrs__qr__code'),

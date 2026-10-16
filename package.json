@@ -23,36 +23,40 @@
     "postbuild": "concurrently npm:lint npm:lint:css npm:typecheck",
     "server": "freya server",
     "pdf": "freya pdf",
+    "pptx": "freya pptx",
     "format": "prettier -w src",
     "lint": "eslint --cache",
     "lint:css": "stylelint --cache src/**/*.css",
     "typecheck": "tsc -p . --noEmit",
     "deploy": "freya deploy",
     "postdeploy": "cd dist/deploy && netlify deploy --site $NETLIFY_SITE_ID --dir site --prod",
-    "verify": "node --import tsx src/scripts/verify.ts",
+    "verify": "freya verify",
     "list": "find src/talks -type d -depth 1 -exec basename {} \\; | sort",
-    "convert-images": "node --import tsx src/scripts/convert-images.ts",
+    "convert-images": "node src/scripts/convert-images.ts",
     "optimize-images": "fd -e .webp -x cwebp {} -o {} -short",
     "fix-downloads-visibility": "nodemon -e jpg,png,webp --exec chflags nohidden .",
-    "generate-cfp": "node --import tsx src/scripts/generate-cfp.ts"
+    "generate-cfp": "freya generate-cfp"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.3.1",
     "@fortawesome/free-brands-svg-icons": "^7.3.1",
     "@fortawesome/free-regular-svg-icons": "^7.3.1",
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
-    "@perseveranza-pets/freya": "^0.74.2"
+    "@perseveranza-pets/dante": "^2.1.3",
+    "@perseveranza-pets/freya": "^1.1.3"
   },
   "devDependencies": {
-    "@cowtech/eslint-config": "^11.1.3",
-    "@cowtech/stylelint-config": "^2.0.5",
-    "@types/node": "^26.6.3",
-    "concurrently": "^10.0.5",
-    "eslint": "^9.39.5",
-    "prettier": "^3.9.9",
+    "@cowtech/eslint-config": "^12.0.1",
+    "@cowtech/stylelint-config": "^3.0.0",
+    "@eslint/compat": "^2.1.1",
+    "@types/node": "^26.6.5",
+    "concurrently": "^10.0.6",
+    "eslint": "^10.12.0",
+    "pino": "^10.3.1",
+    "playwright": "^1.63.0",
+    "prettier": "^3.9.10",
     "sharp": "^0.35.5",
-    "stylelint": "^17.15.0",
-    "tsx": "^4.23.15",
+    "stylelint": "^17.16.0",
     "typescript": "^6.0.3"
   }
 }

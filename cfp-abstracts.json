@@ -5,18 +5,43 @@
     "text": "Master Template\n\nMaster template for testing. Never deployed to production."
   },
   {
-    "name": "Vibe Coding: Let's follow the flow",
+    "name": "AI Agents Made Simple",
     "keyword": "cfp§2",
-    "text": "Vibe Coding: Let's follow the flow\n\nIn this talk, we will explore the concept of 'vibe coding' and how it can enhance our development process. We'll discuss the importance of maintaining a positive and collaborative atmosphere within our teams, and how this can lead to more effective problem-solving and innovation."
+    "text": "AI Agents Made Simple\n\nIn this talk, we will explore the capabilities of AI agents and how to use them effectively with LangChain."
+  },
+  {
+    "name": "AI in the Browser: Am I Still Waiting for It?",
+    "keyword": "cfp§3",
+    "text": "AI in the Browser: Am I Still Waiting for It?\n\nIn this talk, we will explore the current state of AI in the browser and discuss whether we are truly leveraging its potential or still waiting for it to fully materialize."
   },
   {
     "name": "ChromeDevTools—are you confident in your expertise?",
-    "keyword": "cfp§3",
-    "text": "ChromeDevTools—are you confident in your expertise?\n\nIn this talk, we will explore the capabilities of ChromeDevTools and how they can enhance our development workflow. We'll discuss the importance of mastering these tools to improve debugging, performance optimization, and overall productivity."
+    "keyword": "cfp§4",
+    "text": "ChromeDevTools—are you confident in your expertise?\n\nIn this talk, we will explore the capabilities of ChromeDevTools and how they can enhance our development workflow.We'll discuss the importance of mastering these tools to improve debugging, performance optimization, and overall productivity."
+  },
+  {
+    "name": "Chrome DevTools, for super fast SSR applications!",
+    "keyword": "cfp§5",
+    "text": "Chrome DevTools, for super fast SSR applications!\n\nIn this talk, we will explore the capabilities of ChromeDevTools and how use them to optimize the performance of server-side rendered (SSR) applications.We will cover techniques for accessibility and performance debugging and improvements."
+  },
+  {
+    "name": "Costruiamo agenti con ADK-js",
+    "keyword": "cfp§6",
+    "text": "Costruiamo agenti con ADK-js\n\nIn questo workshop, esploreremo le basi e le potenzialità di ADK-js per costruire agenti intelligenti."
+  },
+  {
+    "name": "Don't Trust Your Types: Type Testing with TSTyche",
+    "keyword": "cfp§7",
+    "text": "Don't Trust Your Types: Type Testing with TSTyche\n\nTypeScript can make a Fastify package feel safe while a small refactor silently erases its public contract. This talk introduces type testing with TSTyche and shows how to protect route inference, invalid usage, and TypeScript-version compatibility."
   },
   {
     "name": "React Compiler, how can you help me?",
-    "keyword": "cfp§4",
+    "keyword": "cfp§8",
     "text": "React Compiler, how can you help me?\n\nIn this talk, we will explore the capabilities of the React Compiler and how it can enhance our development workflow."
+  },
+  {
+    "name": "Vibe Coding: Let’s Follow the Flow",
+    "keyword": "cfp§9",
+    "text": "Vibe Coding: Let’s Follow the Flow\n\nIn this talk, we will explore the concept of 'vibe coding' and how it can enhance our development process. We'll discuss the importance of maintaining a positive and collaborative atmosphere within our teams, and how this can lead to more effective problem-solving and innovation."
   }
 ]

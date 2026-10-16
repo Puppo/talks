@@ -1,22 +1,18 @@
-/* stylelint-disable-next-line selector-class-pattern */
-.talk@ {
-  &code-tight {
-    /* stylelint-disable-next-line selector-class-pattern */
-    & .theme@code__wrapper {
-      font-size: 0.76em;
-    }
+.talk\@code-tight {
+  & .theme\@code__wrapper {
+    font-size: 0.76em;
   }
+}
 
-  &callout {
-    max-width: 88%;
-    font-family: var(--nf-font-bitter);
-  }
+.talk\@callout {
+  max-width: 88%;
+  font-family: var(--nf-font-bitter);
+}
 
-  &source-list {
-    row-gap: 0.14--sp;
+.talk\@source-list {
+  row-gap: 0.14--sp;
+}
 
-    &__link {
-      font-size: 0.68em;
-    }
-  }
+.talk\@source-list__link {
+  font-size: 0.68em;
 }
