@@ -1,0 +1,19 @@
+---
+config: common.config
+document:
+  title: 'Your Next User Is an AI Agent'
+  titleFormatted: |
+    Your Next User
+    Is an AI Agent
+  abstract: |
+    We usually design web applications with a single user in mind, that is, the person who is using the screen.
+
+    Users read the page, click on the buttons, complete the forms, and make their decisions. Yet what if the software took on some of these tasks for them?
+
+    We shall examine in this talk how agents are able to operate in the browser, interact with applications, and make use of the features that we provide. The agent loop, browser tools, and WebMCP will all be covered, with practical examples given in TypeScript.
+
+    We shall also discuss the questions that arise following the demo, for example those concerning what actions the agents should be permitted to take, when it is necessary for users to remain in control, and how to verify that everything has worked as expected.
+
+    The internet remains familiar, but there is now a new type of user to take into account.
+  author: common.author
+  company: common.company

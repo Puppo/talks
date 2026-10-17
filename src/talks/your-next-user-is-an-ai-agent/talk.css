@@ -1,0 +1,57 @@
+/* Screenshots come from the companion app; keep their full contents visible. */
+.talk\@capture .talk\@screenshot {
+  object-fit: contain;
+  width: auto;
+  height: auto;
+  max-width: 8.5--sp;
+  max-height: 3--sp;
+}
+
+.talk\@panel-shot {
+  object-fit: contain;
+  width: 100%;
+  height: 4.35--sp;
+}
+
+.talk\@eyebrow {
+  color: var(--nf-color-midnight-50);
+  font-size: 0.55em;
+  font-weight: 500;
+}
+
+.talk\@compact-items {
+  row-gap: 0.15--sp;
+}
+
+.talk\@compact-item {
+  min-height: 0.6--sp;
+}
+
+.talk\@code .talk\@code-line {
+  display: block;
+  height: auto;
+  padding: 0;
+}
+
+.talk\@unpublished-qr {
+  display: none;
+}
+
+.talk\@stage-dark {
+  background-color: var(--nf-color-midnight);
+  color: var(--nf-color-white);
+}
+
+.talk\@stage-green {
+  background-color: var(--nf-color-green);
+  color: var(--nf-color-midnight);
+}
+
+.talk\@code-block {
+  padding: 0.15--sp;
+  color: var(--nf-color-midnight);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.145--sp;
+  line-height: 1.45;
+  white-space: pre;
+}
