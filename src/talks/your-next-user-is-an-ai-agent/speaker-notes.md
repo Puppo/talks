@@ -82,6 +82,8 @@ Transition: Start with the relationship between people and software.
 
 ## 4. We learned to meet people halfway
 
+Visual: three drawn interfaces trace the burden from command recall to task navigation.
+
 Takeaway: We learned to meet people halfway
 
 Time: 55 seconds.
@@ -95,6 +97,8 @@ Sources:
 
 ## 5. A screen starts with a person
 
+Visual: generated editorial illustration of a research session; not a demo capture.
+
 Takeaway: A screen starts with a person
 
 Time: 55 seconds.
@@ -107,6 +111,8 @@ Sources:
 - https://www.nngroup.com/articles/ten-usability-heuristics/
 
 ## 6. Good UI makes the next step clear
+
+Visual: eyes, light bulb and raised-hand emoji replace step numbers.
 
 Takeaway: Good UI makes the next step clear
 
@@ -158,6 +164,8 @@ Transition: An agent needs a loop to turn that intention into actions.
 
 ## 10. An agent needs a feedback loop
 
+Visual: follow the circular feedback arrows; goal and constraints stay in the center.
+
 Takeaway: An agent needs a feedback loop
 
 Time: 60 seconds.
@@ -171,6 +179,8 @@ Sources:
 
 ## 11. An agent can arrive from outside
 
+Visual: the assistant is outside the application boundary.
+
 Takeaway: An agent can arrive from outside
 
 Time: 60 seconds.
@@ -183,6 +193,8 @@ Sources:
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/README.md
 
 ## 12. Or live inside your application
+
+Visual: the agent moves inside the product boundary. This is conceptual, not a new demo.
 
 Takeaway: Or live inside your application
 
@@ -211,6 +223,8 @@ Sources:
 
 ## 14. WebMCP: the page offers actions
 
+Visual: four real tool names beside one large statement, instead of a process list.
+
 Takeaway: WebMCP: the page offers actions
 
 Time: 70 seconds.
@@ -224,6 +238,8 @@ Sources:
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/webmcp.ts
 
 ## 15. Two entrances. One application.
+
+Visual: two entry points converge on shared rules; they are not sequential steps.
 
 Takeaway: Two entrances. One application.
 
@@ -252,6 +268,8 @@ Sources:
 
 ## 17. Control is part of the interaction
 
+Visual: pause on the raised hand and give the human decision space.
+
 Takeaway: Control is part of the interaction
 
 Time: 55 seconds.
@@ -265,6 +283,8 @@ Sources:
 - https://www.nngroup.com/articles/ten-usability-heuristics/
 
 ## 18. “Done” needs evidence
+
+Visual: emoji checklist of evidence, unknowns and saved state.
 
 Takeaway: “Done” needs evidence
 
@@ -280,6 +300,8 @@ Sources:
 
 ## 19. More ways in. One human goal.
 
+Visual: generated person/agent illustration; describe coexistence rather than replacement.
+
 Takeaway: More ways in. One human goal.
 
 Time: 40 seconds.
@@ -289,6 +311,8 @@ Offer a design thesis, not a guaranteed roadmap: people can switch between actin
 Transition: We have the whole model. Now stay in the app and exercise it.
 
 ## 20. One day, from request to saved agenda
+
+Visual: three emoji mark the continuous demo itinerary.
 
 Takeaway: One day, from request to saved agenda
 
@@ -315,6 +339,8 @@ Sources:
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
 
 ## 22. Design for intent. Keep people in control.
+
+Visual: short emoji recap beside the final statement.
 
 Takeaway: Design for intent. Keep people in control.
 
@@ -647,3 +673,9 @@ Source PNGs live in assets/__originals; deck assets are WebP. Captures need no m
 The 16 October app captures and historical fixture evidence retain their original provenance; this narrative rewrite does not constitute a new external-client rehearsal. On 2026-10-19 the production build, ESLint, CSS lint and TypeScript checks passed. All 41 slides have notes and valid bookends; referenced assets exist and displayed code matches its source. Chromium 156.0.8078.4 traversed all 41 slides after decoding images, with no page errors, failed requests or detected text overflow. All browser captures were visually reviewed. The demo is scheduled only on slide 21, returning to slide 22; timed slides total 1,800 seconds. The built-in headed verifier was not rerun; this check used the local server and a complete headless traversal.
 
 PDF validation on 2026-10-19: Freya logged successful export of all 41 slides; pdfinfo confirms 41 pages and all pages rasterize successfully. All PDF pages were visually inspected. The local export used a temporary 180-second navigation allowance. The command wrapper returned 143 after the completion log; the generated artifact was independently checked rather than treating that wrapper status as a clean exit. No repository toolchain configuration was changed.
+
+## Visual revision — 2026-10-19
+
+The timing, slide numbering and single final demo block are unchanged. Five authored diagrams replace repeated columns; two generated editorial illustrations provide visual pauses. Twemoji graphics are embedded as local WebP assets for reliable PDF rendering. See [visual-assets.md](visual-assets.md) for prompts, source files and attribution. Earlier validation above refers to the narrative revision; visual-revision checks are recorded after rendering.
+
+Visual revision validation: production build, TypeScript and CSS lint pass. Slide count, notes, source-code display and asset references remain valid. The first browser pass visually confirmed the new interface diagram, research illustration and emoji checklist, then timed out during navigation. The retry failed to launch Chromium within 600 seconds while the host was under I/O pressure. Earlier 41-slide browser/PDF results above belong to the previous narrative revision; they do not certify this visual revision. Preview/PDF export is checked through Netlify separately.

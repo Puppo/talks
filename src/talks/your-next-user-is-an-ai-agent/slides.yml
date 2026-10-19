@@ -41,25 +41,6 @@ notes: |-
 
 ---
 title: We learned to meet people halfway
-items:
-  horizontal: true
-  className: talk@compact-items
-  entries:
-    - index: 1
-      title: Commands
-      text: Remember what to type.
-      className:
-        root: talk@compact-item
-    - index: 2
-      title: Visual controls
-      text: Recognize what you can do.
-      className:
-        root: talk@compact-item
-    - index: 3
-      title: Web journeys
-      text: Find your way through a task.
-      className:
-        root: talk@compact-item
 decorations:
   permalink: false
 notes: |-
@@ -74,29 +55,18 @@ notes: |-
   Sources:
   - https://www.nngroup.com/articles/ten-usability-heuristics/
 
+  Visual: three drawn interfaces trace the burden from command recall to task navigation.
+image:
+  url: '@talk/interface_evolution.webp'
+  className: talk@diagram-image
+className:
+  root: talk@diagram
+
 ---
 title: A screen starts with a person
-items:
-  horizontal: true
-  className: talk@compact-items
-  entries:
-    - index: 1
-      title: Observe
-      text: What are they trying to finish?
-      className:
-        root: talk@compact-item
-    - index: 2
-      title: Understand
-      text: What do they already expect?
-      className:
-        root: talk@compact-item
-    - index: 3
-      title: Try it
-      text: Where do they hesitate?
-      className:
-        root: talk@compact-item
 decorations:
   permalink: false
+  logo: black
 notes: |-
   Takeaway: A screen starts with a person
 
@@ -109,27 +79,41 @@ notes: |-
   Sources:
   - https://www.nngroup.com/articles/ten-usability-heuristics/
 
+  Visual: generated editorial illustration of a research session; not a demo capture.
+layout: half
+image:
+  url: '@talk/ui_research.webp'
+content:
+  - Observe the task.
+  - Listen to the person.
+  - Try the interface.
+className:
+  root: talk@illustrated
+
 ---
 title: Good UI makes the next step clear
 items:
-  horizontal: true
+  horizontal: false
   className: talk@compact-items
   entries:
-    - index: 1
-      title: Recognize
+    - title: Recognize
       text: Labels explain the available actions.
       className:
         root: talk@compact-item
-    - index: 2
-      title: Understand
+        image: talk@emoji
+      image: '@talk/emoji_eyes.webp'
+    - title: Understand
       text: Feedback shows what changed.
       className:
         root: talk@compact-item
-    - index: 3
-      title: Recover
+        image: talk@emoji
+      image: '@talk/emoji_bulb.webp'
+    - title: Recover
       text: A clear way to cancel or correct.
       className:
         root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_hand.webp'
 decorations:
   permalink: false
 notes: |-
@@ -144,6 +128,8 @@ notes: |-
   Sources:
   - https://www.nngroup.com/articles/ten-usability-heuristics/
   - https://www.w3.org/WAI/fundamentals/accessibility-intro/
+
+  Visual: eyes, light bulb and raised-hand emoji replace step numbers.
 
 ---
 title: A good UI still asks me to do the work
@@ -209,25 +195,6 @@ notes: |-
 
 ---
 title: An agent needs a feedback loop
-items:
-  horizontal: true
-  className: talk@compact-items
-  entries:
-    - index: 1
-      title: Observe
-      text: Read the current state.
-      className:
-        root: talk@compact-item
-    - index: 2
-      title: Act
-      text: Choose and use a tool.
-      className:
-        root: talk@compact-item
-    - index: 3
-      title: Check
-      text: Inspect the result; continue or stop.
-      className:
-        root: talk@compact-item
 decorations:
   permalink: false
 notes: |-
@@ -242,27 +209,15 @@ notes: |-
   Sources:
   - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/loop.ts
 
+  Visual: follow the circular feedback arrows; goal and constraints stay in the center.
+image:
+  url: '@talk/agent_loop.webp'
+  className: talk@diagram-image
+className:
+  root: talk@diagram
+
 ---
 title: An agent can arrive from outside
-items:
-  horizontal: true
-  className: talk@compact-items
-  entries:
-    - index: 1
-      title: Person
-      text: Gives a goal to their assistant.
-      className:
-        root: talk@compact-item
-    - index: 2
-      title: Browser agent
-      text: Reads and operates the page.
-      className:
-        root: talk@compact-item
-    - index: 3
-      title: Application
-      text: Shows controls and outcomes.
-      className:
-        root: talk@compact-item
 decorations:
   permalink: false
 notes: |-
@@ -277,27 +232,15 @@ notes: |-
   Sources:
   - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/README.md
 
+  Visual: the assistant is outside the application boundary.
+image:
+  url: '@talk/external_agent.webp'
+  className: talk@diagram-image
+className:
+  root: talk@diagram
+
 ---
 title: Or live inside your application
-items:
-  horizontal: true
-  className: talk@compact-items
-  entries:
-    - index: 1
-      title: Person
-      text: Asks inside the product.
-      className:
-        root: talk@compact-item
-    - index: 2
-      title: Embedded agent
-      text: Uses application context and actions.
-      className:
-        root: talk@compact-item
-    - index: 3
-      title: Page
-      text: Shows progress, review and results.
-      className:
-        root: talk@compact-item
 decorations:
   permalink: false
 notes: |-
@@ -312,6 +255,13 @@ notes: |-
   Sources:
   - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/app/EventPage.tsx
   - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/loop.ts
+
+  Visual: the agent moves inside the product boundary. This is conceptual, not a new demo.
+image:
+  url: '@talk/embedded_agent.webp'
+  className: talk@diagram-image
+className:
+  root: talk@diagram
 
 ---
 title: Two separate design decisions
@@ -345,25 +295,6 @@ notes: |-
 
 ---
 title: 'WebMCP: the page offers actions'
-items:
-  horizontal: true
-  className: talk@compact-items
-  entries:
-    - index: 1
-      title: Describe
-      text: Name the tool and its inputs.
-      className:
-        root: talk@compact-item
-    - index: 2
-      title: Discover
-      text: A compatible agent finds it.
-      className:
-        root: talk@compact-item
-    - index: 3
-      title: Execute
-      text: Application code returns a result.
-      className:
-        root: talk@compact-item
 decorations:
   permalink: false
 notes: |-
@@ -379,27 +310,20 @@ notes: |-
   - https://developer.chrome.com/docs/ai/webmcp
   - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/webmcp.ts
 
+  Visual: four real tool names beside one large statement, instead of a process list.
+layout: side
+content:
+  - search_sessions
+  - get_session_details
+  - get_agenda
+  - propose_agenda
+highlight:
+  text: The page says:<br/><strong>“Here is what I can do.”</strong>
+className:
+  root: talk@tool-menu
+
 ---
 title: Two entrances. One application.
-items:
-  horizontal: true
-  className: talk@compact-items
-  entries:
-    - index: 1
-      title: Human controls
-      text: Search, inspect, review.
-      className:
-        root: talk@compact-item
-    - index: 2
-      title: Agent tools
-      text: Search, read, propose.
-      className:
-        root: talk@compact-item
-    - index: 3
-      title: Shared rules
-      text: Valid sessions; preserved choices; no overlaps.
-      className:
-        root: talk@compact-item
 decorations:
   permalink: false
 notes: |-
@@ -414,6 +338,13 @@ notes: |-
   Sources:
   - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/schemas.ts
   - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/tools.ts
+
+  Visual: two entry points converge on shared rules; they are not sequential steps.
+image:
+  url: '@talk/shared_rules.webp'
+  className: talk@diagram-image
+className:
+  root: talk@diagram
 
 ---
 layout: side
@@ -442,27 +373,9 @@ notes: |-
 
 ---
 title: Control is part of the interaction
-items:
-  horizontal: true
-  className: talk@compact-items
-  entries:
-    - index: 1
-      title: Before
-      text: Keep my existing choices.
-      className:
-        root: talk@compact-item
-    - index: 2
-      title: At review
-      text: Approve, reject, or request a revision.
-      className:
-        root: talk@compact-item
-    - index: 3
-      title: After
-      text: See exactly what was saved.
-      className:
-        root: talk@compact-item
 decorations:
   permalink: false
+  logo: white
 notes: |-
   Takeaway: Control is part of the interaction
 
@@ -476,27 +389,38 @@ notes: |-
   - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/schemas.ts
   - https://www.nngroup.com/articles/ten-usability-heuristics/
 
+  Visual: pause on the raised hand and give the human decision space.
+layout: separator
+subtitle: Keep my choices. Let me review. Show what changed.
+image:
+  url: '@talk/emoji_hand.webp'
+className:
+  root: talk@stage-dark talk@hand-stop
+
 ---
 title: “Done” needs evidence
 items:
-  horizontal: true
+  horizontal: false
   className: talk@compact-items
   entries:
-    - index: 1
-      title: Constraints
+    - title: Constraints
       text: No overlaps; original choice preserved.
       className:
         root: talk@compact-item
-    - index: 2
-      title: Unknowns
+        image: talk@emoji
+      image: '@talk/emoji_check.webp'
+    - title: Unknowns
       text: Missing information stays unknown.
       className:
         root: talk@compact-item
-    - index: 3
-      title: Saved state
+        image: talk@emoji
+      image: '@talk/emoji_bulb.webp'
+    - title: Saved state
       text: Read it back; reload and inspect.
       className:
         root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_eyes.webp'
 decorations:
   permalink: false
 notes: |-
@@ -512,14 +436,15 @@ notes: |-
   - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
   - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/evaluation-report.md
 
+  Visual: emoji checklist of evidence, unknowns and saved state.
+
 ---
-layout: separator
+layout: half
 title: More ways in. One human goal.
-subtitle: Direct manipulation · delegated work · visible review
 className:
-  root: talk@stage-green
+  root: talk@illustrated talk@stage-dark
 decorations:
-  logo: black
+  logo: white
   permalink: false
 notes: |-
   Takeaway: More ways in. One human goal.
@@ -530,27 +455,38 @@ notes: |-
 
   Transition: We have the whole model. Now stay in the app and exercise it.
 
+  Visual: generated person/agent illustration; describe coexistence rather than replacement.
+image:
+  url: '@talk/human_agent.webp'
+content:
+  - Act directly.
+  - Delegate the work.
+  - Review the outcome.
+
 ---
 title: One day, from request to saved agenda
 items:
   horizontal: true
   className: talk@compact-items
   entries:
-    - index: 1
-      title: Use the screen
+    - title: Use the screen
       text: Search and inspect a session.
       className:
         root: talk@compact-item
-    - index: 2
-      title: Delegate
+        image: talk@emoji
+      image: '@talk/emoji_eyes.webp'
+    - title: Delegate
       text: Plan around a saved choice; review.
       className:
         root: talk@compact-item
-    - index: 3
-      title: Challenge it
+        image: talk@emoji
+      image: '@talk/emoji_robot.webp'
+    - title: Challenge it
       text: Reject, revise, conflict, then verify.
       className:
         root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_check.webp'
 decorations:
   permalink: false
 notes: |-
@@ -564,6 +500,8 @@ notes: |-
 
   Sources:
   - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
+
+  Visual: three emoji mark the continuous demo itinerary.
 
 ---
 layout: separator
@@ -588,25 +526,30 @@ notes: |-
 
 ---
 title: Design for intent. Keep people in control.
+className:
+  root: talk@closing
 items:
-  horizontal: true
+  horizontal: false
   className: talk@compact-items
   entries:
-    - index: 1
-      title: Understand the job
+    - title: Understand the job
       text: The user’s goal still comes first.
       className:
         root: talk@compact-item
-    - index: 2
-      title: Expose meaningful actions
+        image: talk@emoji
+      image: '@talk/emoji_bulb.webp'
+    - title: Expose meaningful actions
       text: Reuse the application’s rules.
       className:
         root: talk@compact-item
-    - index: 3
-      title: Make the outcome reviewable
+        image: talk@emoji
+      image: '@talk/emoji_tools.webp'
+    - title: Make the outcome reviewable
       text: Show the change and verify the state.
       className:
         root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_hand.webp'
 decorations:
   permalink: false
 notes: |-
@@ -617,6 +560,11 @@ notes: |-
   Return from the app once. Tie each outcome to the opening story: studying the task gave us the constraints; explicit actions made delegation possible; review and feedback let us keep control. Mention only outcomes actually observed in the demo. If replay was used, name it again. Close with the title: your next user may be an agent, but the purpose of the product still belongs to a person.
 
   Transition: Share the demo and source.
+
+  Visual: short emoji recap beside the final statement.
+layout: side
+highlight:
+  text: Human goals.<br/><strong>Agent actions.</strong>
 
 ---
 title: Try the Conference Companion
@@ -1167,6 +1115,8 @@ notes: |-
   - https://github.com/Puppo/your-next-user-is-an-ai-agent
   - https://github.com/webmachinelearning/webmcp
   - https://developer.chrome.com/docs/ai/webmcp
+content:
+  - 'Illustrations: generated for this talk. Emoji: Twemoji / CC BY 4.0.'
 
 ---
 layout: cover
