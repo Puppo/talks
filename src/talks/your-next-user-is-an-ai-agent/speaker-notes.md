@@ -1,6 +1,12 @@
 # Your Next User Is an AI Agent — speaker notes
 
-Revised 2026-10-16 around Conference Companion. English slides; 30 minutes excluding Q&A. Main narrative: slides 1–26. Slides 27–35: contacts and optional appendix.
+Revised 2026-10-19. English slides; 30 minutes excluding Q&A. Slides 1–20 build the story from human interface design to delegated interaction. Slide 21 holds one continuous twelve-minute demo. Return once to slides 22–24 for conclusions and closing. Slides 25–41 are contacts and optional appendix.
+
+## Narrative and stage direction
+
+Begin with the work behind a useful UI: understanding people, making actions discoverable, providing feedback and recovery. Use the conference attendee as the recurring example. Move from choosing each step to delegating a constrained goal, then explain external agents, embedded agents and WebMCP as distinct concepts. End the explanation before opening the app. The existing scenarios run together at the end. Code excerpts, fixture details and captured outcome references stay in the appendix.
+
+The embedded-agent section describes an architectural option; the actual Conference Companion demo uses an external client. No new demo or embedded chat implementation is promised. Preserve the original title and abstract.
 
 ## Source and evidence boundary
 
@@ -12,499 +18,555 @@ Revised 2026-10-16 around Conference Companion. English slides; 30 minutes exclu
 - Code slides are presentation excerpts, not complete standalone programs. Whitespace is reflowed and omissions identified in notes. The displayed lines use escaped `code.rendered` so Freya preserves source punctuation. `code.content` retains the displayed text.
 - Historical fixture result 18/18 belongs to 12 October, dataset 2026-10-12.1 and build 4b1418af9d6b60eb99fc7402f9256ba0a5d72212. It is not a current model benchmark.
 
-## Why this revision
-
-The old deck was dominated by integration placeholders, treated an embedded assistant as the main path, and lacked the actual programme, proposal and saved outcome. This version follows one attendee request through the actual production tools and page controls. The abstract and shared opening/closing remain intact. Declarative forms, fixture evaluation and the separate loop are appendix material.
 
 ## Timed slides
 
-| Slide | Title                                        | Seconds |
-| ----- | -------------------------------------------- | ------: |
-| 1     | cover                                        |      20 |
-| 2     | hello                                        |      20 |
-| 3     | nearform                                     |      20 |
-| 4     | A familiar job: plan your conference day     |      55 |
-| 5     | The request                                  |      45 |
-| 6     | A useful answer must respect my day          |      50 |
-| 7     | One application. Two ways to act.            |      60 |
-| 8     | Demo 1 · Use the screen                      |     180 |
-| 9     | The agent keeps taking the next step         |      65 |
-| 10    | Expose the actions this journey needs        |      70 |
-| 11    | A proposal needs IDs and a known revision    |      55 |
-| 12    | Register capabilities, reuse the application |      65 |
-| 13    | Different entry points. The same rules.      |      55 |
-| 14    | Demo 2 · Propose my day                      |     310 |
-| 15    | This is a draft, not my saved day            |      40 |
-| 16    | The tool returns a handoff                   |      45 |
-| 17    | There is no approve_agenda tool              |      40 |
-| 18    | An old approval must not apply a new change  |      50 |
-| 19    | Demo 3 · Say no, then try a conflict         |     240 |
-| 20    | Both talks start at 12:35                    |      50 |
-| 21    | Unknown is a valid answer                    |      45 |
-| 22    | “Done” means the saved state agrees          |      90 |
-| 23    | Test the state. Then test the agent.         |      60 |
-| 24    | Design one journey an agent can complete     |      45 |
-| 25    | Try the Conference Companion                 |      15 |
-| 26    | end                                          |      10 |
+| Slide | Title | Seconds |
+| --- | --- | ---: |
+| 1 | cover | 20 |
+| 2 | hello | 20 |
+| 3 | nearform | 20 |
+| 4 | We learned to meet people halfway | 55 |
+| 5 | A screen starts with a person | 55 |
+| 6 | Good UI makes the next step clear | 55 |
+| 7 | A good UI still asks me to do the work | 55 |
+| 8 | The goal behind all those clicks | 45 |
+| 9 | From steps to intent | 35 |
+| 10 | An agent needs a feedback loop | 60 |
+| 11 | An agent can arrive from outside | 60 |
+| 12 | Or live inside your application | 60 |
+| 13 | Two separate design decisions | 50 |
+| 14 | WebMCP: the page offers actions | 70 |
+| 15 | Two entrances. One application. | 55 |
+| 16 | The UI becomes a place to review | 50 |
+| 17 | Control is part of the interaction | 55 |
+| 18 | “Done” needs evidence | 55 |
+| 19 | More ways in. One human goal. | 40 |
+| 20 | One day, from request to saved agenda | 50 |
+| 21 | Demo · Plan my conference day | 720 |
+| 22 | Design for intent. Keep people in control. | 70 |
+| 23 | Try the Conference Companion | 25 |
+| 24 | end | 20 |
 
-Total: 1800 seconds. Demo windows total 730 seconds (12m10s), including handoffs. Shorter cut: reduce Demo 1 to 90s, omit the approval-check code excerpt, and show conflict rather than the full reject/revise run. Keep human review and saved-state verification.
+Total: 1800 seconds. Theory and setup: 16m05s; continuous demo: 12m; conclusion/resources/end: 1m55s.
 
 ## 1. cover
 
-**Takeaway:** Design a journey an agent can actually complete.
+Takeaway: cover
 
-**Time:** 20 seconds.
+Time: 20 seconds.
 
-Open with the promise: we will plan a real conference day, keep an existing choice, and check what was saved. Slides remain in English, as in the accepted talk; commentary and preparation can be in Italian.
+Open with the title, then promise a story about how interaction changes. We will first build the mental model, then spend twelve uninterrupted minutes in the existing application. Keep the slides in English.
 
-**Transition:** Introduce yourself.
+Transition: Introduce yourself.
 
 ## 2. hello
 
-**Takeaway:** Luca Del Puppo.
+Takeaway: hello
 
-**Time:** 20 seconds.
+Time: 20 seconds.
 
-Keep the introduction brief; connect your web-development background to the new interaction model.
+Brief personal introduction; connect your web-development experience to interface design.
 
-**Transition:** Introduce Nearform.
+Transition: Introduce Nearform.
 
 ## 3. nearform
 
-**Takeaway:** Nearform.
+Takeaway: nearform
 
-**Time:** 20 seconds.
+Time: 20 seconds.
 
 Use the shared company slide.
 
-**Transition:** Show the application before introducing APIs.
+Transition: Start with the relationship between people and software.
 
-## 4. A familiar job: plan your conference day
+## 4. We learned to meet people halfway
 
-**Takeaway:** A familiar job: plan your conference day
+Takeaway: We learned to meet people halfway
 
-**Time:** 55 seconds.
+Time: 55 seconds.
 
-This is the real React + TypeScript app. It contains a reviewed snapshot: 29 sessions and 33 speakers, event date 24 October 2026, Europe/Rome. Search and save work for a person. One talk is already saved: Your Next User Is an AI Agent. This screenshot is a local UI capture, not an external-agent run.
+Use this as a conceptual progression, not a dated history or a claim that one interface replaced another. Commands, graphical controls and web journeys coexist. Tell the story through the burden placed on the person: remembering syntax, recognizing an action, navigating a task. The design question gradually becomes how to make the user’s job understandable. Avoid suggesting that accessibility began only after graphical interfaces.
 
-**Transition:** Give the new user a goal.
+Transition: To design that journey, we first have to understand the person.
 
 Sources:
+- https://www.nngroup.com/articles/ten-usability-heuristics/
 
+## 5. A screen starts with a person
+
+Takeaway: A screen starts with a person
+
+Time: 55 seconds.
+
+Describe the work before pixels: observe a task, learn the user’s vocabulary and mental model, prototype, and watch someone try it. Use an attendee choosing talks as the example. They want a useful day, not a tutorial on the filtering controls. This is the design practice we carry forward into agent interaction.
+
+Transition: What did that work teach us about good interfaces?
+
+Sources:
+- https://www.nngroup.com/articles/ten-usability-heuristics/
+
+## 6. Good UI makes the next step clear
+
+Takeaway: Good UI makes the next step clear
+
+Time: 55 seconds.
+
+Use the conference example: a Search label, a visible saved count, and a remove or cancel action. These are practical ways to reduce uncertainty. Accessibility adds another essential perspective: people use different input and output methods. Semantic controls remain necessary for people; potential agent benefits never substitute for accessibility testing.
+
+Transition: Even a well-designed interface leaves some work with the person.
+
+Sources:
+- https://www.nngroup.com/articles/ten-usability-heuristics/
+- https://www.w3.org/WAI/fundamentals/accessibility-intro/
+
+## 7. A good UI still asks me to do the work
+
+Takeaway: A good UI still asks me to do the work
+
+Time: 55 seconds.
+
+Show the existing programme capture without opening the app. Walk verbally through the work: search topics, compare parallel sessions, remember a saved choice, check time conflicts, save the result. This is a real local capture of the reviewed DevFest Venezia 2026 snapshot, not a model run. The interface can be good while the coordination remains demanding.
+
+Transition: What would the person ask if they could delegate that coordination?
+
+Sources:
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
 
-## 5. The request
+## 8. The goal behind all those clicks
 
-**Takeaway:** A goal contains constraints, not just keywords.
+Takeaway: The goal behind all those clicks
 
-**Time:** 45 seconds.
+Time: 45 seconds.
 
-Use the exact ASCII prompt in the runbook when pasting into ChatGPT. Emphasize preserve and avoid overlaps. The goal is a feasible proposal, not a claim of an optimal timetable.
+Read only the opening phrase; let the audience scan the constraints. Keep the full planning request because it will be the exact same request in the final demo. Highlight preserve my selections and avoid overlaps. We now have an intent and success criteria, not merely a sequence of clicks.
 
-**Transition:** Make the success conditions visible.
+Transition: That changes the unit of interaction.
 
 Sources:
-
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
 
-## 6. A useful answer must respect my day
+## 9. From steps to intent
 
-**Takeaway:** A useful answer must respect my day
+Takeaway: From steps to intent
 
-**Time:** 50 seconds.
+Time: 35 seconds.
 
-The same constraints will be used in every demo. A polished answer is insufficient if the selected talk disappears or the saved schedule overlaps.
+Pause on the shift. A person may still choose to act directly. Delegation adds a way to interact: state the goal and constraints, then inspect the proposed outcome. This is a product design direction, not a prediction that screens disappear.
 
-**Transition:** Compare the two ways an agent can act.
+Transition: An agent needs a loop to turn that intention into actions.
 
-Sources:
+## 10. An agent needs a feedback loop
 
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agenda/proposals.ts
+Takeaway: An agent needs a feedback loop
 
-## 7. One application. Two ways to act.
+Time: 60 seconds.
 
-**Takeaway:** One application. Two ways to act.
+Explain the loop with the same day-planning task: read my agenda, search sessions, propose a day, inspect the result. A model answer alone does not establish success. The application supplies observations and action results. The loop needs cancellation, a budget and a stopping condition; the repository’s optional loop illustrates bounded execution, but it is not the implementation of external ChatGPT.
 
-**Time:** 60 seconds.
-
-The live model runs in the external ChatGPT app, not inside Conference Companion. For a browser-driven path, verify actual DOM interactions in that client. WebMCP provides a structured entry point in a compatible browser/client; it does not supply the model or make any external client automatically compatible.
-
-**Transition:** Start with the interface.
+Transition: First consider an agent that arrives from outside the application.
 
 Sources:
-
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/README.md
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/browser-support.md
-
-## 8. Demo 1 · Use the screen
-
-**Takeaway:** Demo 1 · Use the screen
-
-**Time:** 180 seconds.
-
-Open the preserve scenario and press Start selected scenario. Use the browser-driven client only if rehearsed; otherwise demonstrate the human workflow explicitly. Search AI, open details, and show the existing saved talk. An agent must stop before the person’s approval. Do not suggest this screenshot or Playwright capture demonstrates ChatGPT reasoning. Cut off an unproductive stall at 20 seconds and switch to the labelled replay.
-
-**Transition:** Explain the mechanism behind the interaction.
-
-## 9. The agent keeps taking the next step
-
-**Takeaway:** The agent keeps taking the next step
-
-**Time:** 65 seconds.
-
-This is the agent loop. The app returns facts and errors; the client decides what to do next. The live client owns the loop. A separate AgentLoop implementation exists in the repository for fixture checks; it is not mounted as an embedded chat in the current UI.
-
-**Transition:** Replace interface guessing with explicit actions.
-
-Sources:
-
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/loop.ts
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/app/EventPage.tsx
 
-## 10. Expose the actions this journey needs
+## 11. An agent can arrive from outside
 
-**Takeaway:** Expose the actions this journey needs
+Takeaway: An agent can arrive from outside
 
-**Time:** 70 seconds.
+Time: 60 seconds.
 
-These are the four production tools. Search changes visible filters, so it is not marked read-only. Agenda and details are read-only. A fifth tool, report_capability_gap, is registered only after explicit local permission; it is optional and not part of the happy path. Production exposes one imperative search tool. The declarative form is a separate teaching spike.
+Describe the external assistant acting through browser tools. It can encounter a site that was built for people. Labels, state and feedback help make the journey understandable, but a particular client must be tested. This is the existing demo’s intended client arrangement. No embedded assistant is required for this path.
 
-**Transition:** Look at the proposal contract.
+Transition: Alternatively, the product can provide the assistant itself.
 
 Sources:
+- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/README.md
 
+## 12. Or live inside your application
+
+Takeaway: Or live inside your application
+
+Time: 60 seconds.
+
+Present an architectural option, clearly distinct from the current live demo: the application can own the orchestration and the assistant UI. The model can be remote or local; embedded means integrated into the product, not necessarily running inference in the browser. A chat box alone is not an agent. The product still needs tools, state, cancellation and review. Conference Companion has no embedded chat UI; do not promise a second implementation during the demo.
+
+Transition: Location and action interface are two different design decisions.
+
+Sources:
+- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/app/EventPage.tsx
+- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/loop.ts
+
+## 13. Two separate design decisions
+
+Takeaway: Two separate design decisions
+
+Time: 50 seconds.
+
+Make the two axes explicit. An embedded agent can call application functions directly. An external browser agent may use human controls or discover tools through a compatible browser integration. WebMCP belongs to the action-interface discussion; it is not a model, a chat product, or an orchestration loop.
+
+Transition: Now introduce the page’s explicit tool interface.
+
+Sources:
+- https://developer.chrome.com/docs/ai/webmcp
+
+## 14. WebMCP: the page offers actions
+
+Takeaway: WebMCP: the page offers actions
+
+Time: 70 seconds.
+
+Use the demo vocabulary: search_sessions, get_session_details, get_agenda and propose_agenda. The imperative implementation registers tools on document.modelContext and delegates execution to the existing shared tools. Declarative forms are another approach in WebMCP, explored only in the repository’s separate teaching spike. Explain the contract without reading API syntax aloud. Browser/client availability is experimental and must be rehearsed; registration alone does not prove a connected client. Documentation checked 2026-10-19; pinned app evidence is separate.
+
+Transition: Tools must lead to the same application rules as the UI.
+
+Sources:
+- https://developer.chrome.com/docs/ai/webmcp
+- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/webmcp.ts
+
+## 15. Two entrances. One application.
+
+Takeaway: Two entrances. One application.
+
+Time: 55 seconds.
+
+Follow both entrances to the same domain logic. Structured tools reduce the need to infer an action from pixels, but validation still belongs in application code. Search also updates the visible filters in this demo; it is not described as a purely read-only tool. The full schema and registration excerpts are available in the appendix for questions.
+
+Transition: The person needs a useful place to receive the agent’s work.
+
+Sources:
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/schemas.ts
+- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/tools.ts
 
-## 11. A proposal needs IDs and a known revision
+## 16. The UI becomes a place to review
 
-**Takeaway:** A proposal needs IDs and a known revision
+Takeaway: The UI becomes a place to review
 
-**Time:** 55 seconds.
+Time: 50 seconds.
+
+This is a static capture before the demo, used to explain the interaction model. Point to Keep/Add/Remove and the actual approval controls. A proposal is not the saved agenda. The interface lets the person understand the change without reconstructing every tool call. Caption the capture as a local scripted-replay outcome, not live client evidence.
+
+Transition: Review needs a meaningful decision, not a decorative confirmation.
+
+Sources:
+- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
+
+## 17. Control is part of the interaction
+
+Takeaway: Control is part of the interaction
+
+Time: 55 seconds.
+
+Relate this to familiar UI control and feedback. The tool can propose; the page owns the review flow. The production registry has no approve_agenda tool. A browser agent could still click the human control, so the presentation explicitly hands control to the person; this is not physical-human authentication. Approval validates that the proposal is still current. Rejection must leave the agenda unchanged.
+
+Transition: The final answer needs evidence in the application state.
+
+Sources:
+- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/schemas.ts
+- https://www.nngroup.com/articles/ten-usability-heuristics/
+
+## 18. “Done” needs evidence
+
+Takeaway: “Done” needs evidence
+
+Time: 55 seconds.
+
+Separate intent from verified outcome. The demo checks all agenda pages, overlap and protected-selection counts, and persistence after reload. For recording information the app returns null rather than inventing an answer. Deterministic domain tests support these rules; fixture outcomes do not measure an external model’s reliability. Those distinctions belong in our definition of done.
+
+Transition: What kind of web experience does this make possible?
+
+Sources:
+- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
+- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/evaluation-report.md
+
+## 19. More ways in. One human goal.
+
+Takeaway: More ways in. One human goal.
+
+Time: 40 seconds.
+
+Offer a design thesis, not a guaranteed roadmap: people can switch between acting directly and delegating work while the page keeps the result understandable. The accumulated work on usability remains useful. The new design work includes describing capabilities, expressing constraints and creating a good handoff back to the person.
+
+Transition: We have the whole model. Now stay in the app and exercise it.
+
+## 20. One day, from request to saved agenda
+
+Takeaway: One day, from request to saved agenda
+
+Time: 50 seconds.
+
+Preview the continuous demo sequence. Tell the audience that we will leave the deck once and come back only after the checks. Same application, same scenarios, same planning request. The final block includes the missing-recording question if the client responds within the time budget. Do not open the application yet; advance to the holding slide.
+
+Transition: Advance once, then switch to the app for the entire block.
+
+Sources:
+- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
+
+## 21. Demo · Plan my conference day
+
+Takeaway: Demo · Plan my conference day
+
+Time: 720 seconds.
+
+ONE APPLICATION WINDOW: leave the slides here for the full twelve minutes. 0:00–1:30 browser UI search/details; 1:30–5:00 preserve planning, full diff, human approval and readback; 5:00–7:30 reject/revise; 7:30–9:00 conflict; 9:00–9:45 missing recordings; 9:45–12:00 final verification and reload. Reset scenarios explicitly inside the app; say when a reset starts a new test. Start the verify scenario only if the current state does not match its preconditions, and disclose its seeded state. Never claim a seeded reset persisted the earlier run. In preserve, verify and reload its approved state before resetting. Use a 20-second stall cutoff and announce Captured replay — scripted shared tools, no model inference. All fallback operations remain in the app; use the appendix captures only if the app itself is unavailable. Return to slide 22 only when the whole block is complete. Full prompts and checks are in the runbook below.
+
+Transition: Return once, to the conclusion on slide 22.
+
+Sources:
+- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
+
+## 22. Design for intent. Keep people in control.
+
+Takeaway: Design for intent. Keep people in control.
+
+Time: 70 seconds.
+
+Return from the app once. Tie each outcome to the opening story: studying the task gave us the constraints; explicit actions made delegation possible; review and feedback let us keep control. Mention only outcomes actually observed in the demo. If replay was used, name it again. Close with the title: your next user may be an agent, but the purpose of the product still belongs to a person.
+
+Transition: Share the demo and source.
+
+## 23. Try the Conference Companion
+
+Takeaway: Try the Conference Companion
+
+Time: 25 seconds.
+
+Share the existing application and repository QR links. The sources and implementation excerpts are in the appendix for Q&A.
+
+Transition: Thank the audience.
+
+## 24. end
+
+Takeaway: end
+
+Time: 20 seconds.
+
+Use the shared closing slide. This ends the timed 30-minute talk.
+
+Transition: Contacts and optional questions.
+
+## 25. byebye
+
+Takeaway: byebye
+
+Time: Optional / outside the main narrative.
+
+Shared contacts.
+
+Transition: Open the appendix only for a question or a complete app failure.
+
+## 26. Appendix
+
+Takeaway: Appendix
+
+Time: Optional / outside the main narrative.
+
+Optional material only. No planned live demos or slide/app switching here. The main talk ends before this section.
+
+Transition: Choose the relevant reference slide.
+
+## 27. A proposal needs IDs and a known revision
+
+Takeaway: A proposal needs IDs and a known revision
+
+Time: Optional / outside the main narrative.
 
 Presentation excerpt of schemas.ts, with whitespace changed and the optional replacement field omitted. The description is split into concatenated strings for projection. Explain concrete IDs and optimistic revision checks. No approve flag is accepted. The schema is not the business rule; runtime validation and ProposalStore enforce it.
 
-**Transition:** Register the same contract with the browser.
+Transition: Return to the question or closing slide; no scheduled app switch.
 
-Sources:
-
+Sources (reviewed 2026-10-16):
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/schemas.ts
 
-## 12. Register capabilities, reuse the application
+## 28. Register capabilities, reuse the application
 
-**Takeaway:** Register capabilities, reuse the application
+Takeaway: Register capabilities, reuse the application
 
-**Time:** 65 seconds.
+Time: Optional / outside the main narrative.
 
 Presentation excerpt of registerNative: formatting changed; feature detection, try/catch and optional report registration omitted. execute forwards the call to the existing application tools. The callback signal cancels execution; registrationSignal removes registrations when the page/event lifetime ends. This is browser-native WebMCP, not a backend MCP server. The API remains experimental; verify the presentation environment.
 
-**Transition:** Show where both entry points converge.
+Transition: Return to the question or closing slide; no scheduled app switch.
 
-Sources:
-
+Sources (reviewed 2026-10-16):
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/webmcp.ts
 - https://github.com/webmachinelearning/webmcp
 
-## 13. Different entry points. The same rules.
+## 29. The tool returns a handoff
 
-**Takeaway:** Different entry points. The same rules.
+Takeaway: The tool returns a handoff
 
-**Time:** 55 seconds.
-
-The concrete flow is Human UI → ProposalStore and Visiting client → WebMCP → createTools → ProposalStore. Agenda state is localStorage, scoped by event and dataset version. There is no reservation server or model credential in this static Pages app. Shared rules prevent the tool path from bypassing schedule constraints.
-
-**Transition:** Run the structured journey.
-
-Sources:
-
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agenda/store.ts
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/tools.ts
-
-## 14. Demo 2 · Propose my day
-
-**Takeaway:** Demo 2 · Propose my day
-
-**Time:** 310 seconds.
-
-Reset preserve. In the external ChatGPT app, paste the exact planning prompt. Inspect discovered tools before the run. The expected path reads get_agenda, explores/paginates search, then calls propose_agenda with real IDs and the current revision. Show Keep/Add/Remove while the saved agenda still contains the original talk. Pause here, and use the actual page approval button as the presenter. If the client connection stalls beyond 20 seconds, announce Captured replay and reset preserve; execute its three initial calls. Do not claim replay is native invocation or inference.
-
-**Transition:** Freeze the important moment: a visible draft.
-
-## 15. This is a draft, not my saved day
-
-**Takeaway:** Inspect the full diff before applying it.
-
-**Time:** 40 seconds.
-
-Actual local capture of the preserve replay, awaiting approval. The replay uses shared tools, no model inference. It proposes seven total sessions, keeping the selected talk and adding six. The full list is in the page; bounded tool output includes counts and only the first two IDs per diff section.
-
-**Transition:** Compare the UI with the returned result.
-
-Sources:
-
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/events/devfest-venezia-2026/captures.json
-
-## 16. The tool returns a handoff
-
-**Takeaway:** The tool returns a handoff
-
-**Time:** 45 seconds.
+Time: Optional / outside the main narrative.
 
 Selected fields from the committed preserve capture’s propose_agenda result. Proposal ID, revision and individual IDs are omitted. Six suggestions do not mean six saved writes. The agent should direct the person to the complete page diff.
 
-**Transition:** Make the approval boundary explicit.
+Transition: Return to the question or closing slide; no scheduled app switch.
 
-Sources:
-
+Sources (reviewed 2026-10-16):
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/events/devfest-venezia-2026/captures.json
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/tools.ts
 
-## 17. There is no approve_agenda tool
+## 30. An old approval must not apply a new change
 
-**Takeaway:** There is no approve_agenda tool
+Takeaway: An old approval must not apply a new change
 
-**Time:** 40 seconds.
-
-Approval is a page action, not a tool exposed to the visiting agent. This is a designed handoff, not proof of physical human identity: a browser-automation agent can click controls. The client must pause and let the person decide; a static page cannot authenticate that intent.
-
-**Transition:** Show the checks that remain at approval.
-
-## 18. An old approval must not apply a new change
-
-**Takeaway:** An old approval must not apply a new change
-
-**Time:** 50 seconds.
+Time: Optional / outside the main narrative.
 
 Excerpt of approveFromHuman, reflowed for projection. Subsequent preservation check and write omitted. Recheck identity, status, saved revision and planning context, then schedule and preservation rules before writing. Approval is bound to this proposal and current state.
 
-**Transition:** Exercise rejection and an impossible request.
+Transition: Return to the question or closing slide; no scheduled app switch.
 
-Sources:
-
+Sources (reviewed 2026-10-16):
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agenda/proposals.ts
 
-## 19. Demo 3 · Say no, then try a conflict
+## 31. Both talks start at 12:35
 
-**Takeaway:** Demo 3 · Say no, then try a conflict
+Takeaway: Both talks start at 12:35
 
-**Time:** 240 seconds.
-
-Use reject-revise from a clean scenario start. Reject the first draft; verify the saved list is unchanged. Ask the exact revision prompt in the runbook, inspect the replacement and approve only after review. If short on time, show conflict instead: add A web for anyone, anywhere, anytime while preserving selections. Both talks start at 12:35 in the reviewed snapshot; show the explicit CONFLICT and unchanged agenda. Do not silently remove the selected talk. For fallback use the corresponding labelled replay.
-
-**Transition:** Keep failure grounded in the real timetable.
-
-## 20. Both talks start at 12:35
-
-**Takeaway:** Both talks start at 12:35
-
-**Time:** 50 seconds.
+Time: Optional / outside the main narrative.
 
 Both intervals are in the 24 October 2026 snapshot, Europe/Rome. The conflict is an actual scripted capture result, not a hypothetical failure. Offer a choice to the person instead of relaxing preservation. The full tool error and before/after IDs are in the captured trace.
 
-**Transition:** Missing information needs the same honesty.
+Transition: Return to the question or closing slide; no scheduled app switch.
 
-Sources:
-
+Sources (reviewed 2026-10-16):
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/events/devfest-venezia-2026/package.json
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/events/devfest-venezia-2026/captures.json
 
-## 21. Unknown is a valid answer
+## 32. Unknown is a valid answer
 
-**Takeaway:** Unknown is a valid answer
+Takeaway: Unknown is a valid answer
 
-**Time:** 45 seconds.
+Time: Optional / outside the main narrative.
 
 Selected fields from the recording scenario’s get_session_details result. Ask: Will this talk be recorded? The snapshot has no published answer; null is unknown, not false. The real response also supplies provenance. If showing reporting, enable local reports explicitly, record a sanitized recording-information gap, then disable it. This is not a message to the organizer.
 
-**Transition:** Now verify the successful path.
+Transition: Return to the question or closing slide; no scheduled app switch.
 
-Sources:
-
+Sources (reviewed 2026-10-16):
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/events/devfest-venezia-2026/captures.json
 
-## 22. “Done” means the saved state agrees
+## 33. “Done” means the saved state agrees
 
-**Takeaway:** Verify saved choices, not a persuasive completion message.
+Takeaway: Verify saved choices, not a persuasive completion message.
 
-**Time:** 90 seconds.
+Time: Optional / outside the main narrative.
 
 Actual local screenshot after the preserve replay was approved and the page reloaded. Seven saved sessions remain. Show get_agenda total_pages and visit each page: production responses contain at most two sessions. Verify overlap_count = 0, protected_missing_count = 0, and the original selected ID remains. A seven-session fixture outcome is not a guarantee that a live model chooses the same seven.
 
-**Transition:** Separate application guarantees from model behavior.
+Transition: Return to the question or closing slide; no scheduled app switch.
 
-Sources:
-
+Sources (reviewed 2026-10-16):
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/tools.ts
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/tests/replay.browser.test.mjs
 
-## 23. Test the state. Then test the agent.
+## 34. Test the state. Then test the agent.
 
-**Takeaway:** Test the state. Then test the agent.
+Takeaway: Test the state. Then test the agent.
 
-**Time:** 60 seconds.
+Time: Optional / outside the main narrative.
 
 Repository evidence records 18/18 scripted fixture trials without inference. That checks deterministic paths, not model quality. Native integration was tested with Chrome DevTools MCP. The current repository still requires rehearsal of external ChatGPT on the presentation machine. Record failures and final constraints, not just calls or prose.
 
-**Transition:** Return to what the audience can change.
+Transition: Return to the question or closing slide; no scheduled app switch.
 
-Sources:
-
+Sources (reviewed 2026-10-16):
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/evidence/evaluation-fixture.json
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/browser-support.md
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
 
-## 24. Design one journey an agent can complete
+## 35. Registration is not a connected agent
 
-**Takeaway:** Design one journey an agent can complete
+Takeaway: Registration is not a connected agent
 
-**Time:** 45 seconds.
-
-Recap the same conference request: preserve a choice, inspect alternatives, approve a proposal, verify the saved agenda. WebMCP is useful because it exposes those existing actions in a structured way. Keep accessible human controls as part of the journey.
-
-**Transition:** Share the actual companion repository.
-
-## 25. Try the Conference Companion
-
-**Takeaway:** The code and data behind the talk are available.
-
-**Time:** 15 seconds.
-
-Use the repository README for setup, docs/runbook.md for exact scenarios, and docs/browser-support.md for native compatibility. This is an independent companion with a reviewed snapshot, not the organizer’s live agenda or a reservation service.
-
-**Transition:** Thank the audience.
-
-Sources:
-
-- https://github.com/Puppo/your-next-user-is-an-ai-agent
-
-## 26. end
-
-**Takeaway:** Thank you.
-
-**Time:** 10 seconds.
-
-End the 30-minute narrative. Q&A is outside the timed slot.
-
-**Transition:** Contact details.
-
-## 27. byebye
-
-**Takeaway:** Continue the conversation.
-
-**Time:** Optional / outside the main narrative.
-
-Use the shared contact slide. Open appendix material only when relevant to questions.
-
-**Transition:** Optional appendix.
-
-## 28. Appendix
-
-**Takeaway:** Appendix
-
-**Time:** Optional / outside the main narrative.
-
-The main talk has ended. These slides support questions and rehearsal.
-
-**Transition:** Choose a relevant topic.
-
-## 29. Registration is not a connected agent
-
-**Takeaway:** Registration is not a connected agent
-
-**Time:** Optional / outside the main narrative.
+Time: Optional / outside the main narrative.
 
 These exact versions are repository evidence from 12 October 2026. They are not a claim about the current presentation machine or general browser support. The app feature-detects document.modelContext and the registry. Registration only proves the page registered tools; it does not prove ChatGPT connected or reasoned correctly. Consult the experimental browser documentation before each rehearsal.
 
-**Transition:** Return to the native demo.
+Transition: Return to the question or closing slide; no scheduled app switch.
 
-Sources:
-
+Sources (reviewed 2026-10-16):
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/browser-support.md
 - https://developer.chrome.com/docs/ai/webmcp
 
-## 30. A fallback that still exercises the rules
+## 36. A fallback that still exercises the rules
 
-**Takeaway:** A fallback that still exercises the rules
+Takeaway: A fallback that still exercises the rules
 
-**Time:** Optional / outside the main narrative.
+Time: Optional / outside the main narrative.
 
 The five captures are preserve, conflict, reject-revise, recording and verify. They contain no model inference and make no native-client claim. Label every switch. Captures are versioned public data; replay preserves the review boundary. Loaded assets are needed: the app has no service worker and does not promise fresh offline navigation.
 
-**Transition:** Return to the live path if the connection recovers.
+Transition: Return to the question or closing slide; no scheduled app switch.
 
-Sources:
-
+Sources (reviewed 2026-10-16):
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/presenter/replay.ts
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
 
-## 31. The repository also contains a bounded loop
+## 37. The repository also contains a bounded loop
 
-**Takeaway:** The repository also contains a bounded loop
+Takeaway: The repository also contains a bounded loop
 
-**Time:** Optional / outside the main narrative.
+Time: Optional / outside the main narrative.
 
 The current React UI uses external ChatGPT rather than an embedded assistant. Do not demonstrate loop.ts as the ChatGPT implementation. In that optional loop, cancellation and context changes stop work; call/result IDs are retained; proposal review is awaited. This is teaching and fixture material, not proof of a cloud-model run.
 
-**Transition:** Distinguish the evidence categories.
+Transition: Return to the question or closing slide; no scheduled app switch.
 
-Sources:
-
+Sources (reviewed 2026-10-16):
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/loop.ts
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/app/EventPage.tsx
 
-## 32. 18/18 is a fixture result
+## 38. 18/18 is a fixture result
 
-**Takeaway:** 18/18 is a fixture result
+Takeaway: 18/18 is a fixture result
 
-**Time:** Optional / outside the main narrative.
+Time: Optional / outside the main narrative.
 
 Historical evidence: dataset 2026-10-12.1, build commit 4b1418af9d6b60eb99fc7402f9256ba0a5d72212. The recorded result predates the current React/Vite commit. Do not relabel it as a benchmark for a model or the current checkout. New execution results belong in the validation record with their own commit and date.
 
-**Transition:** Use evidence to explain the limit of each claim.
+Transition: Return to the question or closing slide; no scheduled app switch.
 
-Sources:
-
+Sources (reviewed 2026-10-16):
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/evidence/evaluation-fixture.json
 
-## 33. Declarative forms live in the teaching spike
+## 39. Declarative forms live in the teaching spike
 
-**Takeaway:** Declarative forms live in the teaching spike
+Takeaway: Declarative forms live in the teaching spike
 
-**Time:** Optional / outside the main narrative.
+Time: Optional / outside the main narrative.
 
 The isolated spike checks browser compatibility; direct add_to_agenda is only a fixture. Do not present it as the production agenda policy. Production search is registered once through the imperative API so it carries the appropriate annotations. For a shorter talk omit this appendix entirely.
 
-**Transition:** Return to the production contract.
+Transition: Return to the question or closing slide; no scheduled app switch.
 
-Sources:
-
+Sources (reviewed 2026-10-16):
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/experiments/webmcp/main.ts
 - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/browser-support.md
 
-## 34. Sources behind this demo
+## 40. Sources behind this demo
 
-**Takeaway:** Sources behind this demo
+Takeaway: Sources behind this demo
 
-**Time:** Optional / outside the main narrative.
+Time: Optional / outside the main narrative.
 
 Application reviewed at commit 8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505. Technical excerpts and UI captures are tied to this revision; sources and capture methods are recorded in speaker-notes.md. Current registration/cancellation docs checked via Context7 on 16 October 2026. Event facts come from the reviewed event package, not the older synthetic journey-design document.
 
-**Transition:** Return to the cover.
+Transition: Return to the question or closing slide; no scheduled app switch.
 
-Sources:
-
+Sources (reviewed 2026-10-16):
 - https://github.com/Puppo/your-next-user-is-an-ai-agent
 - https://github.com/webmachinelearning/webmcp
 - https://developer.chrome.com/docs/ai/webmcp
 
-## 35. cover
+## 41. cover
 
-**Takeaway:** Your next user is an AI agent.
+Takeaway: cover
 
-**Time:** Optional / outside the main narrative.
+Time: Optional / outside the main narrative.
 
-Closing placeholder for your-next-user-is-an-ai-agent.
+Closing cover.
 
-**Transition:** End.
+Transition: End.
 
 ## Demo runbook
 
@@ -538,16 +600,24 @@ Check the exact browser build, native feature support, actual discovered tools, 
 
 > Check that my saved agenda preserves Your Next User Is an AI Agent, has no overlaps, and includes web and AI topics.
 
-### Stage transitions
+### One continuous demo block — slide 21 → slide 22
 
-| Demo / return          | Start                                    | Expected visible outcome                                                                           | Stop / fallback                                                              |
-| ---------------------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| Demo 1, slide 8 → 9    | preserve reset; one talk saved           | Search and details work; original choice stays visible                                             | 20s stall: disclose unavailable browser-client path; show human controls     |
-| Demo 2, slide 14 → 15  | preserve reset; tools discovered         | Read/search/propose; full diff; one saved selection until human approval                           | 20s stall: announce preserve Captured replay; three tool steps reach review  |
-| Demo 3, slide 19 → 20  | reject-revise reset, then conflict reset | Rejection leaves agenda unchanged; fresh proposal needs review; conflict preserves original choice | 20s stall: corresponding labelled replay; use conflict only if time is short |
-| Outcome, slide 22 → 23 | approved preserve run                    | Read every get_agenda page; zero overlaps/missing protected choices; reload persists               | Screenshot is an observed replay outcome, not a live-client result           |
+Leave the deck once at slide 21. Stay in the application through every scene, including resets and replay. Return only to slide 22 after verification. No theory slides between scenarios.
 
-The recording question can be shown after conflict if time permits. Unknown fields stay null. Optional reporting requires local permission; it sends nothing to organizers.
+| Elapsed | Scene | Start and observable check |
+| --- | --- | --- |
+| 0:00–1:30 | Use the screen | Preserve reset; search and details; original saved talk remains. |
+| 1:30–5:00 | Plan and approve | Preserve reset; discover tools; planning prompt; inspect full diff; saved count stays one until the person approves. Read back and reload this result BEFORE any reset. |
+| 5:00–7:30 | Reject and revise | Announce reject-revise reset. Reject first draft; confirm saved state unchanged; request revision; replacement still needs review. |
+| 7:30–9:00 | Conflict | Announce conflict reset. Request the competing 12:35 talk; inspect overlap; original choice remains. |
+| 9:00–9:45 | Missing information | Ask the recording question; show unknown/null and the source. No invented availability. |
+| 9:45–12:00 | Verify | Inspect every agenda page, preserved choice, overlap count and reload. If using the verify scenario, explicitly disclose its seeded seven-session starting state. |
+
+A scenario reset is a new test case, not continuity evidence. The preserve scene proves persistence of its own approved result before a reset. The final verify scenario checks its declared starting state.
+
+At any 20-second stall, announce **Captured replay — scripted shared tools, no model inference**, then use the same scene inside the app. If the app itself cannot run, disclose that and show the appendix captures as a fallback; they are not live results. Keep the deck parked on slide 21 during normal operation.
+
+For a 20-minute cut: trim the theory to 12 minutes by skipping slides 5, 12, 13 and shortening 4–6 and 15–18; use an 8-minute demo by shortening UI exploration, omitting reject/revise and the recording question, retaining preserve/approval, conflict and verification. Never cut the human handoff or the saved-state check.
 
 ### Replay steps
 
@@ -571,10 +641,9 @@ Source PNGs live in assets/__originals; deck assets are WebP. Captures need no m
 - Check the event snapshot and official programme before the event; keep the edition and snapshot label if the live schedule changes.
 - If recording the external-client run, obtain an actual capture; this deck contains no invented client transcript, model score or recording.
 
+
 ## Revision validation
 
-On the reviewed companion checkout: production build and TypeScript checks pass; all 26 deterministic data/domain tests pass. A local replay preserved the selected talk, required explicit approval, and retained seven saved sessions after reload. This verifies the shared-tool/UI path; it does not establish external ChatGPT compatibility. Deck rendering checks are recorded separately after export.
+The 16 October app captures and historical fixture evidence retain their original provenance; this narrative rewrite does not constitute a new external-client rehearsal. On 2026-10-19 the production build, ESLint, CSS lint and TypeScript checks passed. All 41 slides have notes and valid bookends; referenced assets exist and displayed code matches its source. Chromium 156.0.8078.4 traversed all 41 slides after decoding images, with no page errors, failed requests or detected text overflow. All browser captures were visually reviewed. The demo is scheduled only on slide 21, returning to slide 22; timed slides total 1,800 seconds. The built-in headed verifier was not rerun; this check used the local server and a complete headless traversal.
 
-Deck checks on 2026-10-16: 35 non-empty YAML slides with presenter notes, required opening and closing, all referenced assets present, and displayed code matching its source. Build, ESLint, CSS lint and typecheck pass. Chromium 156.0.8078.4 traversed all 35 slides with decoded images, no page exceptions, failed requests or detected text overflow. Native external-client rehearsal remains a separate check.
-
-The final native PDF export contains 35 pages. All pages were visually inspected; the corrected programme capture was checked again in the final PDF. Screenshots and code panels preserve their full content.
+PDF validation on 2026-10-19: Freya logged successful export of all 41 slides; pdfinfo confirms 41 pages and all pages rasterize successfully. All PDF pages were visually inspected. The local export used a temporary 180-second navigation allowance. The command wrapper returned 143 after the completion log; the generated artifact was independently checked rather than treating that wrapper status as a clean exit. No repository toolchain configuration was changed.
