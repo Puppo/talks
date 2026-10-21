@@ -13,6 +13,7 @@ import {
 } from '@perseveranza-pets/freya'
 import { type Logger } from 'pino'
 import { chromium, type Browser, type BrowserContext, type Page } from 'playwright'
+import { writeHomepage } from '../homepage/build.ts'
 
 type BrowserEnvironment = [Browser, BrowserContext, Page]
 
@@ -136,10 +137,14 @@ async function writeNetlifyRedirects(directory: string): Promise<void> {
 }
 
 export const setupCLI: SetupCLI = (program: Command, logger: Logger) => {
+  process.env.DANTE_BUILD_FILE_PATH = resolve('src/build/index.ts')
   program.commands
     .find(command => command.name() === 'deploy')
     ?.hook('postAction', async (command: Command) => {
       await writeNetlifyRedirects(command.opts().directory)
+      if (!process.exitCode) {
+        await writeHomepage(resolve(command.opts().directory, 'deploy/site'))
+      }
     })
 
   program
