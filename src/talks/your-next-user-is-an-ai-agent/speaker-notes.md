@@ -1,10 +1,10 @@
 # Your Next User Is an AI Agent — speaker notes
 
-Revised 2026-10-19. English slides; 30 minutes excluding Q&A. Slides 1–20 build the story from human interface design to delegated interaction. Slide 21 holds one continuous twelve-minute demo. Return once to slides 22–24 for conclusions and closing. Slides 25–41 are contacts and optional appendix.
+Revised 2026-10-22. English slides; 30 minutes excluding Q&A. Slides 1–20 build the story from human interface design to delegated interaction. Slide 21 holds one continuous twelve-minute demo. Return once to slides 22–24 for conclusions and closing. Slides 25–26 are contacts and the closing cover.
 
 ## Narrative and stage direction
 
-Begin with the work behind a useful UI: understanding people, making actions discoverable, providing feedback and recovery. Use the conference attendee as the recurring example. Move from choosing each step to delegating a constrained goal, then explain external agents, embedded agents and WebMCP as distinct concepts. End the explanation before opening the app. The existing scenarios run together at the end. Code excerpts, fixture details and captured outcome references stay in the appendix.
+Begin with the work behind a useful UI: understanding people, making actions discoverable, providing feedback and recovery. Use the conference attendee as the recurring example. Move from choosing each step to delegating a constrained goal, then explain external agents, embedded agents and WebMCP as distinct concepts. End the explanation before opening the app. The existing scenarios run together at the end. Implementation details and fixture evidence remain available in the demo repository.
 
 The embedded-agent section describes an architectural option; the actual Conference Companion demo uses an external client. No new demo or embedded chat implementation is promised. Preserve the original title and abstract.
 
@@ -14,8 +14,7 @@ The embedded-agent section describes an architectural option; the actual Confere
 - Reviewed commit: `8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505`.
 - Event: DevFest Venezia 2026, 24 October 2026, Europe/Rome. Dataset `2026-10-12.1`: 29 sessions / 33 speakers, reviewed snapshot captured 12 October. Editorial topics/summaries are labelled in the app.
 - Current live presentation path: external ChatGPT app + browser connection; no embedded chat in Conference Companion. A successful ChatGPT rehearsal on the presentation machine is still required. Native repository evidence uses Chrome DevTools MCP, not ChatGPT.
-- Captures in this deck were made locally from this checkout on 16 October with Chromium 156.0.8078.4. Programme: human UI reset. Proposal: preserve captured replay awaiting approval. Saved agenda: same replay after explicit approval and reload. These are real app UI captures, not fabricated mockups or evidence of model inference.
-- Code slides are presentation excerpts, not complete standalone programs. Whitespace is reflowed and omissions identified in notes. The displayed lines use escaped `code.rendered` so Freya preserves source punctuation. `code.content` retains the displayed text.
+- The retained app captures were made locally from this checkout on 16 October with Chromium 156.0.8078.4. Programme: human UI reset. Proposal: preserve captured replay awaiting approval. Saved agenda: same replay after explicit approval and reload. These are real app UI captures, not fabricated mockups or evidence of model inference.
 - Historical fixture result 18/18 belongs to 12 October, dataset 2026-10-12.1 and build 4b1418af9d6b60eb99fc7402f9256ba0a5d72212. It is not a current model benchmark.
 
 
@@ -245,7 +244,7 @@ Takeaway: Two entrances. One application.
 
 Time: 55 seconds.
 
-Follow both entrances to the same domain logic. Structured tools reduce the need to infer an action from pixels, but validation still belongs in application code. Search also updates the visible filters in this demo; it is not described as a purely read-only tool. The full schema and registration excerpts are available in the appendix for questions.
+Follow both entrances to the same domain logic. Structured tools reduce the need to infer an action from pixels, but validation still belongs in application code. Search also updates the visible filters in this demo; it is not described as a purely read-only tool. The full schema and registration are available in the demo repository for questions.
 
 Transition: The person needs a useful place to receive the agent’s work.
 
@@ -331,7 +330,7 @@ Takeaway: Demo · Plan my conference day
 
 Time: 720 seconds.
 
-ONE APPLICATION WINDOW: leave the slides here for the full twelve minutes. 0:00–1:30 browser UI search/details; 1:30–5:00 preserve planning, full diff, human approval and readback; 5:00–7:30 reject/revise; 7:30–9:00 conflict; 9:00–9:45 missing recordings; 9:45–12:00 final verification and reload. Reset scenarios explicitly inside the app; say when a reset starts a new test. Start the verify scenario only if the current state does not match its preconditions, and disclose its seeded state. Never claim a seeded reset persisted the earlier run. In preserve, verify and reload its approved state before resetting. Use a 20-second stall cutoff and announce Captured replay — scripted shared tools, no model inference. All fallback operations remain in the app; use the appendix captures only if the app itself is unavailable. Return to slide 22 only when the whole block is complete. Full prompts and checks are in the runbook below.
+ONE APPLICATION WINDOW: leave the slides here for the full twelve minutes. 0:00–1:30 browser UI search/details; 1:30–5:00 preserve planning, full diff, human approval and readback; 5:00–7:30 reject/revise; 7:30–9:00 conflict; 9:00–9:45 missing recordings; 9:45–12:00 final verification and reload. Reset scenarios explicitly inside the app; say when a reset starts a new test. Start the verify scenario only if the current state does not match its preconditions, and disclose its seeded state. Never claim a seeded reset persisted the earlier run. In preserve, verify and reload its approved state before resetting. Use a 20-second stall cutoff and announce Captured replay — scripted shared tools, no model inference. All fallback operations remain in the app. If the app is unavailable, disclose that and explain the intended outcome instead of presenting it as a live result. Return to slide 22 only when the whole block is complete. Full prompts and checks are in the runbook below.
 
 Transition: Return once, to the conclusion on slide 22.
 
@@ -356,7 +355,7 @@ Takeaway: Try the Conference Companion
 
 Time: 25 seconds.
 
-Share the existing application and repository QR links. The sources and implementation excerpts are in the appendix for Q&A.
+Share the existing application and repository QR links. Use the repository for implementation details during Q&A.
 
 Transition: Thank the audience.
 
@@ -378,213 +377,9 @@ Time: Optional / outside the main narrative.
 
 Shared contacts.
 
-Transition: Open the appendix only for a question or a complete app failure.
+Transition: Questions, then the closing cover.
 
-## 26. Appendix
-
-Takeaway: Appendix
-
-Time: Optional / outside the main narrative.
-
-Optional material only. No planned live demos or slide/app switching here. The main talk ends before this section.
-
-Transition: Choose the relevant reference slide.
-
-## 27. A proposal needs IDs and a known revision
-
-Takeaway: A proposal needs IDs and a known revision
-
-Time: Optional / outside the main narrative.
-
-Presentation excerpt of schemas.ts, with whitespace changed and the optional replacement field omitted. The description is split into concatenated strings for projection. Explain concrete IDs and optimistic revision checks. No approve flag is accepted. The schema is not the business rule; runtime validation and ProposalStore enforce it.
-
-Transition: Return to the question or closing slide; no scheduled app switch.
-
-Sources (reviewed 2026-10-16):
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/schemas.ts
-
-## 28. Register capabilities, reuse the application
-
-Takeaway: Register capabilities, reuse the application
-
-Time: Optional / outside the main narrative.
-
-Presentation excerpt of registerNative: formatting changed; feature detection, try/catch and optional report registration omitted. execute forwards the call to the existing application tools. The callback signal cancels execution; registrationSignal removes registrations when the page/event lifetime ends. This is browser-native WebMCP, not a backend MCP server. The API remains experimental; verify the presentation environment.
-
-Transition: Return to the question or closing slide; no scheduled app switch.
-
-Sources (reviewed 2026-10-16):
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/webmcp.ts
-- https://github.com/webmachinelearning/webmcp
-
-## 29. The tool returns a handoff
-
-Takeaway: The tool returns a handoff
-
-Time: Optional / outside the main narrative.
-
-Selected fields from the committed preserve capture’s propose_agenda result. Proposal ID, revision and individual IDs are omitted. Six suggestions do not mean six saved writes. The agent should direct the person to the complete page diff.
-
-Transition: Return to the question or closing slide; no scheduled app switch.
-
-Sources (reviewed 2026-10-16):
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/events/devfest-venezia-2026/captures.json
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/tools.ts
-
-## 30. An old approval must not apply a new change
-
-Takeaway: An old approval must not apply a new change
-
-Time: Optional / outside the main narrative.
-
-Excerpt of approveFromHuman, reflowed for projection. Subsequent preservation check and write omitted. Recheck identity, status, saved revision and planning context, then schedule and preservation rules before writing. Approval is bound to this proposal and current state.
-
-Transition: Return to the question or closing slide; no scheduled app switch.
-
-Sources (reviewed 2026-10-16):
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agenda/proposals.ts
-
-## 31. Both talks start at 12:35
-
-Takeaway: Both talks start at 12:35
-
-Time: Optional / outside the main narrative.
-
-Both intervals are in the 24 October 2026 snapshot, Europe/Rome. The conflict is an actual scripted capture result, not a hypothetical failure. Offer a choice to the person instead of relaxing preservation. The full tool error and before/after IDs are in the captured trace.
-
-Transition: Return to the question or closing slide; no scheduled app switch.
-
-Sources (reviewed 2026-10-16):
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/events/devfest-venezia-2026/package.json
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/events/devfest-venezia-2026/captures.json
-
-## 32. Unknown is a valid answer
-
-Takeaway: Unknown is a valid answer
-
-Time: Optional / outside the main narrative.
-
-Selected fields from the recording scenario’s get_session_details result. Ask: Will this talk be recorded? The snapshot has no published answer; null is unknown, not false. The real response also supplies provenance. If showing reporting, enable local reports explicitly, record a sanitized recording-information gap, then disable it. This is not a message to the organizer.
-
-Transition: Return to the question or closing slide; no scheduled app switch.
-
-Sources (reviewed 2026-10-16):
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/events/devfest-venezia-2026/captures.json
-
-## 33. “Done” means the saved state agrees
-
-Takeaway: Verify saved choices, not a persuasive completion message.
-
-Time: Optional / outside the main narrative.
-
-Actual local screenshot after the preserve replay was approved and the page reloaded. Seven saved sessions remain. Show get_agenda total_pages and visit each page: production responses contain at most two sessions. Verify overlap_count = 0, protected_missing_count = 0, and the original selected ID remains. A seven-session fixture outcome is not a guarantee that a live model chooses the same seven.
-
-Transition: Return to the question or closing slide; no scheduled app switch.
-
-Sources (reviewed 2026-10-16):
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/tools.ts
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/tests/replay.browser.test.mjs
-
-## 34. Test the state. Then test the agent.
-
-Takeaway: Test the state. Then test the agent.
-
-Time: Optional / outside the main narrative.
-
-Repository evidence records 18/18 scripted fixture trials without inference. That checks deterministic paths, not model quality. Native integration was tested with Chrome DevTools MCP. The current repository still requires rehearsal of external ChatGPT on the presentation machine. Record failures and final constraints, not just calls or prose.
-
-Transition: Return to the question or closing slide; no scheduled app switch.
-
-Sources (reviewed 2026-10-16):
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/evidence/evaluation-fixture.json
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/browser-support.md
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
-
-## 35. Registration is not a connected agent
-
-Takeaway: Registration is not a connected agent
-
-Time: Optional / outside the main narrative.
-
-These exact versions are repository evidence from 12 October 2026. They are not a claim about the current presentation machine or general browser support. The app feature-detects document.modelContext and the registry. Registration only proves the page registered tools; it does not prove ChatGPT connected or reasoned correctly. Consult the experimental browser documentation before each rehearsal.
-
-Transition: Return to the question or closing slide; no scheduled app switch.
-
-Sources (reviewed 2026-10-16):
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/browser-support.md
-- https://developer.chrome.com/docs/ai/webmcp
-
-## 36. A fallback that still exercises the rules
-
-Takeaway: A fallback that still exercises the rules
-
-Time: Optional / outside the main narrative.
-
-The five captures are preserve, conflict, reject-revise, recording and verify. They contain no model inference and make no native-client claim. Label every switch. Captures are versioned public data; replay preserves the review boundary. Loaded assets are needed: the app has no service worker and does not promise fresh offline navigation.
-
-Transition: Return to the question or closing slide; no scheduled app switch.
-
-Sources (reviewed 2026-10-16):
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/presenter/replay.ts
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
-
-## 37. The repository also contains a bounded loop
-
-Takeaway: The repository also contains a bounded loop
-
-Time: Optional / outside the main narrative.
-
-The current React UI uses external ChatGPT rather than an embedded assistant. Do not demonstrate loop.ts as the ChatGPT implementation. In that optional loop, cancellation and context changes stop work; call/result IDs are retained; proposal review is awaited. This is teaching and fixture material, not proof of a cloud-model run.
-
-Transition: Return to the question or closing slide; no scheduled app switch.
-
-Sources (reviewed 2026-10-16):
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/loop.ts
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/app/EventPage.tsx
-
-## 38. 18/18 is a fixture result
-
-Takeaway: 18/18 is a fixture result
-
-Time: Optional / outside the main narrative.
-
-Historical evidence: dataset 2026-10-12.1, build commit 4b1418af9d6b60eb99fc7402f9256ba0a5d72212. The recorded result predates the current React/Vite commit. Do not relabel it as a benchmark for a model or the current checkout. New execution results belong in the validation record with their own commit and date.
-
-Transition: Return to the question or closing slide; no scheduled app switch.
-
-Sources (reviewed 2026-10-16):
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/evidence/evaluation-fixture.json
-
-## 39. Declarative forms live in the teaching spike
-
-Takeaway: Declarative forms live in the teaching spike
-
-Time: Optional / outside the main narrative.
-
-The isolated spike checks browser compatibility; direct add_to_agenda is only a fixture. Do not present it as the production agenda policy. Production search is registered once through the imperative API so it carries the appropriate annotations. For a shorter talk omit this appendix entirely.
-
-Transition: Return to the question or closing slide; no scheduled app switch.
-
-Sources (reviewed 2026-10-16):
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/experiments/webmcp/main.ts
-- https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/browser-support.md
-
-## 40. Sources behind this demo
-
-Takeaway: Sources behind this demo
-
-Time: Optional / outside the main narrative.
-
-Application reviewed at commit 8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505. Technical excerpts and UI captures are tied to this revision; sources and capture methods are recorded in speaker-notes.md. Current registration/cancellation docs checked via Context7 on 16 October 2026. Event facts come from the reviewed event package, not the older synthetic journey-design document.
-
-Transition: Return to the question or closing slide; no scheduled app switch.
-
-Sources (reviewed 2026-10-16):
-- https://github.com/Puppo/your-next-user-is-an-ai-agent
-- https://github.com/webmachinelearning/webmcp
-- https://developer.chrome.com/docs/ai/webmcp
-
-## 41. cover
+## 26. cover
 
 Takeaway: cover
 
@@ -641,7 +436,7 @@ Leave the deck once at slide 21. Stay in the application through every scene, in
 
 A scenario reset is a new test case, not continuity evidence. The preserve scene proves persistence of its own approved result before a reset. The final verify scenario checks its declared starting state.
 
-At any 20-second stall, announce **Captured replay — scripted shared tools, no model inference**, then use the same scene inside the app. If the app itself cannot run, disclose that and show the appendix captures as a fallback; they are not live results. Keep the deck parked on slide 21 during normal operation.
+At any 20-second stall, announce **Captured replay — scripted shared tools, no model inference**, then use the same scene inside the app. If the app itself cannot run, disclose that, explain the intended outcome and return to slide 22; do not present it as a live result. Keep the deck parked on slide 21 during normal operation.
 
 For a 20-minute cut: trim the theory to 12 minutes by skipping slides 5, 12, 13 and shortening 4–6 and 15–18; use an 8-minute demo by shortening UI exploration, omitting reject/revise and the recording question, retaining preserve/approval, conflict and verification. Never cut the human handoff or the saved-state check.
 
@@ -657,7 +452,7 @@ Announce **Captured replay — scripted shared tools, no model inference**. Pick
 | proposal.webp     | Preserve replay, responsive 840px viewport, #proposal before approval | Full Keep/Add/Remove diff and actual review controls |
 | saved_agenda.webp | Same replay, approve, finish, reload; responsive 840px viewport, #agenda crop    | Seven persisted selections in this local run         |
 
-Source PNGs live in assets/__originals; deck assets are WebP. Captures need no model credentials. A separate conflict diagnostic PNG was used only during verification and is not part of the slide assets.
+Source PNGs live in assets/__originals; retained assets are WebP. The saved-agenda capture is retained as supporting material but is no longer a slide. Captures need no model credentials. A separate conflict diagnostic PNG was used only during verification and is not part of the slide assets.
 
 ## Remaining rehearsal work
 
@@ -679,3 +474,7 @@ PDF validation on 2026-10-19: Freya logged successful export of all 41 slides; p
 The timing, slide numbering and single final demo block are unchanged. Five authored diagrams replace repeated columns; two generated editorial illustrations provide visual pauses. Twemoji graphics are embedded as local WebP assets for reliable PDF rendering. See [visual-assets.md](visual-assets.md) for prompts, source files and attribution. Earlier validation above refers to the narrative revision; visual-revision checks are recorded after rendering.
 
 Visual revision validation: production build, TypeScript and CSS lint pass. Slide count, notes, source-code display and asset references remain valid. The first browser pass visually confirmed the new interface diagram, research illustration and emoji checklist, then timed out during navigation. The retry failed to launch Chromium within 600 seconds while the host was under I/O pressure. Earlier 41-slide browser/PDF results above belong to the previous narrative revision; they do not certify this visual revision. Preview/PDF export is checked through Netlify separately.
+
+## Appendix removal — 2026-10-22
+
+Removed the appendix divider and all fourteen reference slides. The deck now has 26 slides: the 24-slide timed narrative, contacts and the closing cover. The main demo block and its 30-minute timing are unchanged. Presenter notes now point to the repository for implementation details and no longer depend on appendix captures for fallback. Illustration and emoji credits remain on the demo/source links slide. Earlier 41-slide validation records above describe historical versions.
