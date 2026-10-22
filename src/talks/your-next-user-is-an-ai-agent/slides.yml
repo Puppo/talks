@@ -1,0 +1,632 @@
+---
+layout: cover
+className:
+  qr: talk@unpublished-qr
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: cover
+
+  Time: 20 seconds.
+
+  Open with the title, then promise a story about how interaction changes. We will first build the mental model, then spend twelve uninterrupted minutes in the existing application. Keep the slides in English.
+
+  Transition: Introduce yourself.
+
+---
+layout: hello
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: hello
+
+  Time: 20 seconds.
+
+  Brief personal introduction; connect your web-development experience to interface design.
+
+  Transition: Introduce Nearform.
+
+---
+layout: nearform
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: nearform
+
+  Time: 20 seconds.
+
+  Use the shared company slide.
+
+  Transition: Start with the relationship between people and software.
+
+---
+title: We learned to meet people halfway
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: We learned to meet people halfway
+
+  Time: 55 seconds.
+
+  Use this as a conceptual progression, not a dated history or a claim that one interface replaced another. Commands, graphical controls and web journeys coexist. Tell the story through the burden placed on the person: remembering syntax, recognizing an action, navigating a task. The design question gradually becomes how to make the user’s job understandable. Avoid suggesting that accessibility began only after graphical interfaces.
+
+  Transition: To design that journey, we first have to understand the person.
+
+  Sources:
+  - https://www.nngroup.com/articles/ten-usability-heuristics/
+
+  Visual: three drawn interfaces trace the burden from command recall to task navigation.
+image:
+  url: '@talk/interface_evolution.webp'
+  className: talk@diagram-image
+className:
+  root: talk@diagram
+
+---
+title: A screen starts with a person
+decorations:
+  permalink: false
+  logo: black
+notes: |-
+  Takeaway: A screen starts with a person
+
+  Time: 55 seconds.
+
+  Describe the work before pixels: observe a task, learn the user’s vocabulary and mental model, prototype, and watch someone try it. Use an attendee choosing talks as the example. They want a useful day, not a tutorial on the filtering controls. This is the design practice we carry forward into agent interaction.
+
+  Transition: What did that work teach us about good interfaces?
+
+  Sources:
+  - https://www.nngroup.com/articles/ten-usability-heuristics/
+
+  Visual: generated editorial illustration of a research session; not a demo capture.
+layout: half
+image:
+  url: '@talk/ui_research.webp'
+content:
+  - Observe the task.
+  - Listen to the person.
+  - Try the interface.
+className:
+  root: talk@illustrated
+
+---
+title: Good UI makes the next step clear
+items:
+  horizontal: false
+  className: talk@compact-items
+  entries:
+    - title: Recognize
+      text: Labels explain the available actions.
+      className:
+        root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_eyes.webp'
+    - title: Understand
+      text: Feedback shows what changed.
+      className:
+        root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_bulb.webp'
+    - title: Recover
+      text: A clear way to cancel or correct.
+      className:
+        root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_hand.webp'
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: Good UI makes the next step clear
+
+  Time: 55 seconds.
+
+  Use the conference example: a Search label, a visible saved count, and a remove or cancel action. These are practical ways to reduce uncertainty. Accessibility adds another essential perspective: people use different input and output methods. Semantic controls remain necessary for people; potential agent benefits never substitute for accessibility testing.
+
+  Transition: Even a well-designed interface leaves some work with the person.
+
+  Sources:
+  - https://www.nngroup.com/articles/ten-usability-heuristics/
+  - https://www.w3.org/WAI/fundamentals/accessibility-intro/
+
+  Visual: eyes, light bulb and raised-hand emoji replace step numbers.
+
+---
+title: A good UI still asks me to do the work
+content:
+  - <span class="talk@eyebrow">Conference Companion · DevFest Venezia 2026 · snapshot 12 Oct 2026</span>
+image:
+  url: '@talk/programme.webp'
+  className: talk@screenshot
+className:
+  root: talk@capture
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: A good UI still asks me to do the work
+
+  Time: 55 seconds.
+
+  Show the existing programme capture without opening the app. Walk verbally through the work: search topics, compare parallel sessions, remember a saved choice, check time conflicts, save the result. This is a real local capture of the reviewed DevFest Venezia 2026 snapshot, not a model run. The interface can be good while the coordination remains demanding.
+
+  Transition: What would the person ask if they could delegate that coordination?
+
+  Sources:
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
+
+---
+layout: quote
+title: The goal behind all those clicks
+quote:
+  icons: false
+  sentence: Help me plan my day at this conference. I’m interested in web development and AI. Avoid overlapping sessions, preserve the sessions I’ve already selected, and explain the trade-offs.
+  author: The attendee
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: The goal behind all those clicks
+
+  Time: 45 seconds.
+
+  Read only the opening phrase; let the audience scan the constraints. Keep the full planning request because it will be the exact same request in the final demo. Highlight preserve my selections and avoid overlaps. We now have an intent and success criteria, not merely a sequence of clicks.
+
+  Transition: That changes the unit of interaction.
+
+  Sources:
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
+
+---
+layout: separator
+title: From steps to intent
+subtitle: “Show me the controls” → “Help me reach this outcome”
+className:
+  root: talk@stage-dark
+decorations:
+  logo: white
+  permalink: false
+notes: |-
+  Takeaway: From steps to intent
+
+  Time: 35 seconds.
+
+  Pause on the shift. A person may still choose to act directly. Delegation adds a way to interact: state the goal and constraints, then inspect the proposed outcome. This is a product design direction, not a prediction that screens disappear.
+
+  Transition: An agent needs a loop to turn that intention into actions.
+
+---
+title: An agent needs a feedback loop
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: An agent needs a feedback loop
+
+  Time: 60 seconds.
+
+  Explain the loop with the same day-planning task: read my agenda, search sessions, propose a day, inspect the result. A model answer alone does not establish success. The application supplies observations and action results. The loop needs cancellation, a budget and a stopping condition; the repository’s optional loop illustrates bounded execution, but it is not the implementation of external ChatGPT.
+
+  Transition: First consider an agent that arrives from outside the application.
+
+  Sources:
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/loop.ts
+
+  Visual: follow the circular feedback arrows; goal and constraints stay in the center.
+image:
+  url: '@talk/agent_loop.webp'
+  className: talk@diagram-image
+className:
+  root: talk@diagram
+
+---
+title: An agent can arrive from outside
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: An agent can arrive from outside
+
+  Time: 60 seconds.
+
+  Describe the external assistant acting through browser tools. It can encounter a site that was built for people. Labels, state and feedback help make the journey understandable, but a particular client must be tested. This is the existing demo’s intended client arrangement. No embedded assistant is required for this path.
+
+  Transition: Alternatively, the product can provide the assistant itself.
+
+  Sources:
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/README.md
+
+  Visual: the assistant is outside the application boundary.
+image:
+  url: '@talk/external_agent.webp'
+  className: talk@diagram-image
+className:
+  root: talk@diagram
+
+---
+title: Or live inside your application
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: Or live inside your application
+
+  Time: 60 seconds.
+
+  Present an architectural option, clearly distinct from the current live demo: the application can own the orchestration and the assistant UI. The model can be remote or local; embedded means integrated into the product, not necessarily running inference in the browser. A chat box alone is not an agent. The product still needs tools, state, cancellation and review. Conference Companion has no embedded chat UI; do not promise a second implementation during the demo.
+
+  Transition: Location and action interface are two different design decisions.
+
+  Sources:
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/app/EventPage.tsx
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/loop.ts
+
+  Visual: the agent moves inside the product boundary. This is conceptual, not a new demo.
+image:
+  url: '@talk/embedded_agent.webp'
+  className: talk@diagram-image
+className:
+  root: talk@diagram
+
+---
+title: Two separate design decisions
+items:
+  horizontal: true
+  className: talk@compact-items
+  entries:
+    - index: 1
+      title: Where is the agent?
+      text: Outside the product, or integrated into it.
+      className:
+        root: talk@compact-item
+    - index: 2
+      title: How does it act?
+      text: Through UI controls, or explicit application tools.
+      className:
+        root: talk@compact-item
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: Two separate design decisions
+
+  Time: 50 seconds.
+
+  Make the two axes explicit. An embedded agent can call application functions directly. An external browser agent may use human controls or discover tools through a compatible browser integration. WebMCP belongs to the action-interface discussion; it is not a model, a chat product, or an orchestration loop.
+
+  Transition: Now introduce the page’s explicit tool interface.
+
+  Sources:
+  - https://developer.chrome.com/docs/ai/webmcp
+
+---
+title: 'WebMCP: the page offers actions'
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: WebMCP: the page offers actions
+
+  Time: 70 seconds.
+
+  Use the demo vocabulary: search_sessions, get_session_details, get_agenda and propose_agenda. The imperative implementation registers tools on document.modelContext and delegates execution to the existing shared tools. Declarative forms are another approach in WebMCP, explored only in the repository’s separate teaching spike. Explain the contract without reading API syntax aloud. Browser/client availability is experimental and must be rehearsed; registration alone does not prove a connected client. Documentation checked 2026-10-19; pinned app evidence is separate.
+
+  Transition: Tools must lead to the same application rules as the UI.
+
+  Sources:
+  - https://developer.chrome.com/docs/ai/webmcp
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/webmcp.ts
+
+  Visual: four real tool names beside one large statement, instead of a process list.
+layout: side
+content:
+  - search_sessions
+  - get_session_details
+  - get_agenda
+  - propose_agenda
+highlight:
+  text: The page says:<br/><strong>“Here is what I can do.”</strong>
+className:
+  root: talk@tool-menu
+
+---
+title: Two entrances. One application.
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: Two entrances. One application.
+
+  Time: 55 seconds.
+
+  Follow both entrances to the same domain logic. Structured tools reduce the need to infer an action from pixels, but validation still belongs in application code. Search also updates the visible filters in this demo; it is not described as a purely read-only tool. The full schema and registration are available in the demo repository for questions.
+
+  Transition: The person needs a useful place to receive the agent’s work.
+
+  Sources:
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/schemas.ts
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/tools.ts
+
+  Visual: two entry points converge on shared rules; they are not sequential steps.
+image:
+  url: '@talk/shared_rules.webp'
+  className: talk@diagram-image
+className:
+  root: talk@diagram
+
+---
+layout: side
+title: The UI becomes a place to review
+content:
+  - Keep / Add / Remove
+  - The existing agenda is unchanged.
+  - I can approve or reject.
+image:
+  url: '@talk/proposal.webp'
+  className: talk@panel-shot
+decorations:
+  permalink: false
+  logo: white
+notes: |-
+  Takeaway: The UI becomes a place to review
+
+  Time: 50 seconds.
+
+  This is a static capture before the demo, used to explain the interaction model. Point to Keep/Add/Remove and the actual approval controls. A proposal is not the saved agenda. The interface lets the person understand the change without reconstructing every tool call. Caption the capture as a local scripted-replay outcome, not live client evidence.
+
+  Transition: Review needs a meaningful decision, not a decorative confirmation.
+
+  Sources:
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
+
+---
+title: Control is part of the interaction
+decorations:
+  permalink: false
+  logo: white
+notes: |-
+  Takeaway: Control is part of the interaction
+
+  Time: 55 seconds.
+
+  Relate this to familiar UI control and feedback. The tool can propose; the page owns the review flow. The production registry has no approve_agenda tool. A browser agent could still click the human control, so the presentation explicitly hands control to the person; this is not physical-human authentication. Approval validates that the proposal is still current. Rejection must leave the agenda unchanged.
+
+  Transition: The final answer needs evidence in the application state.
+
+  Sources:
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/src/agents/schemas.ts
+  - https://www.nngroup.com/articles/ten-usability-heuristics/
+
+  Visual: pause on the raised hand and give the human decision space.
+layout: separator
+subtitle: Keep my choices. Let me review. Show what changed.
+image:
+  url: '@talk/emoji_hand.webp'
+className:
+  root: talk@stage-dark talk@hand-stop
+
+---
+title: “Done” needs evidence
+items:
+  horizontal: false
+  className: talk@compact-items
+  entries:
+    - title: Constraints
+      text: No overlaps; original choice preserved.
+      className:
+        root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_check.webp'
+    - title: Unknowns
+      text: Missing information stays unknown.
+      className:
+        root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_bulb.webp'
+    - title: Saved state
+      text: Read it back; reload and inspect.
+      className:
+        root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_eyes.webp'
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: “Done” needs evidence
+
+  Time: 55 seconds.
+
+  Separate intent from verified outcome. The demo checks all agenda pages, overlap and protected-selection counts, and persistence after reload. For recording information the app returns null rather than inventing an answer. Deterministic domain tests support these rules; fixture outcomes do not measure an external model’s reliability. Those distinctions belong in our definition of done.
+
+  Transition: What kind of web experience does this make possible?
+
+  Sources:
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/evaluation-report.md
+
+  Visual: emoji checklist of evidence, unknowns and saved state.
+
+---
+layout: half
+title: More ways in. One human goal.
+className:
+  root: talk@illustrated talk@stage-dark
+decorations:
+  logo: white
+  permalink: false
+notes: |-
+  Takeaway: More ways in. One human goal.
+
+  Time: 40 seconds.
+
+  Offer a design thesis, not a guaranteed roadmap: people can switch between acting directly and delegating work while the page keeps the result understandable. The accumulated work on usability remains useful. The new design work includes describing capabilities, expressing constraints and creating a good handoff back to the person.
+
+  Transition: We have the whole model. Now stay in the app and exercise it.
+
+  Visual: generated person/agent illustration; describe coexistence rather than replacement.
+image:
+  url: '@talk/human_agent.webp'
+content:
+  - Act directly.
+  - Delegate the work.
+  - Review the outcome.
+
+---
+title: One day, from request to saved agenda
+items:
+  horizontal: true
+  className: talk@compact-items
+  entries:
+    - title: Use the screen
+      text: Search and inspect a session.
+      className:
+        root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_eyes.webp'
+    - title: Delegate
+      text: Plan around a saved choice; review.
+      className:
+        root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_robot.webp'
+    - title: Challenge it
+      text: Reject, revise, conflict, then verify.
+      className:
+        root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_check.webp'
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: One day, from request to saved agenda
+
+  Time: 50 seconds.
+
+  Preview the continuous demo sequence. Tell the audience that we will leave the deck once and come back only after the checks. Same application, same scenarios, same planning request. The final block includes the missing-recording question if the client responds within the time budget. Do not open the application yet; advance to the holding slide.
+
+  Transition: Advance once, then switch to the app for the entire block.
+
+  Sources:
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
+
+  Visual: three emoji mark the continuous demo itinerary.
+
+---
+layout: separator
+title: Demo · Plan my conference day
+subtitle: Use the screen → delegate → review → challenge → verify
+className:
+  root: talk@stage-dark
+decorations:
+  logo: white
+  permalink: false
+notes: |-
+  Takeaway: Demo · Plan my conference day
+
+  Time: 720 seconds.
+
+  ONE APPLICATION WINDOW: leave the slides here for the full twelve minutes. 0:00–1:30 browser UI search/details; 1:30–5:00 preserve planning, full diff, human approval and readback; 5:00–7:30 reject/revise; 7:30–9:00 conflict; 9:00–9:45 missing recordings; 9:45–12:00 final verification and reload. Reset scenarios explicitly inside the app; say when a reset starts a new test. Start the verify scenario only if the current state does not match its preconditions, and disclose its seeded state. Never claim a seeded reset persisted the earlier run. In preserve, verify and reload its approved state before resetting. Use a 20-second stall cutoff and announce Captured replay — scripted shared tools, no model inference. All fallback operations remain in the app. If the app is unavailable, disclose that and explain the intended outcome instead of presenting it as a live result. Return to slide 22 only when the whole block is complete. Full prompts and checks are in the runbook below.
+
+  Transition: Return once, to the conclusion on slide 22.
+
+  Sources:
+  - https://github.com/Puppo/your-next-user-is-an-ai-agent/blob/8f6f7ebcf1a5ab2e18fee7ea00ba03c95dd35505/docs/runbook.md
+
+---
+title: Design for intent. Keep people in control.
+className:
+  root: talk@closing
+items:
+  horizontal: false
+  className: talk@compact-items
+  entries:
+    - title: Understand the job
+      text: The user’s goal still comes first.
+      className:
+        root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_bulb.webp'
+    - title: Expose meaningful actions
+      text: Reuse the application’s rules.
+      className:
+        root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_tools.webp'
+    - title: Make the outcome reviewable
+      text: Show the change and verify the state.
+      className:
+        root: talk@compact-item
+        image: talk@emoji
+      image: '@talk/emoji_hand.webp'
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: Design for intent. Keep people in control.
+
+  Time: 70 seconds.
+
+  Return from the app once. Tie each outcome to the opening story: studying the task gave us the constraints; explicit actions made delegation possible; review and feedback let us keep control. Mention only outcomes actually observed in the demo. If replay was used, name it again. Close with the title: your next user may be an agent, but the purpose of the product still belongs to a person.
+
+  Transition: Share the demo and source.
+
+  Visual: short emoji recap beside the final statement.
+layout: side
+highlight:
+  text: Human goals.<br/><strong>Agent actions.</strong>
+
+---
+title: Try the Conference Companion
+content:
+  - 'Illustrations: generated for this talk. Emoji: Twemoji / CC BY 4.0.'
+items:
+  entries:
+    - qr: https://github.com/Puppo/your-next-user-is-an-ai-agent
+      title: Demo and source
+      text: github.com/Puppo/your-next-user-is-an-ai-agent
+    - qr: https://puppo.github.io/your-next-user-is-an-ai-agent/?event=devfest-venezia-2026
+      title: DevFest Venezia 2026
+      text: Programme · agenda · reviewed proposals
+  horizontal: true
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: Try the Conference Companion
+
+  Time: 25 seconds.
+
+  Share the existing application and repository QR links. Use the repository for implementation details during Q&A.
+
+  Transition: Thank the audience.
+
+---
+layout: end
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: end
+
+  Time: 20 seconds.
+
+  Use the shared closing slide. This ends the timed 30-minute talk.
+
+  Transition: Contacts and optional questions.
+
+---
+layout: byebye
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: byebye
+
+  Time: Optional / outside the main narrative.
+
+  Shared contacts.
+
+  Transition: Questions, then the closing cover.
+
+---
+layout: cover
+className:
+  qr: talk@unpublished-qr
+decorations:
+  permalink: false
+notes: |-
+  Takeaway: cover
+
+  Time: Optional / outside the main narrative.
+
+  Closing cover.
+
+  Transition: End.
