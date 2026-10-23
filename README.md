@@ -120,7 +120,7 @@ This repository is **first-class AI-agent friendly**! 🧠✨
 <img src="https://avatars.githubusercontent.com/u/2527849?v=4" width="120" height="120" style="border-radius: 50%;" alt="Luca Del Puppo" />
 
 ### **Luca Del Puppo** 🇮🇹
-**Senior Software Engineer @ [Nearform](https://nearform.com)**  
+**AI Native Engineer @ [Nearform](https://nearform.com)**  
 🏆 *Google Developer Expert (Web Technologies) • Former Microsoft MVP • Codemotion & GitKraken Ambassador*
 
 [![Website](https://img.shields.io/badge/🌐_Website-delpuppo.net-2563EB?style=flat-square)](https://delpuppo.net)
