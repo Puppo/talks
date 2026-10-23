@@ -1,7 +1,5 @@
 ---
 layout: cover
-className:
-  qr: talk@unpublished-qr
 decorations:
   permalink: false
 notes: |-
@@ -618,8 +616,6 @@ notes: |-
 
 ---
 layout: cover
-className:
-  qr: talk@unpublished-qr
 decorations:
   permalink: false
 notes: |-
