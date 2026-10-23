@@ -94,7 +94,8 @@ export function renderHomepage({ talks: allTalks, author, version, scripts }: Ho
 <title>Talks by ${escape(author.name)}</title>
 <meta name="description" content="Explore Luca Del Puppo’s conference talks on AI agents, the web platform, React, TypeScript and developer tools. View slides and download presentations.">
 <meta name="theme-color" content="#000e38">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23000e38'/%3E%3Ctext x='10' y='46' font-size='44' fill='%2300e5a4'%3E✳%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/assets/homepage/favicon.webp?v=${encodeURIComponent(version)}" type="image/webp" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/homepage/favicon.webp?v=${encodeURIComponent(version)}" type="image/webp">
 <link rel="preload" href="/assets/homepage/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/homepage/style.css?v=${encodeURIComponent(version)}">
 <script type="module" src="/assets/homepage/browser.js?v=${encodeURIComponent(version)}"></script>${scripts}

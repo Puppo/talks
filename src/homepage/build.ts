@@ -51,6 +51,7 @@ export async function writeHomepage(directory: string, version?: string): Promis
   await cp(resolve('src/homepage/style.css'), resolve(assets, 'style.css'))
   await cp(resolve('src/homepage/assets/inter.woff2'), resolve(assets, 'inter.woff2'))
   await cp(resolve('src/homepage/assets/inter_license.txt'), resolve(assets, 'inter_license.txt'))
+  await cp(resolve('src/themes/main/assets/favicon.webp'), resolve(assets, 'favicon.webp'))
   const browser = await readFile(resolve('src/homepage/browser.ts'), 'utf8')
   await writeFile(resolve(assets, 'browser.js'), stripTypeScriptTypes(browser))
   await writeFile(resolve(directory, 'index.html'), renderHomepage({ talks, author, version: siteVersion, scripts }))
