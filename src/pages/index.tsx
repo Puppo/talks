@@ -1,60 +1,55 @@
 import type { BuildContext } from '@perseveranza-pets/dante'
 import type { PageData } from '@perseveranza-pets/freya'
 import type { VNode } from '@perseveranza-pets/freya/preact'
+import { cp, mkdir, readFile, writeFile } from 'node:fs/promises'
+import { existsSync } from 'node:fs'
+import { stripTypeScriptTypes } from 'node:module'
+import { resolve } from 'node:path'
 import { catalog } from '../homepage/catalog.ts'
-import { Page } from './shared.tsx'
+import { renderHomepage, type GalleryTalk, type HomepageOptions } from '../homepage/render.ts'
 
-export default async function Index(_context: BuildContext, { talks, script }: PageData['index']): Promise<VNode> {
-  const visible = Object.entries(talks).filter(
-    ([id, talk]) => !id.startsWith('__') && id !== 'master' && !talk.document.hidden
+export default async function Index(context: BuildContext, data: PageData['index']): Promise<VNode> {
+  const directory = context.extensions.freya.netlify ? resolve(context.root, 'html') : resolve('dist/html')
+  const assets = resolve(directory, 'assets/homepage')
+  await mkdir(assets, { recursive: true })
+  for (const file of ['inter.woff2', 'inter_license.txt']) {
+    await cp(resolve('src/homepage/assets', file), resolve(assets, file))
+  }
+  await cp(resolve('src/homepage/style.css'), resolve(assets, 'style.css'))
+  await cp(resolve('src/themes/main/assets/favicon.webp'), resolve(assets, 'favicon.webp'))
+  await writeFile(
+    resolve(assets, 'browser.js'),
+    stripTypeScriptTypes(await readFile(resolve('src/homepage/browser.ts'), 'utf8'))
   )
-  const sections = [
-    ['Current talks', visible.filter(([, talk]) => !talk.document.archived)],
-    ['From the archive', visible.filter(([, talk]) => talk.document.archived)]
-  ] as const
-  return Page({
-    title: 'Talks by Luca Del Puppo',
-    script,
-    children: (
-      <>
-        <div className="intro">
-          <p className="eyebrow">Code. Learn. Share.</p>
-          <h1>
-            Ideas worth sharing<span>.</span>
-          </h1>
-          <p>Talks about the web, AI, and the craft of writing software.</p>
-        </div>
-        {sections.map(
-          ([heading, items]) =>
-            items.length > 0 && (
-              <section key={heading}>
-                <h2>{heading}</h2>
-                <div className="grid">
-                  {items.map(([id, talk]) => {
-                    const entry = catalog[id]
-                    return (
-                      <article className="card" key={id}>
-                        <a className={`cover ${entry?.color ?? 'mint'}`} href={`/${id}`}>
-                          <span>{entry?.poster ?? talk.document.title}</span>
-                        </a>
-                        <div className="content">
-                          <h3>
-                            <a href={`/${id}`}>{talk.document.title}</a>
-                          </h3>
-                          <p>{entry?.summary ?? talk.document.abstract}</p>
-                          <nav aria-label={`Resources: ${talk.document.title}`}>
-                            <a href={`/${id}`}>View slides ↗</a>
-                            <span data-downloads={id} />
-                          </nav>
-                        </div>
-                      </article>
-                    )
-                  })}
-                </div>
-              </section>
-            )
-        )}
-      </>
-    )
+  const talks: GalleryTalk[] = []
+  for (const [id, talk] of Object.entries(data.talks).sort(([a], [b]) => a.localeCompare(b))) {
+    if (id.startsWith('__') || id === 'master' || talk.document.hidden) continue
+    const artwork = catalog[id]?.artwork
+    const source = artwork && resolve('src/talks', id, 'assets', artwork)
+    const image = `${id}.webp`
+    if (source && existsSync(source)) await cp(source, resolve(assets, image))
+    talks.push({
+      id,
+      title: talk.document.title,
+      abstract: talk.document.abstract,
+      archived: talk.document.archived,
+      artwork:
+        source && existsSync(source) ? `/assets/homepage/${image}?v=${encodeURIComponent(context.version)}` : undefined
+    })
+  }
+  talks.sort((a, b) => Number(Boolean(catalog[b.id]?.featured)) - Number(Boolean(catalog[a.id]?.featured)))
+  const html = renderHomepage({
+    talks,
+    author: data.common.author as HomepageOptions['author'],
+    version: context.version,
+    scripts: `<script>${data.script}</script>`
   })
+  const head = html.slice(html.indexOf('<head>') + 6, html.indexOf('</head>'))
+  const body = html.slice(html.indexOf('<body class="gallery">') + 22, html.indexOf('</body>'))
+  return (
+    <html lang="en">
+      <head dangerouslySetInnerHTML={{ __html: head }} />
+      <body className="gallery" dangerouslySetInnerHTML={{ __html: body }} />
+    </html>
+  )
 }

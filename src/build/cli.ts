@@ -156,7 +156,7 @@ export const setupCLI: SetupCLI = (program: Command, logger: Logger) => {
         ]) {
           try {
             await access(resolve(site, folder, `${id}.${extension}`))
-            links.push(`<a href="/${folder}/${id}.${extension}">${label} ↓</a>`)
+            links.push(`<a class="download-link" href="/${folder}/${id}.${extension}">${label} ↓</a>`)
           } catch {
             // This export was not included in the deployment.
           }
