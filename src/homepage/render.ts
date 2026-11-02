@@ -59,6 +59,7 @@ function actions(talk: GalleryTalk, featured: boolean = false): string {
   return `<div class="talk-actions"><a class="${featured ? 'button button--mint' : 'slides-link'}" href="/${escape(talk.id)}" aria-label="View slides: ${escape(talk.title)}">View slides <span aria-hidden="true">↗</span></a>
     ${talk.downloads?.pdf ? `<a class="download-link" href="/pdfs/${escape(talk.id)}.pdf" download aria-label="Download PDF: ${escape(talk.title)}">PDF <span aria-hidden="true">↓</span></a>` : ''}
     ${talk.downloads?.pptx ? `<a class="download-link" href="/pptx/${escape(talk.id)}.pptx" download aria-label="Download PowerPoint: ${escape(talk.title)}">PPTX <span aria-hidden="true">↓</span></a>` : ''}
+    <span data-downloads="${escape(talk.id)}"></span>
   </div>`
 }
 

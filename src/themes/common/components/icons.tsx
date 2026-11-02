@@ -1,6 +1,6 @@
 import { cleanCssClasses, generateSVGId, useClient } from '@perseveranza-pets/freya/client'
-import { type VNode } from 'preact'
-import { render } from 'preact-render-to-string'
+import { type VNode } from '@perseveranza-pets/freya/preact'
+import { render } from '@perseveranza-pets/freya/preact-render-to-string'
 
 interface SvgIconProps {
   name: string

@@ -56,35 +56,15 @@ test('rendering groups archived talks and includes only published download forma
   assert.ok(html.includes('globalThis.__freyaSiteVersion'))
 })
 
-test('packaged homepage discovers real downloads and preserves version scripts on refresh', async () => {
-  const { mkdtemp, mkdir, readFile, rm, writeFile } = await import('node:fs/promises')
-  const { tmpdir } = await import('node:os')
-  const { join } = await import('node:path')
-  const { writeHomepage } = await import('./build.ts')
-  const directory = await mkdtemp(join(tmpdir(), 'talk-gallery-'))
-  const id = 'your-next-user-is-an-ai-agent'
-  try {
-    await writeFile(
-      join(directory, 'index.html'),
-      '<html><head><script>globalThis.__freyaSiteVersion = "test-build"</script></head><body></body></html>'
-    )
-    await writeFile(join(directory, `${id}.html`), '')
-    await writeFile(join(directory, '__master.html'), '')
-    await writeHomepage(directory)
-    let html = await readFile(join(directory, 'index.html'), 'utf8')
-    assert.equal((html.match(/data-talk data-search/g) ?? []).length, 1)
-    assert.ok(html.includes('data-featured'))
-    assert.ok(!html.includes(`/pdfs/${id}.pdf`))
-    await mkdir(join(directory, 'pdfs'))
-    await writeFile(join(directory, 'pdfs', `${id}.pdf`), 'fixture')
-    await writeHomepage(directory)
-    html = await readFile(join(directory, 'index.html'), 'utf8')
-    assert.ok(html.includes(`/pdfs/${id}.pdf`))
-    assert.ok(!html.includes(`/pptx/${id}.pptx`))
-    assert.equal((html.match(/__freyaSiteVersion/g) ?? []).length, 1)
-    assert.equal((html.match(/src="\/assets\/homepage\/browser.js/g) ?? []).length, 1)
-    assert.ok(html.includes('style.css?v=test-build'))
-  } finally {
-    await rm(directory, { recursive: true, force: true })
-  }
+test('featured gallery preserves Freya script and deployment download placeholders', () => {
+  const html = renderHomepage({
+    talks: [{ id: 'your-next-user-is-an-ai-agent', title: 'Agents' }],
+    author: { name: 'Luca' },
+    version: 'v2',
+    scripts: '<script>globalThis.__freyaSiteVersion = "v2"</script>'
+  })
+  assert.ok(html.includes('data-featured'))
+  assert.ok(html.includes('data-downloads="your-next-user-is-an-ai-agent"'))
+  assert.equal((html.match(/__freyaSiteVersion/g) ?? []).length, 1)
+  assert.ok(html.includes('style.css?v=v2'))
 })

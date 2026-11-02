@@ -41,8 +41,8 @@
     "@fortawesome/free-brands-svg-icons": "^7.3.1",
     "@fortawesome/free-regular-svg-icons": "^7.3.1",
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
-    "@perseveranza-pets/dante": "^2.1.3",
-    "@perseveranza-pets/freya": "^1.1.3"
+    "@perseveranza-pets/dante": "^3.2.0",
+    "@perseveranza-pets/freya": "^2.2.1"
   },
   "devDependencies": {
     "@cowtech/eslint-config": "^12.0.1",

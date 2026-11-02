@@ -1,6 +1,6 @@
 import { cleanCssClasses, Code, Image, QRCode, useClient, useSlide } from '@perseveranza-pets/freya/client'
-import { Fragment, type ComponentChildren, type VNode } from 'preact'
-import { useCallback, useEffect, useMemo, useState } from 'preact/hooks'
+import { Fragment, type ComponentChildren, type VNode } from '@perseveranza-pets/freya/preact'
+import { useCallback, useEffect, useMemo, useState } from '@perseveranza-pets/freya/preact/hooks'
 import { type Grid, type Item as ItemDefinition, type Items as ItemsDefinition } from '../models.ts'
 import { Text } from './common.tsx'
 import { SvgIcon } from './icons.tsx'

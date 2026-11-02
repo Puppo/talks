@@ -1,5 +1,5 @@
 ---
-style: style.css
+style: theme.css
 urls:
   development: 'http://delpuppo.local:4200'
   production: 'https://talks.delpuppo.net'
