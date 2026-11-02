@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #f9f8f2;
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.5;
+
+  background: #000e38;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 3px solid #9af4d2;
+
+  outline-offset: 4px;
+}
+
+header,
+main,
+footer {
+  width: min(1200px, calc(100% - 3rem));
+
+  margin-inline: auto;
+}
+
+header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffff40;
+
+  padding-block: 2rem;
+}
+
+header a,
+footer a {
+  text-decoration: none;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.brand span {
+  color: #9af4d2;
+}
+
+nav {
+  display: flex;
+  gap: 1.2rem;
+
+  flex-wrap: wrap;
+}
+
+.intro {
+  padding-block: 5rem 4rem;
+}
+
+.eyebrow {
+  color: #9af4d2;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.3em 0;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+h1 span {
+  color: #9af4d2;
+}
+
+h2 {
+  margin: 0 0 1.5rem;
+  font-size: 2rem;
+}
+
+section {
+  margin-bottom: 5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  border-radius: 1rem;
+  color: #000e38;
+
+  background: #fff;
+}
+
+.cover {
+  display: flex;
+  align-items: end;
+  min-height: 200px;
+  padding: 1.5rem;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  white-space: pre-line;
+}
+
+.mint {
+  background: #9af4d2;
+}
+
+.peach {
+  background: #ffc9a6;
+}
+
+.lavender {
+  background: #d0c2fa;
+}
+
+.blue {
+  background: #a8d6fa;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.content h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.content p {
+  flex: 1;
+}
+
+.content nav {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  min-height: 55vh;
+}
+
+footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  border-top: 1px solid #ffffff40;
+
+  padding-block: 2rem;
+}
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .intro {
+    padding-block: 3rem;
+  }
+}

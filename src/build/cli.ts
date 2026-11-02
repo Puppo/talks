@@ -1,4 +1,4 @@
-import { readFile, writeFile } from 'node:fs/promises'
+import { access, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { setTimeout as sleep } from 'node:timers/promises'
 import { type BuildContext } from '@perseveranza-pets/dante'
@@ -13,7 +13,6 @@ import {
 } from '@perseveranza-pets/freya'
 import { type Logger } from 'pino'
 import { chromium, type Browser, type BrowserContext, type Page } from 'playwright'
-import { writeHomepage } from '../homepage/build.ts'
 
 type BrowserEnvironment = [Browser, BrowserContext, Page]
 
@@ -137,14 +136,34 @@ async function writeNetlifyRedirects(directory: string): Promise<void> {
 }
 
 export const setupCLI: SetupCLI = (program: Command, logger: Logger) => {
-  process.env.DANTE_BUILD_FILE_PATH = resolve('src/build/index.ts')
   program.commands
     .find(command => command.name() === 'deploy')
     ?.hook('postAction', async (command: Command) => {
-      await writeNetlifyRedirects(command.opts().directory)
-      if (!process.exitCode) {
-        await writeHomepage(resolve(command.opts().directory, 'deploy/site'))
+      if (process.exitCode) {
+        return
       }
+      const directory = command.opts().directory
+      await writeNetlifyRedirects(directory)
+      const site = resolve(directory, 'deploy/site')
+      const indexPath = resolve(site, 'index.html')
+      let html = await readFile(indexPath, 'utf8')
+      const matches = [...html.matchAll(/<span data-downloads="([a-z0-9-]+)"><\/span>/g)]
+      for (const [placeholder, id] of matches) {
+        const links: string[] = []
+        for (const [folder, extension, label] of [
+          ['pdfs', 'pdf', 'PDF'],
+          ['pptx', 'pptx', 'PPTX']
+        ]) {
+          try {
+            await access(resolve(site, folder, `${id}.${extension}`))
+            links.push(`<a href="/${folder}/${id}.${extension}">${label} ↓</a>`)
+          } catch {
+            // This export was not included in the deployment.
+          }
+        }
+        html = html.replace(placeholder, links.join(''))
+      }
+      await writeFile(indexPath, html)
     })
 
   program

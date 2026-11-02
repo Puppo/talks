@@ -1,5 +1,5 @@
 import { cleanCssClasses, useClient, useSlide, type SlideProps } from '@perseveranza-pets/freya/client'
-import { type VNode } from 'preact'
+import { type VNode } from '@perseveranza-pets/freya/preact'
 import { Text } from '../../common/components/common.tsx'
 import { type Slide } from '../../common/models.ts'
 import { SlideWrapper } from '../components/common.tsx'
